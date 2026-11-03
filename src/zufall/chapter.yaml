@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Wahrscheinlichkeit
+summary: >-
+  Wahrscheinlichkeitsrechnung für Klasse 8: von der Laplace-Formel über das Baumdiagramm und beide Pfadregeln bis
+  zum Gegenereignis und zum Ziehen ohne Zurücklegen – mit Bildern und Übungen, die dir sofort sagen, ob es stimmt.
+pages:
+  [laplace, baumdiagramm, pfadregel-1, gegenereignis, ohne-zuruecklegen, pfadregel-2, ergebnisformen, pfade-uebersetzen]
+selfAssessment:
+  pages:
+    - exercises:
+        - /zufall/laplace/#laplace-zaehlen
+        - /zufall/laplace/#laplace-urne
+        - /zufall/baumdiagramm/#baum-ergaenzen
+    - exercises:
+        - /zufall/baumdiagramm/#baum-ergaenzen
+        - /zufall/pfadregel-1/#pfad-im-baum
+        - /zufall/pfadregel-1/#pfadregel-1-urne
+    - exercises:
+        - /zufall/gegenereignis/#gegenwahrscheinlichkeit
+        - /zufall/gegenereignis/#gegenereignis-direkt
+        - /zufall/ohne-zuruecklegen/#mit-und-ohne
+    - exercises:
+        - /zufall/ohne-zuruecklegen/#zweite-kugel-ohne
+        - /zufall/pfadregel-2/#pfade-addieren
+        - /zufall/pfadregel-2/#genau-einmal-rot
