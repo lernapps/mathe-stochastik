@@ -112,11 +112,6 @@ blocks:
             correct: false
             info: Das sind nur $\frac{5}{6}$, erweitert mit 3. Beim Multiplizieren werden die Zähler und die Nenner miteinander multipliziert.
         explanation: "Kommt derselbe Faktor mehrmals vor, darfst du eine Potenz schreiben: $\\frac{5}{6} \\cdot \\frac{5}{6} \\cdot \\frac{5}{6} = \\left(\\frac{5}{6}\\right)^3$. Ausgerechnet ist das $\\frac{125}{216}$."
-        links:
-          - {
-              title: "Darstellung von Wahrscheinlichkeiten (Lernlandkarte)",
-              url: "https://lernapps.net/apps/map/mathematik/c/zufall-ergebnisform/",
-            }
       - type: number
         id: ergebnisform-muenze
         text: Du wirfst eine Münze dreimal. Schreibe die Wahrscheinlichkeit für dreimal Zahl als Potenz und rechne sie aus. Gib sie in Prozent an.

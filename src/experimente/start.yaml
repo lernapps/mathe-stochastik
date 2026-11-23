@@ -35,16 +35,20 @@ blocks:
         id: test-haeufigkeit
         component: Kurztest
         props:
-          question: Bei 50 Würfen kommt 10-mal die Sechs. Wie groß ist die relative Häufigkeit der Sechs?
+          question: Bei 60 Würfen sind 21 Ergebnisse eine gerade Zahl. Wie groß ist die relative Häufigkeit von „gerade“?
           options:
-            - { text: "0,2", correct: true, info: "10 von 50 ist 10 : 50 = 0,2, also 20 %." }
-            - { text: "10", correct: false, info: "Das ist die absolute Häufigkeit, die Anzahl der Sechsen." }
-            - { text: "0,5", correct: false, info: "Das wäre 25 von 50. Teile 10 durch 50." }
+            - { text: "0,35", correct: true, info: "21 von 60 kürzt du mit 3 zu 7 von 20. Das sind 0,35, also 35 %." }
+            - { text: "21", correct: false, info: "Das ist die absolute Häufigkeit, die Anzahl der geraden Zahlen." }
+            - {
+                text: "2,85",
+                correct: false,
+                info: "Du hast 60 durch 21 geteilt. Teile die Anzahl der Treffer (21) durch die Zahl aller Würfe (60).",
+              }
           right: Richtig.
           wrong: Nicht richtig.
         nojs: |
-          Kurztest: Bei 50 Würfen kommt 10-mal die Sechs. Wie groß ist die relative Häufigkeit der Sechs? Antwort: 0,2.
-          10 : 50 = 0,2, also 20 %. Die 10 ist die absolute Häufigkeit.
+          Kurztest: Bei 60 Würfen sind 21 Ergebnisse eine gerade Zahl. Wie groß ist die relative Häufigkeit von „gerade“?
+          Antwort: 0,35. 21 von 60 kürzt du mit 3 zu 7 von 20, das sind 0,35 oder 35 %. Die 21 ist die absolute Häufigkeit.
       - type: text
         text: |
           Falsch gelegen? Dann übe den Baustein

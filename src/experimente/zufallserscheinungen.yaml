@@ -38,11 +38,6 @@ blocks:
             correct: false
             info: Nur am Anfang schwankt sie stark. Mit jedem Wurf bewegt sie sich weniger.
         explanation: Die relative Häufigkeit der Sechs pendelt sich bei vielen Würfen bei ungefähr einem Sechstel ein, ungefähr 0,17.
-        links:
-          - {
-              title: "Zufallsversuche auf der Lernlandkarte von lernapps.net",
-              url: "https://lernapps.net/apps/map/mathematik/c/zufallserscheinungen/",
-            }
       - type: single-choice
         id: zufall-erkennen
         text: Jonas hat sechsmal gewürfelt. Muss genau eine Sechs dabei sein?
@@ -57,11 +52,6 @@ blocks:
             correct: false
             info: Es gibt keine feste Reihenfolge. Beim sechsten Wurf ist jede Zahl wieder möglich.
         explanation: Beim Würfeln weißt du erst nach dem Wurf, welche Zahl oben liegt. Das ist das Besondere an einem Zufallsversuch.
-        links:
-          - {
-              title: "Zufallsversuche (Lernlandkarte)",
-              url: "https://lernapps.net/apps/map/mathematik/c/zufallserscheinungen/",
-            }
   - type: section
     id: regel
     title: Was ist ein Zufallsversuch?
@@ -125,11 +115,6 @@ blocks:
             correct: false
             info: Das stimmt nicht. Du siehst es an der Tabelle, beide Ergebnisse kommen vor.
         explanation: Wo du nicht rechnen kannst, hilft nur Werfen und Zählen. Wie du daraus etwas für den nächsten Wurf schließt, lernst du auf der nächsten Seite.
-        links:
-          - {
-              title: "Zufallsversuche auf der Lernlandkarte von lernapps.net",
-              url: "https://lernapps.net/apps/map/mathematik/c/zufallserscheinungen/",
-            }
   - type: section
     id: uebung
     title: Übung
@@ -166,11 +151,6 @@ blocks:
             correct: false
             info: Auch das stimmt nicht. Frühere Würfe ändern nichts am nächsten Wurf.
         explanation: Zufallsversuche haben kein Gedächtnis. Jeder Wurf beginnt neu.
-        links:
-          - {
-              title: "Zufallsversuche (Lernlandkarte)",
-              url: "https://lernapps.net/apps/map/mathematik/c/zufallserscheinungen/",
-            }
       - type: matching
         id: ergebnisse-zuordnen
         text: Ordne jedem Zufallsversuch seine Ergebnismenge zu.
@@ -180,8 +160,3 @@ blocks:
           - { left: "Glücksrad mit Rot, Blau, Gelb", right: "Rot, Blau, Gelb" }
         distractors: ["Spitze oben, Spitze unten"]
         explanation: Die Ergebnismenge nennt jedes mögliche Ergebnis genau einmal.
-        links:
-          - {
-              title: "Zufallsversuche (Lernlandkarte)",
-              url: "https://lernapps.net/apps/map/mathematik/c/zufallserscheinungen/",
-            }

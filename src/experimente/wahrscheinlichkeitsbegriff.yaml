@@ -22,11 +22,6 @@ blocks:
           - Ein Würfel zeigt keine 6.
           - Auf Montag folgt Dienstag.
         explanation: Die 7 gibt es auf dem Würfel nicht, die 6 ist eine von sechs Zahlen, Zahl ist eine von zwei Seiten, „keine 6“ passiert bei fünf von sechs Zahlen, und Dienstag folgt immer.
-        links:
-          - {
-              title: "Wahrscheinlichkeitsbegriff auf der Lernlandkarte von lernapps.net",
-              url: "https://lernapps.net/apps/map/mathematik/c/wahrscheinlichkeitsbegriff/",
-            }
   - type: section
     id: regel
     title: Wahrscheinlichkeit ist eine Zahl von 0 bis 1
@@ -87,11 +82,6 @@ blocks:
             correct: false
             info: Auch das stimmt nicht. Bei vier Drehs kann Blau keinmal oder mehrmals kommen.
         explanation: Wahrscheinlichkeit beschreibt, wie oft etwas auf lange Sicht passiert, nicht, was beim nächsten Versuch passiert.
-        links:
-          - {
-              title: "Wahrscheinlichkeitsbegriff auf der Lernlandkarte von lernapps.net",
-              url: "https://lernapps.net/apps/map/mathematik/c/wahrscheinlichkeitsbegriff/",
-            }
   - type: section
     id: uebung
     title: Übung
@@ -113,21 +103,11 @@ blocks:
             correct: false
             info: 1 ist erlaubt. Es ist die Wahrscheinlichkeit eines sicheren Ereignisses.
         explanation: Eine Wahrscheinlichkeit ist nie kleiner als 0 und nie größer als 1.
-        links:
-          - {
-              title: "Wahrscheinlichkeitsbegriff auf der Lernlandkarte von lernapps.net",
-              url: "https://lernapps.net/apps/map/mathematik/c/wahrscheinlichkeitsbegriff/",
-            }
       - type: true-false
         id: genau-fuenfmal
         text: Die Wahrscheinlichkeit für Kopf ist 0,5. Darum kommt bei 10 Münzwürfen genau 5-mal Kopf.
         answer: false
         explanation: Bei 10 Würfen schwankt die Zahl der Kopfwürfe. Erst bei sehr vielen Würfen liegt der Anteil nahe bei 0,5. Genau fünfmal Kopf kann passieren, muss aber nicht.
-        links:
-          - {
-              title: "Wahrscheinlichkeitsbegriff auf der Lernlandkarte von lernapps.net",
-              url: "https://lernapps.net/apps/map/mathematik/c/wahrscheinlichkeitsbegriff/",
-            }
       - type: matching
         id: ereignis-wert
         text: Ordne jedem Ereignis seine Wahrscheinlichkeit zu.
@@ -137,11 +117,6 @@ blocks:
           - { left: Eine Münze zeigt Kopf., right: "0,5" }
         distractors: ["2"]
         explanation: Sicher ist 1, unmöglich ist 0, und eine faire Münze zeigt Kopf auf lange Sicht in der Hälfte der Würfe.
-        links:
-          - {
-              title: "Wahrscheinlichkeitsbegriff auf der Lernlandkarte von lernapps.net",
-              url: "https://lernapps.net/apps/map/mathematik/c/wahrscheinlichkeitsbegriff/",
-            }
       - type: generated
         id: regen-deuten
         given:
