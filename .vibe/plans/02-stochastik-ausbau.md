@@ -4,7 +4,7 @@
 # Archetype, as in the app's first plan. Allowed values: explainer, interactive, quiz.
 archetype: explainer
 # Current phase. Allowed values: explore, plan, code, commit.
-phase: explore
+phase: plan
 # prePushFailures: failed pre-push runs of this increment, written by the hook.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks.
@@ -97,8 +97,9 @@ ergänzt die 6 fehlenden von 14 Bausteinen und bringt die 8 vorhandenen Seiten a
 - [x] Write under "Notes" the didactic approach per competency and the scope (in, out, data range).
 - [x] The increment needs a kind of content the guide does not cover (a new page structure, screen, component or kind
       of exercise): load skills `lernapps-explainer-design` and `lernapps-exercise-patterns`. Else skip this task.
-- [ ] **Checkpoint:** research. Show in plain words: the new competencies by chapter, the didactic approach, the
+- [x] **Checkpoint:** research. Show in plain words: the new competencies by chapter, the didactic approach, the
       scope, every "(guess)", the sources and what is unchecked. Stop and wait. Changes: change them, then ask again.
+      Creator: Recherche vom Orchestrator in Vertretung des Menschen angenommen (Bestand, Abweichungen, Update, Plan 02, Recap mit Kurztest); der Mensch hat npx freigegeben.
 
 ### Answers
 
@@ -113,24 +114,30 @@ ergänzt die 6 fehlenden von 14 Bausteinen und bringt die 8 vorhandenen Seiten a
 
 ### Tasks
 
-- [ ] Load skill `lernapps-content-growth`. Add the tasks of Code as slices, one per competency, in the guide's
+- [x] Load skill `lernapps-content-growth`. Add the tasks of Code as slices, one per competency, in the guide's
       order, one call each: `npx --no -- lernapps plan add --at slices "<task>"`. Say in each which sub-agent may
       write it in parallel, if any.
-- [ ] Write "Content method": the guide's patterns, figures and components per slice. Anything new: map it as skill
+- [x] Write "Content method": the guide's patterns, figures and components per slice. Anything new: map it as skill
       `lernapps-explainer-design` says, and say why the guide's patterns do not fit.
-- [ ] Draw a sketch of each new component or interactive exercise, in `.vibe/sketches/`.
-- [ ] Show the creator, short: goal, new competencies by chapter, slices; in plain words what learners see and do and
+- [x] Draw a sketch of each new component or interactive exercise, in `.vibe/sketches/`.
+- [x] Show the creator, short: goal, new competencies by chapter, slices; in plain words what learners see and do and
       what is new. At most 2 questions.
 - [ ] **Checkpoint:** confirm the plan and the content method. Stop and wait for an explicit yes. Changes: change
       them, then ask again.
 
 ### Content method
 
-<!-- One line each: the guide's patterns, figures and components used, and where; anything new, what it does and
-cannot. Something new goes into the guide in the slice that adds it. -->
-<!-- An explainer: per figure, model and component its learning action in two to four sentences
-(`explainer-representation-explained`); per page its prerequisites the app does not practise, and which get a recap
-page, which a link. -->
+Je Seite: erste Aufgabe vor der Erklärung (Zufallsmaschine laufen lassen, vorhersagen), Wechsel Sehen/Tun/Lesen, Rückblick am Kapitelende, roter Faden Spieleabend („Ist das Spiel fair?“).
+
+- **Zufallsmaschine** (neu, Komponente `ZufallMaschine`): Würfel, Münze, Glücksrad, Urne, Reißzwecke/Legostein; ein Wurf, 10, 100, 1000 Würfe; Tabelle der absoluten und relativen Häufigkeit und eine Linie, die sich einpendelt. Lernhandlung: erst schätzen, dann laufen lassen und vergleichen. Grund: kein Block zieht zufällig und zeichnet (`prefer-built-in-block`). Grenzen: Zufallszahlen aus dem Seed (`Zufallszahlen.ts`), nichts wird gespeichert; ohne JavaScript steht eine feste Beispielreihe als Tabelle mit Text da.
+- **Vorhersage-Aufgabe:** erst schätzen oder rechnen, dann die Maschine, Rückmeldung mit Grund. Typische Fehler: „nach 6 Würfen muss eine 6 kommen“, „es gleicht sich aus“.
+- **Vierfeldertafel** (neu, Komponente `Vierfeldertafel`): Tafel mit Lücken füllen, daneben der Baum mit denselben Zahlen (bestehende `ZufallBaum`), in beide Richtungen lesbar. Eingabe als Bruch, Dezimalzahl oder Prozent. Fehlertypen: Bedingung in der falschen Richtung, Zeilen- statt Spaltensumme.
+- **Kurztest** (aus `/tmp/epic/docs/mathe-epic/components/`): in jedem Recap, eine Frage, eine Auswahl, Grund bei jeder Option, `nojs`-Text.
+- **Bestehend, wiederverwendet:** `ZufallBaum`, `ZufallBaumLuecken`, `ZufallPfad`, `ZufallGegen`, `ZufallOhne`, `ZufallPfade`, `ZufallTerm`, `generated`, `single-choice`, `table`, `formula`, `figure`. Bruchsatz nur mit `formula`; `a/b` nur in Komponenten-Rückmeldungen und `mistakes` (W28, gezählt).
+- **Aufgabenarten je Baustein (mindestens 3, steigend):** Rechnen mit Eingabe (`generated`), Komponente mit Bild, Auswahl mit Begründung, Ablesen aus Bild oder Tafel; nicht alle Seiten gleich (`explainer-page-variety`).
+- **Recap-Seiten** (`recap:`, beschreibend): Kopf („Das brauchst du für dieses Kapitel“), je Baustein Begriffe fett mit Beispiel, Kurztest, Schluss als Checkliste; Begriffe auch im Glossar. Kapitel `experimente`: haeufigkeiten. Kapitel `zufall`: zaehlprinzip, brueche-multiplizieren-dividieren, prozent-grundbegriffe (Kartenseite als Hinweis, nie Link in fremde Apps). Kapitel `vierfeldertafel`: keine.
+- **Bilder:** SVG aus den Komponenten gerendert, mit Alt-Text; Mathe-Blau `#1d4ed8`, Orange `#ff8f00`; nie Farbe allein.
+- **Keine Videos, keine externen Links;** Quellen nur Karte, KMK 2022, Hessisches Kerncurriculum, eigene Herleitungen.
 
 ## Code
 
@@ -153,7 +160,18 @@ page, which a link. -->
       `references/language-tasks.md` in the same folder. A component in the plan: also `references/components.md`.
 - [ ] Decide whether the app needs `scope`, as "`scope`" in
       `.agents/skills/lernapps-explainer/references/structure.md` says. Write the choice under "Key decisions".
-<!-- tasks: slices: one per competency, as written in Plan -->
+- [ ] Bestand A (ich allein): YouTube und serlo ersatzlos raus (Video-Abschnitte, Textlinks, links:, sources, Tutor-Regeln), Klassenangabe "7 und 8" in app.yaml und chapter.yaml; check und Tests grün.
+- [ ] Bestand B (Unteragent, nur Kapitel zufall, eigene Worktree): je Seite mindestens 3 Aufgaben je Baustein, steigend und nicht überall generated, Brüche gesetzt statt 3/5 (a/b in Komponenten-Rückmeldungen zählen, W28), Textwände kürzen oder teilen, Abschnitt-Ids unverändert.
+- [ ] Kurztest + Recap Kapitel experimente (ich allein): Kurztest-Dateien aus /tmp/epic nach src/components kopieren und anpassen, Recap-Seite haeufigkeiten (Begriffe fett, Beispiel, Kopf, Checkliste, Kurztest), Glossar.
+- [ ] Zufallsmaschine + Musterseite experimente/zufallsversuche (zufallserscheinungen), ich allein: Komponente mit Test, Bild, drei Aufgaben; danach Lernenden-Prüfer (Klasse 7) und Checkpoint Musterseite.
+- [ ] Seite experimente/relative-haeufigkeit (haeufigkeit-als-schaetzwert): Unteragent nach der Musterseite, eigene Datei, nutzt die Zufallsmaschine.
+- [ ] Seite experimente/simulationen (simulationen): Unteragent nach der Musterseite, eigene Datei.
+- [ ] Seite experimente/wahrscheinlichkeit (wahrscheinlichkeitsbegriff) und chapter.yaml experimente: ich allein.
+- [ ] Recap zu Kapitelanfang zufall (zaehlprinzip, brueche-multiplizieren-dividieren, prozent-grundbegriffe) mit Kurztests; Baumdiagramm-Begriffe wie in der Karte; chapter.yaml, app.yaml Reihenfolge: ich allein.
+- [ ] Kapitel vierfeldertafel, Seite tafel (vierfeldertafel): Komponente Vierfeldertafel mit Test, Baum und Tafel mit denselben Zahlen, drei Aufgaben; Unteragent möglich nach der Musterseite.
+- [ ] Seite vierfeldertafel/bedingt (bedingte-wahrscheinlichkeit): Schnelltest mit falsch positiven Ergebnissen, Richtung der Bedingung; Unteragent möglich nach der Musterseite.
+- [ ] Selbsteinschätzung je Kapitel (selfAssessment), Spieleabend als roter Faden, Kapitelrückblick: ich allein.
+<!-- tasks: slices (11 added): one per competency, as written in Plan -->
 - [ ] **Checkpoint:** the pattern page, after the first slice. A slice in a pattern the app already has: show it to
       the creator and go on. A new pattern: load skill `lernapps-learner-check`, do its learner check, fix what it
       finds, then ask the creator whether the others may follow it, and wait.
