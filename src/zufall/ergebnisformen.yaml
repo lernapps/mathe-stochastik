@@ -59,16 +59,30 @@ blocks:
       - type: figure
         image: images/zufall-ergebnisformen.svg
         alt: Baumdiagramm zur Urne mit 3 roten und 2 blauen Kugeln, zweimal ohne Zurücklegen; orange sind die zwei Pfade von „genau einmal rot“
-        caption: |-
+        caption: >-
           Der Baum aus dem Beispiel: 3 rote (R) und 2 blaue (B) Kugeln, zweimal ohne Zurücklegen. Erste Stufe:
-          rot 3/5, blau 2/5. Nach rot: rot 2/4, blau 2/4; nach blau: rot 3/4, blau 1/4. Orange sind die zwei Pfade von
-          „genau einmal rot“: rot-blau 3/10 und blau-rot 3/10. Zusammen 3/5.
+          rot $\frac{3}{5}$, blau $\frac{2}{5}$. Nach rot: rot $\frac{2}{4}$, blau $\frac{2}{4}$; nach blau: rot $\frac{3}{4}$, blau $\frac{1}{4}$. Orange sind die zwei Pfade von
+          „genau einmal rot“: rot-blau $\frac{3}{10}$ und blau-rot $\frac{3}{10}$. Zusammen $\frac{3}{5}$.
         source: Eigene Darstellung der Mathe-Karte
         licence: MIT
   - type: section
     id: uebung
     title: Übung
     blocks:
+      - type: matching
+        id: ergebnisform-zuordnen
+        text: Welche Form hat der Term für diese Wahrscheinlichkeit? Ordne zu.
+        pairs:
+          - left: fünfmal hintereinander dieselbe Seite einer Münze
+            right: eine Potenz
+          - left: erst rot, dann blau (ein Pfad)
+            right: ein Produkt
+          - left: genau einmal rot in zwei Zügen (zwei Pfade)
+            right: eine Summe aus Produkten
+          - left: mindestens einmal eine 6 in drei Würfen
+            right: eins minus eine Potenz
+        hint: Frage dich bei jedem Ereignis, wie viele Pfade dazugehören und ob sich ein Faktor wiederholt.
+        explanation: Ein Pfad mit verschiedenen Zweigen ist ein Produkt. Wiederholt sich der Faktor, schreibst du eine Potenz. Gehören mehrere Pfade dazu, addierst du ihre Produkte. Bei „mindestens einmal“ rechnest du 1 minus die Wahrscheinlichkeit des Gegenereignisses, und die ist eine Potenz.
       - type: vue-component
         id: term-waehlen
         component: ZufallTerm
@@ -87,20 +101,35 @@ blocks:
         options:
           - text: fünf Sechstel hoch drei
             correct: true
-            info: Derselbe Faktor dreimal multipliziert ist die dritte Potenz. Ausgerechnet sind das 125 Zweihundertsechzehntel.
+            info: Derselbe Faktor dreimal multipliziert ist die dritte Potenz. Ausgerechnet sind das $\frac{125}{216}$.
           - text: drei mal fünf Sechstel
             correct: false
-            info: Das ist fünf Sechstel plus fünf Sechstel plus fünf Sechstel, also eine Summe. Sie ist größer als 1 und keine Wahrscheinlichkeit.
+            info: Das ist $\frac{5}{6} + \frac{5}{6} + \frac{5}{6}$, also eine Summe. Sie ist größer als 1 und keine Wahrscheinlichkeit.
           - text: fünf hoch drei durch sechs
             correct: false
-            info: Hier ist nur der Zähler hoch drei genommen. Bei der Potenz eines Bruchs kommt auch der Nenner hoch drei.
+            info: Hier ist nur der Zähler hoch drei genommen. Bei der Potenz eines Bruchs kommt auch der Nenner hoch drei, also $\frac{5^3}{6^3}$.
           - text: fünfzehn Achtzehntel
             correct: false
-            info: Das sind nur fünf Sechstel, erweitert mit 3. Beim Multiplizieren werden die Zähler und die Nenner miteinander multipliziert.
-        explanation: >-
-          Kommt derselbe Faktor mehrmals vor, darfst du eine Potenz schreiben: fünf Sechstel mal fünf Sechstel mal fünf Sechstel ist fünf Sechstel hoch drei, ausgerechnet 125 Zweihundertsechzehntel.
+            info: Das sind nur $\frac{5}{6}$, erweitert mit 3. Beim Multiplizieren werden die Zähler und die Nenner miteinander multipliziert.
+        explanation: "Kommt derselbe Faktor mehrmals vor, darfst du eine Potenz schreiben: $\\frac{5}{6} \\cdot \\frac{5}{6} \\cdot \\frac{5}{6} = \\left(\\frac{5}{6}\\right)^3$. Ausgerechnet ist das $\\frac{125}{216}$."
         links:
           - {
               title: "Darstellung von Wahrscheinlichkeiten (Lernlandkarte)",
               url: "https://lernapps.net/apps/map/mathematik/c/zufall-ergebnisform/",
             }
+      - type: number
+        id: ergebnisform-muenze
+        text: Du wirfst eine Münze dreimal. Schreibe die Wahrscheinlichkeit für dreimal Zahl als Potenz und rechne sie aus. Gib sie in Prozent an.
+        answer: 12.5
+        tolerance: 0
+        unit: "%"
+        mistakes:
+          - answer: 150
+            message: Du hast dreimal ein Halb addiert. Die Hochzahl sagt, wie oft der Faktor mit sich selbst multipliziert wird.
+          - answer: 25
+            message: Das sind nur zwei Würfe. Für drei Würfe kommt ein dritter Faktor dazu.
+        hint: Jeder Wurf hat die Wahrscheinlichkeit ein Halb. Wie oft kommt dieser Faktor im Pfad vor?
+        explanation: "Der Pfad hat drei gleiche Zweige: $\\frac{1}{2} \\cdot \\frac{1}{2} \\cdot \\frac{1}{2} = \\left(\\frac{1}{2}\\right)^3 = \\frac{1}{8} = 12{,}5\\,\\%$."
+        examples:
+          accepted: ["12,5", "12.5", "12,50"]
+          rejected: ["0,125", "37,5"]
