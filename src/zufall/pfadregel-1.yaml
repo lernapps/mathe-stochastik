@@ -91,7 +91,7 @@ blocks:
           accepted:
             - { answer: "1/4", seed: 1 }
             - { answer: "1/2*1/2", seed: 1 }
-            - { answer: "25 %", seed: 1 }
+            - { answer: "25 %", seed: 1 }
           rejected:
             - { answer: "2" }
             - { answer: "" }

@@ -112,7 +112,7 @@ blocks:
           accepted:
             - { answer: { antwort: "3/4" }, seed: 1 }
             - { answer: { antwort: "1/2*1/2+1/2*1/2+1/2*1/2", auswahl: [kz, zk, zz] }, seed: 1 }
-            - { answer: { antwort: "75 %" }, seed: 1 }
+            - { answer: { antwort: "75 %" }, seed: 1 }
           rejected:
             - { answer: { antwort: "1/4" }, seed: 1 }
             - { answer: { antwort: "" } }

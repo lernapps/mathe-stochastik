@@ -50,7 +50,7 @@ blocks:
               - ["Nur ein Pfad", '$\frac{3}{5} \cdot \frac{2}{4}$ – blau-rot fehlt']
               - [
                   "Mit Zurücklegen",
-                  '$\frac{3}{5} \cdot \frac{2}{5} + \frac{2}{5} \cdot \frac{3}{5}$ – der Nenner muss kleiner werden',
+                  '$\frac{3}{5} \cdot \frac{2}{5} + \frac{2}{5} \cdot \frac{3}{5}$ – im zweiten Zug liegen nur noch 4 Kugeln, nicht mehr 5',
                 ]
   - type: section
     id: bild
@@ -73,7 +73,7 @@ blocks:
         id: ergebnisform-zuordnen
         text: Welche Form hat der Term für diese Wahrscheinlichkeit? Ordne zu.
         pairs:
-          - left: fünfmal hintereinander dieselbe Seite einer Münze
+          - left: fünfmal hintereinander Zahl
             right: eine Potenz
           - left: erst rot, dann blau (ein Pfad)
             right: ein Produkt
@@ -128,3 +128,24 @@ blocks:
         examples:
           accepted: ["12,5", "12.5", "12,50"]
           rejected: ["0,125", "37,5"]
+      - type: generated
+        id: ergebnisform-wechseln
+        given:
+          n: { oneOf: [8, 20, 25] }
+          z: { int: [1, 7] }
+        task:
+          text: "Eine Wahrscheinlichkeit ist als Bruch {{z}} von {{n}} gegeben. Gib sie in Prozent an."
+        answer: { value: "z * 100 / n", compare: { number: { format: percent, decimals: 1 } } }
+        mistakes:
+          - {
+              value: "z / n",
+              message: "Das ist die Dezimalzahl. Für Prozent musst du sie noch mit 100 multiplizieren.",
+            }
+          - {
+              value: "z * 100",
+              message: "Du hast den Nenner vergessen. Teile zuerst die Zahl im Zähler durch den Nenner.",
+            }
+        hint: "Wandle den Bruch zuerst in eine Dezimalzahl um. Wie rechnest du dann auf Prozent?"
+        steps:
+          - '$\frac{{{z}}}{{{n}}} = {{z}} : {{n}}$'
+          - "Mal 100 gerechnet ergibt das {{answer}} %."

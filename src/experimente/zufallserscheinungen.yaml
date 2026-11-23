@@ -143,7 +143,7 @@ blocks:
         options:
           - text: Kopf ist jetzt eher dran, damit es sich ausgleicht.
             correct: false
-            info: Ein Ausgleich passiert nicht Wurf für Wurf. Erst bei sehr vielen Würfen verschwindet der Einfluss der ersten Würfe.
+            info: Ein Ausgleich passiert nicht Wurf für Wurf. Erst bei sehr vielen Würfen fallen die ersten Würfe im Anteil kaum noch ins Gewicht. In der Anzahl gleicht sich nichts aus.
           - text: Kopf und Zahl haben wieder dieselbe Chance.
             correct: true
             info: Die Münze merkt sich nichts. Jeder Wurf ist ein neuer Zufallsversuch unter gleichen Bedingungen.

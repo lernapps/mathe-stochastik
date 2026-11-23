@@ -37,18 +37,18 @@ blocks:
         props:
           question: Bei 60 Würfen sind 21 Ergebnisse eine gerade Zahl. Wie groß ist die relative Häufigkeit von „gerade“?
           options:
-            - { text: "0,35", correct: true, info: "21 von 60 kürzt du mit 3 zu 7 von 20. Das sind 0,35, also 35 %." }
             - { text: "21", correct: false, info: "Das ist die absolute Häufigkeit, die Anzahl der geraden Zahlen." }
             - {
-                text: "2,85",
+                text: "knapp 3",
                 correct: false,
                 info: "Du hast 60 durch 21 geteilt. Teile die Anzahl der Treffer (21) durch die Zahl aller Würfe (60).",
               }
+            - { text: "0,35", correct: true, info: "21 von 60 kürzt du mit 3 zu 7 von 20. Das sind 0,35, also 35 %." }
           right: Richtig.
           wrong: Nicht richtig.
         nojs: |
           Kurztest: Bei 60 Würfen sind 21 Ergebnisse eine gerade Zahl. Wie groß ist die relative Häufigkeit von „gerade“?
-          Antwort: 0,35. 21 von 60 kürzt du mit 3 zu 7 von 20, das sind 0,35 oder 35 %. Die 21 ist die absolute Häufigkeit.
+          Antwort: 0,35. 21 von 60 kürzt du mit 3 zu 7 von 20, das sind 0,35 oder 35 %. Die 21 ist die absolute Häufigkeit.
       - type: text
         text: |
           Falsch gelegen? Dann übe den Baustein

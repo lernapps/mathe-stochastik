@@ -5,7 +5,7 @@ format: 2
 strand: mathematik/stochastik
 title: "Mathe: Stochastik – Wahrscheinlichkeit"
 intro: |
-  Hier lernst du Wahrscheinlichkeitsrechnung für die Klassen 7 und 8. Jede Seite erklärt eine Sache mit Regel,
+  Hier lernst du Wahrscheinlichkeitsrechnung für die Klassen 7 bis 10. Jede Seite erklärt eine Sache mit Regel,
   Beispiel und Bild. Danach übst du mit Aufgaben. Jede Aufgabe sagt dir sofort, ob dein Ergebnis stimmt.
 languages: [de]
 chapters: [experimente, zufall, vierfeldertafel]

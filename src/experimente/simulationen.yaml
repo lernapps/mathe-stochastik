@@ -159,7 +159,7 @@ blocks:
     blocks:
       - type: number
         id: durchschnitt-durchlaeufe
-        text: "Mia hat drei Durchläufe gemacht. Bis zur ersten Sechs brauchte sie 4, 9 und 2 Würfe. Wie viele Würfe sind das im Durchschnitt pro Durchlauf?"
+        text: "Mia hat drei Durchläufe gemacht. Bis zur ersten Sechs brauchte sie 4, 9 und 2 Würfe. Wie viele Würfe sind das im Durchschnitt pro Durchlauf? Der Durchschnitt ist die Summe aller Würfe geteilt durch die Zahl der Durchläufe."
         answer: 5
         tolerance: 0
         mistakes:

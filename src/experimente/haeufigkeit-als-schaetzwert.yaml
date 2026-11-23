@@ -5,13 +5,13 @@ competencies: [haeufigkeit-als-schaetzwert]
 blocks:
   - type: section
     id: warum
-    title: Der Legostein am Spieleabend
+    title: Der Steckstein am Spieleabend
     blocks:
       - type: text
         text: |
           Mia, Jonas und Lena spielen am Spieleabend. Beim Würfel wissen sie: Auf lange Sicht kommt jede Zahl
-          ungefähr bei jedem sechsten Wurf, bei der Münze kommt Kopf ungefähr bei jedem zweiten Wurf. Heute hat Lena einen
-          Legostein mitgebracht. Er wird geworfen wie ein Würfel und kann mit den Noppen nach oben, mit den Noppen nach
+          in etwa einem von sechs Würfen vor, bei der Münze kommt Kopf in etwa einem von zwei Würfen vor. Heute hat Lena einen
+          Steckstein mitgebracht. Er wird geworfen wie ein Würfel und kann mit den Noppen nach oben, mit den Noppen nach
           unten oder auf der Seite landen. Wie oft was kommt, weiß niemand.
       - type: single-choice
         id: stein-herausfinden
@@ -28,7 +28,7 @@ blocks:
             info: So gewinnt man eine Zahl aus vielen Würfen. Das ist der Weg, wenn man nicht ausrechnen kann, was herauskommt.
           - text: Darüber nachdenken, denn beim Würfel geht das ja auch, also geht es hier genauso.
             correct: false
-            info: Der Würfel ist ganz gleichmäßig gebaut. Der Legostein ist es nicht, darum gibt es keinen Grund für eine bestimmte Zahl.
+            info: Der Würfel ist ganz gleichmäßig gebaut. Der Steckstein ist es nicht, darum gibt es keinen Grund für eine bestimmte Zahl.
         explanation: Wenn du nicht ausrechnen kannst, wie oft etwas vorkommt, hilft nur, oft zu werfen und zu zählen.
   - type: section
     id: regel
@@ -57,7 +57,7 @@ blocks:
             text: Je mehr Würfe, desto kleiner die Schwankung und desto verlässlicher der Schätzwert. Sicher ist er nie, auch nach sehr vielen Würfen nicht.
   - type: section
     id: beispiel
-    title: Reißzwecke und Legostein
+    title: Reißzwecke und Steckstein
     blocks:
       - type: example
         title: Beispiel
@@ -75,7 +75,7 @@ blocks:
             text: "Die beiden relativen Häufigkeiten ergeben zusammen 1, denn jeder Wurf hat genau ein Ergebnis. Fehlt dir ein Ergebnis in einer Aufgabe, ist es der Rest: alle Würfe minus die anderen Ergebnisse. Für Prozent rechnest du die Dezimalzahl mal 100. Jonas nimmt 0,375 als Schätzwert dafür, wie oft die Spitze auf lange Sicht oben liegt."
       - type: text
         text: |
-          Jetzt zurück zum Legostein. Die Zufallsmaschine wirft ihn für dich. Mit jedem Knopf wirft sie mehrmals und zählt
+          Jetzt zurück zum Steckstein. Die Zufallsmaschine wirft ihn für dich. Mit jedem Knopf wirft sie mehrmals und zählt
           in der Tabelle mit. Die Zeile „Noppen oben“ ist mit ◄ markiert. So gehst du vor: Drücke einmal „10 Würfe“ und
           lies in dieser Zeile die relative Häufigkeit ab. Drücke „Zurücksetzen“ und mache es noch einmal. Das sind zwei
           Reihen mit je 10 Würfen. Mach dann zwei Reihen mit je 1000 Würfen (zehnmal „100 Würfe“ oder einmal „1000 Würfe“).
@@ -88,10 +88,10 @@ blocks:
           geraet: legostein
           beobachte: Noppen oben
         nojs: |
-          Die Zufallsmaschine wirft einen Legostein so oft, wie du willst. Die Ergebnisse sind „Noppen oben“, „Noppen
-          unten“ und „Auf der Seite“. Ein Beispiel mit vier Reihen: Bei zwei Reihen mit je 10 Würfen lagen die Noppen 7-mal
-          und 4-mal oben, die relativen Häufigkeiten sind 0,7 und 0,4. Bei zwei Reihen mit je 1000 Würfen lagen die Noppen
-          571-mal und 583-mal oben, die relativen Häufigkeiten sind 0,571 und 0,583.
+          Die Zufallsmaschine wirft einen Steckstein so oft, wie du willst. Die Ergebnisse sind „Noppen oben“, „Noppen
+          unten“ und „Auf der Seite“. Ein Beispiel mit vier Reihen: Bei zwei Reihen mit je 10 Würfen lagen die Noppen 5-mal
+          und 4-mal oben, die relativen Häufigkeiten sind 0,5 und 0,4. Bei zwei Reihen mit je 1000 Würfen lagen die Noppen
+          458-mal und 467-mal oben, die relativen Häufigkeiten sind 0,458 und 0,467.
       - type: single-choice
         id: reihen-vergleichen
         text: Du hast zwei Reihen mit je 10 Würfen und zwei Reihen mit je 1000 Würfen gemacht. Was fällt bei den relativen Häufigkeiten von „Noppen oben“ auf?
@@ -112,9 +112,9 @@ blocks:
     blocks:
       - type: true-false
         id: genauer-wert
-        text: Lena hat den Legostein 1000-mal geworfen. Die relative Häufigkeit von „Noppen oben“ ist 0,571. Lena sagt, jetzt sei 0,571 der genaue Wert für den Stein und weitere Würfe seien nicht nötig. Stimmt das?
+        text: Lena hat einen Steckstein aus ihrer Kiste 1000-mal geworfen. Die relative Häufigkeit von „Noppen oben“ ist 0,571. Lena sagt, jetzt sei 0,571 der genaue Wert für den Stein und weitere Würfe seien nicht nötig. Stimmt das?
         answer: false
-        explanation: Die relative Häufigkeit ist nur ein Schätzwert. Eine neue Reihe mit 1000 Würfen würde etwas anderes liefern, zum Beispiel 0,58. Mit vielen Würfen ist der Schätzwert verlässlich, aber nie genau.
+        explanation: Die relative Häufigkeit ist nur ein Schätzwert. Eine neue Reihe mit 1000 Würfen würde etwas anderes liefern, zum Beispiel 0,58, bei einem anderen Stein ebenso eine andere Zahl. Mit vielen Würfen ist der Schätzwert verlässlich, aber nie genau.
       - type: matching
         id: begriffe-zuordnen
         text: Ordne jeder Angabe zu, was sie ist.
@@ -125,7 +125,7 @@ blocks:
         explanation: Die absolute Häufigkeit zählt, wie oft etwas vorkam. Die relative Häufigkeit setzt das ins Verhältnis zu allen Würfen. Wenn du sie als Näherung für lange Sicht nimmst, ist sie ein Schätzwert.
       - type: single-choice
         id: im-verhaeltnis
-        text: Jonas hat den Legostein 20-mal geworfen, die Noppen lagen 12-mal oben. Lena hat ihn 50-mal geworfen, bei ihr lagen die Noppen 25-mal oben. Bei wem kam „Noppen oben“ im Verhältnis zu allen Würfen häufiger vor?
+        text: Jonas hat den Steckstein 20-mal geworfen, die Noppen lagen 12-mal oben. Lena hat ihn 50-mal geworfen, bei ihr lagen die Noppen 25-mal oben. Bei wem kam „Noppen oben“ im Verhältnis zu allen Würfen häufiger vor?
         options:
           - text: Bei Jonas, denn 12 von 20 sind 0,6 und 25 von 50 sind nur 0,5.
             correct: true
@@ -153,17 +153,17 @@ blocks:
         explanation: Nach wenigen Würfen kann die relative Häufigkeit noch weit vom Wert auf lange Sicht entfernt sein. Erst viele Würfe machen den Schätzwert verlässlich.
       - type: number
         id: wie-oft-oben
-        text: Mia hat die Reißzwecke 200-mal geworfen. Die relative Häufigkeit von „Spitze oben“ ist 0,35. Wie oft lag die Spitze oben?
-        answer: 70
+        text: Mia hat die Reißzwecke 200-mal geworfen. Die relative Häufigkeit von „Spitze oben“ ist 0,36. Wie oft lag die Spitze oben?
+        answer: 72
         tolerance: 0
         mistakes:
-          - { answer: 130, message: "Das ist die Zahl der Würfe mit „Spitze unten“. Gefragt ist „Spitze oben“." }
+          - { answer: 128, message: "Das ist die Zahl der Würfe mit „Spitze unten“. Gefragt ist „Spitze oben“." }
           - {
-              answer: 35,
+              answer: 36,
               message: "Das ist die Prozentzahl, keine Anzahl von Würfen. Bei 200 Würfen ist eine Anzahl gesucht.",
             }
         hint: Die relative Häufigkeit entsteht, indem du die absolute durch 200 teilst. Wie kommst du zurück?
-        explanation: Die relative Häufigkeit ist die absolute geteilt durch die Zahl aller Würfe. Umgekehrt ergibt 0,35 von 200 Würfen 70 Würfe.
+        explanation: Die relative Häufigkeit ist die absolute geteilt durch die Zahl aller Würfe. Umgekehrt ergibt 0,36 von 200 Würfen 72 Würfe.
       - type: generated
         id: legostein-dezimal
         given:
@@ -172,7 +172,7 @@ blocks:
           b: { int: [50, 120] }
         where: ["a + b <= n - 20", "a != b"]
         task:
-          text: "Lena wirft den Legostein {{n}}-mal. Die Noppen liegen {{a}}-mal oben, {{b}}-mal unten, und den Rest fällt er auf die Seite. Wie groß ist die relative Häufigkeit von „Noppen oben“? Gib sie als Dezimalzahl an."
+          text: "Lena wirft einen Steckstein aus ihrer Kiste {{n}}-mal. Die Noppen liegen {{a}}-mal oben, {{b}}-mal unten, und den Rest fällt er auf die Seite. Wie groß ist die relative Häufigkeit von „Noppen oben“? Gib sie als Dezimalzahl an."
         answer: { value: "a / n", compare: { number: { format: decimal, decimals: 3 } } }
         mistakes:
           - { value: "a", message: "Das ist die absolute Häufigkeit: wie oft. Gefragt ist der Anteil an allen Würfen." }
@@ -200,7 +200,7 @@ blocks:
           - "a + b != n / 2"
           - "decimals((n - a - b) * 100 / n) <= 1"
         task:
-          text: "Lena wirft den Legostein {{n}}-mal. Die Noppen liegen {{a}}-mal oben, {{b}}-mal unten, und den Rest fällt er auf die Seite. Wie viel Prozent der Würfe sind „Auf der Seite“?"
+          text: "Lena wirft einen Steckstein aus ihrer Kiste {{n}}-mal. Die Noppen liegen {{a}}-mal oben, {{b}}-mal unten, und den Rest fällt er auf die Seite. Wie viel Prozent der Würfe sind „Auf der Seite“?"
         answer: { value: "(n - a - b) * 100 / n", compare: { number: { format: percent, decimals: 1 } } }
         mistakes:
           - {

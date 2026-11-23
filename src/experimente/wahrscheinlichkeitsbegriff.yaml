@@ -31,7 +31,7 @@ blocks:
         explanation: Eine Aussage über das Ergebnis eines Zufallsversuchs, die eintreten kann oder nicht. Beim Würfel ist „Die Augenzahl ist gerade“ ein Ereignis. Es trifft bei den Ergebnissen 2, 4 und 6 zu.
       - type: definition
         term: Wahrscheinlichkeit
-        explanation: Eine Zahl zwischen 0 und 1, die sagt, wie sicher ein Ereignis auf lange Sicht eintritt. Man schreibt $P(E)$, das P steht für das englische Wort probability.
+        explanation: Eine Zahl zwischen 0 und 1, die sagt, wie oft ein Ereignis auf lange Sicht eintritt. Man schreibt $P(E)$.
       - type: formula
         formula: '0 \le P(E) \le 1'
       - type: table
@@ -72,10 +72,10 @@ blocks:
         id: gluecksrad-deuten
         text: Die Linie pendelt sich bei 0,25 ein. Was bedeutet das für Blau?
         options:
-          - text: Blau kommt bei jedem vierten Dreh.
+          - text: Blau kommt bei jeder vierten Drehung.
             correct: false
-            info: Das stimmt nicht. Die Dreher bleiben Zufall. Du kannst nicht sagen, bei welchem Dreh Blau kommt.
-          - text: Auf lange Sicht ist ungefähr jeder vierte Dreh Blau.
+            info: Das stimmt nicht. Jede Drehung bleibt Zufall. Du kannst nicht sagen, bei welcher Drehung Blau kommt.
+          - text: Auf lange Sicht ist ungefähr jede vierte Drehung Blau.
             correct: true
             info: Genau das sagt die Wahrscheinlichkeit 0,25. Bei vielen Drehs liegt der Anteil von Blau nahe bei 25 %.
           - text: Nach vier Drehs ist genau einmal Blau dabei.
@@ -128,7 +128,7 @@ blocks:
         mistakes:
           - {
               value: "p",
-              message: "Du hast die Prozentzahl als Anzahl der Tage genommen. {{p}} % von {{n}} Tagen sind weniger oder mehr.",
+              message: "Du hast die Prozentzahl als Anzahl der Tage genommen. {{p}} % von {{n}} Tagen heißt {{p}} von 100 Tagen. Rechne das auf {{n}} Tage um.",
             }
           - { value: "n - p * n / 100", message: "Das sind die Tage ohne Regen. Gefragt sind die Tage mit Regen." }
         hint: "Wie viele Tage sind 1 % von allen Tagen? Rechne dann auf p % hoch."

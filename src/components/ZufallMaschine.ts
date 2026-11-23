@@ -13,7 +13,7 @@ export interface Ergebnis {
 
 export interface GeraetBeschreibung {
   name: string;
-  /** Die Maschine kennt die Wahrscheinlichkeiten, die Lernenden nicht: kein Rechnen möglich (Reißzwecke, Legostein). */
+  /** Die Maschine kennt die Wahrscheinlichkeiten, die Lernenden nicht: kein Rechnen möglich (Reißzwecke, Steckstein). */
   verdeckt: boolean;
   ergebnisse: Ergebnis[];
 }
@@ -51,7 +51,7 @@ export const GERAETE: Record<Geraet, GeraetBeschreibung> = {
     ],
   },
   legostein: {
-    name: "Legostein",
+    name: "Steckstein",
     verdeckt: true,
     ergebnisse: [
       { name: "Noppen oben", gewicht: 46 },

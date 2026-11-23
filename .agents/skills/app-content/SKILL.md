@@ -69,7 +69,7 @@ Die Seiten der Kapitel `experimente` und `vierfeldertafel` haben `warum` (Einsti
   `src/components/Bruch.ts` (exakte Brüche, Runden) und `src/components/Zufallszahlen.ts` (mulberry32); nie in ein
   Kapitel kopieren.
 
-- Zufallsmaschine (`ZufallMaschine`, Logik in `ZufallMaschine.ts`): Würfel, Münze, Glücksrad, Reißzwecke, Legostein; 1, 10, 100 oder 1000 Würfe, Tabelle der Häufigkeiten, Linie der relativen Häufigkeit eines beobachteten Ergebnisses, auf Wunsch gestrichelt der berechnete Wert. Keine Aufgabe; Reißzwecke und Legostein haben verdeckte Wahrscheinlichkeiten. Vor jeder Maschine steht, was man tut und wonach man schaut, danach eine Frage.
+- Zufallsmaschine (`ZufallMaschine`, Logik in `ZufallMaschine.ts`): Würfel, Münze, Glücksrad, Reißzwecke, Steckstein (kein Markenname); 1, 10, 100 oder 1000 Würfe, Tabelle der Häufigkeiten, Linie der relativen Häufigkeit eines beobachteten Ergebnisses, auf Wunsch gestrichelt der berechnete Wert. Keine Aufgabe; Reißzwecke und Legostein haben verdeckte Wahrscheinlichkeiten. Vor jeder Maschine steht, was man tut und wonach man schaut, danach eine Frage.
 - Vierfeldertafel (`Vierfeldertafel`): Tafel mit Summen, anklickbare Zellen, derselbe Inhalt als Baum mit A oder B zuerst; Kürzel der Merkmale über `ka`, `kna`, `kb`, `knb`.
 - Kurztest (`Kurztest`): Selbsttest in einer Recap-Seite, eine Frage, Auswahl, Grund bei jeder Option, `nojs`-Text.
 - Je Seite des Kapitels `zufall` eine Übungskomponente mit „Bild zur Aufgabe“, Tipp, Rechenweg und den typischen Fehlern der alten App:

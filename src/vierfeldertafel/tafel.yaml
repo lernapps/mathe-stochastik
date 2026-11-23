@@ -27,12 +27,12 @@ blocks:
           knb: nB
           ab: 12
           anb: 18
-          nab: 8
-          nanb: 12
+          nab: 10
+          nanb: 10
         nojs: |
-          Die Tafel zählt 50 Gäste in vier Felder: 12 spielen Karten und Brett, 18 nur Karten, 8 nur Brett, 12 keins von
-          beiden. Die Zeilensummen sind 30 (Karten) und 20 (ohne Karten), die Spaltensummen 20 (Brett) und 30 (ohne Brett).
-          Im Baum mit Karten zuerst teilen sich die 50 in 30 und 20, die 30 in 12 und 18, die 20 in 8 und 12.
+          Die Tafel zählt 50 Gäste in vier Felder: 12 spielen Karten und Brett, 18 nur Karten, 10 nur Brett, 10 keins von
+          beiden. Die Zeilensummen sind 30 (Karten) und 20 (ohne Karten), die Spaltensummen 22 (Brett) und 28 (ohne Brett).
+          Im Baum mit Karten zuerst teilen sich die 50 in 30 und 20, die 30 in 12 und 18, die 20 in 10 und 10.
       - type: single-choice
         id: tafel-gesamt
         text: Welche Zahl steht in der Tafel unten rechts, in der Zelle der Gesamtsumme?
@@ -56,8 +56,8 @@ blocks:
         explanation: Eine Tabelle mit vier Feldern für zwei Merkmale, die jeweils zutreffen oder nicht. Jedes Feld zählt die Fälle, auf die beide Angaben zugleich passen. Am Rand stehen die Summen.
       - type: text
         text: |
-          Jede Zeile und jede Spalte hat eine **Summe** am Rand. Zeilensummen und Spaltensummen ergeben zusammen dieselbe
-          Gesamtzahl, sie steht unten rechts. Fehlt in der Tafel eine Zahl, rechnest du sie aus der Summe ihrer Zeile oder
+          Jede Zeile und jede Spalte hat eine **Summe** am Rand. Die Zeilensummen ergeben zusammen die Gesamtzahl, die
+          Spaltensummen ebenfalls. Sie steht unten rechts. Fehlt in der Tafel eine Zahl, rechnest du sie aus der Summe ihrer Zeile oder
           ihrer Spalte aus.
       - type: text
         text: "Beispiel: Karten und Brett spielen 12 von 50 Gästen. Das schreibst du so:"
@@ -114,9 +114,9 @@ blocks:
           - "$k - x = {{k}} - {{x}} = {{answer}}$, also {{answer}} Gäste."
       - type: true-false
         id: summen-doppelt
-        text: Die Zeilensumme von „Karten“ und die Spaltensumme von „Brett“ ergeben zusammen die Zahl aller Gäste.
+        text: Die Zeilensumme von „Karten“ (30) und die Spaltensumme von „Brett“ (22) ergeben zusammen die Zahl aller Gäste (50).
         answer: false
-        explanation: Wer Karten und Brett spielt, ist in beiden Summen enthalten. Er wird doppelt gezählt. Die Gesamtzahl ergibt sich nur aus allen Zeilen oder allen Spalten.
+        explanation: Wer Karten und Brett spielt, ist in beiden Summen enthalten. Er wird doppelt gezählt. Es kommt 30 + 22 = 52 heraus, das sind mehr als 50. Die Gesamtzahl ergibt sich nur aus allen Zeilen oder allen Spalten.
       - type: matching
         id: tafel-zuordnen
         text: "Ordne zu: Welche Zahl in der Tafel gehört zu welcher Aussage?"

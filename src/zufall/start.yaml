@@ -68,32 +68,36 @@ blocks:
         blocks:
           - type: formula
             formula: '\frac{2}{3} \cdot \frac{3}{4} = \frac{2 \cdot 3}{3 \cdot 4} = \frac{6}{12} = \frac{1}{2}'
+          - type: text
+            text: "Durch einen Bruch teilst du, indem du mit seinem Kehrwert multiplizierst. Der Kehrwert von drei Vierteln ist vier Drittel."
+          - type: formula
+            formula: '\frac{1}{2} : \frac{3}{4} = \frac{1}{2} \cdot \frac{4}{3} = \frac{4}{6} = \frac{2}{3}'
       - type: vue-component
         id: test-brueche
         component: Kurztest
         props:
-          question: Was ist drei Fünftel mal fünf Sechstel?
+          question: Was ist vier Neuntel mal drei Achtel?
           options:
             - {
-                text: "ein Halb",
-                correct: true,
-                info: "3 · 5 = 15 und 5 · 6 = 30, also fünfzehn Dreißigstel. Gekürzt mit 15 ist das ein Halb.",
-              }
-            - {
-                text: "acht Elftel",
+                text: "sieben Siebzehntel",
                 correct: false,
                 info: "Du hast Zähler und Nenner addiert. Beim Multiplizieren multiplizierst du beide.",
               }
             - {
-                text: "fünfzehn Elftel",
+                text: "ein Sechstel",
+                correct: true,
+                info: "4 · 3 = 12 und 9 · 8 = 72, also zwölf Zweiundsiebzigstel. Gekürzt mit 12 ist das ein Sechstel.",
+              }
+            - {
+                text: "zwölf Siebzehntel",
                 correct: false,
-                info: "Der Zähler stimmt, aber der Nenner ist 5 · 6 = 30, nicht 5 + 6.",
+                info: "Der Zähler stimmt, aber der Nenner ist 9 · 8 = 72, nicht 9 + 8.",
               }
           right: Richtig.
           wrong: Nicht richtig.
         nojs: |
-          Kurztest: Drei Fünftel mal fünf Sechstel. Antwort: ein Halb. 3 · 5 = 15, 5 · 6 = 30, fünfzehn Dreißigstel gekürzt ein
-          Halb. Wer addiert, kommt auf acht Elftel.
+          Kurztest: Vier Neuntel mal drei Achtel. Antwort: ein Sechstel. 4 · 3 = 12, 9 · 8 = 72, zwölf Zweiundsiebzigstel gekürzt ein
+          Sechstel. Wer addiert, kommt auf sieben Siebzehntel.
       - type: text
         text: "Falsch gelegen? Dann übe den Baustein [Bruchrechnung: Multiplikation und Division](https://lernapps.net/apps/map/mathematik/c/brueche-multiplizieren-dividieren/) auf der Karte."
   - type: section
@@ -107,31 +111,31 @@ blocks:
         explanation: Prozent heißt Hundertstel. 15 % sind 15 von 100, also $\frac{15}{100} = 0{,}15$.
       - type: definition
         term: Grundwert
-        explanation: Das Ganze, von dem ein Anteil genommen wird, zum Beispiel der volle Preis von 80 €.
+        explanation: Das Ganze, von dem ein Anteil genommen wird, zum Beispiel der volle Preis von 80 €.
       - type: definition
         term: Prozentsatz
         explanation: Der Anteil in Prozent, zum Beispiel 15 % Rabatt.
       - type: definition
         term: Prozentwert
-        explanation: Der Teil des Ganzen, den der Prozentsatz angibt. 15 % von 80 € sind 12 €.
+        explanation: Der Teil des Ganzen, den der Prozentsatz angibt. 15 % von 80 € sind 12 €.
       - type: vue-component
         id: test-prozent
         component: Kurztest
         props:
-          question: Wie viel Euro sind 15 % von 80 €?
+          question: Wie viel Euro sind 35 % von 240 €?
           options:
-            - { text: "12 €", correct: true, info: "15 % sind 0,15. Es gilt 0,15 · 80 = 12." }
-            - { text: "1200 €", correct: false, info: "Du hast 15 mal 80 gerechnet. Du musst noch durch 100 teilen." }
             - {
-                text: "5,33 €",
+                text: "6,86 €",
                 correct: false,
-                info: "Du hast 80 durch 15 geteilt. Rechne 15 % als 0,15 und multipliziere mit 80.",
+                info: "Du hast 240 durch 35 geteilt. Rechne 35 % als 0,35 und multipliziere mit 240.",
               }
+            - { text: "8400 €", correct: false, info: "Du hast 35 mal 240 gerechnet. Du musst noch durch 100 teilen." }
+            - { text: "84 €", correct: true, info: "35 % sind 0,35. Es gilt 0,35 · 240 = 84." }
           right: Richtig.
           wrong: Nicht richtig.
         nojs: |
-          Kurztest: Wie viel Euro sind 15 % von 80 €? Antwort: 12 €, denn 0,15 · 80 = 12. 1200 € wäre ohne das Teilen durch
-          100, 5,33 € käme vom Teilen 80 : 15.
+          Kurztest: Wie viel Euro sind 15 % von 80 €? Antwort: 12 €, denn 0,15 · 80 = 12. 1200 € wäre ohne das Teilen durch
+          100, 5,33 € käme vom Teilen 80 : 15.
       - type: text
         text: "Falsch gelegen? Dann übe den Baustein [Prozentrechnung: Grundbegriffe](https://lernapps.net/apps/map/mathematik/c/prozent-grundbegriffe/) auf der Karte."
   - type: section
