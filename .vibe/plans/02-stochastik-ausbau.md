@@ -4,11 +4,11 @@
 # Archetype, as in the app's first plan. Allowed values: explainer, interactive, quiz.
 archetype: explainer
 # Current phase. Allowed values: explore, plan, code, commit.
-phase: plan
+phase: code
 # prePushFailures: failed pre-push runs of this increment, written by the hook.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks.
-failedChecks: {}
+failedChecks: { plan-file: 1 }
 ---
 
 # Increment: stochastik-ausbau
@@ -41,7 +41,7 @@ ergänzt die 6 fehlenden von 14 Bausteinen und bringt die 8 vorhandenen Seiten a
 - Voraussetzungen von außen als `recap`-Seite (Begriffe, Beispiele, Kopf, Checkliste) plus eigene Kurztest-Seite direkt dahinter (regeln.md 7.6); Bausteine laut Karte: zaehlprinzip (#386), brueche-multiplizieren-dividieren, prozent-grundbegriffe (#389), haeufigkeiten (#400). Gebaut wird gegen die Karte, die Apps der anderen werden nicht gelesen.
 - Baumdiagramm als tragende Darstellung (gleiche Begriffe wie #386): Kapitel 3 greift sie für mehrstufige Versuche auf.
 - Die Vierfeldertafel ist neu und läuft als eigene Komponente neben dem Baum (dieselben Zahlen in zwei Darstellungen).
-- Musterseite ist eine neue Seite aus Kapitel 1: `experimente/zufallsversuche` mit der Zufallsmaschine (guess: Name der Seite).
+- Musterseite ist eine neue Seite aus Kapitel 1: `experimente/zufallserscheinungen` mit der Zufallsmaschine (Seiten-id wie Karten-id, vom Orchestrator bestätigt).
 
 ## Notes
 
@@ -49,10 +49,10 @@ ergänzt die 6 fehlenden von 14 Bausteinen und bringt die 8 vorhandenen Seiten a
 
 | Baustein | Stand | Seite |
 |---|---|---|
-| zufallserscheinungen (Zufallsversuche) | fehlt | experimente/zufallsversuche |
+| zufallserscheinungen (Zufallsversuche) | fehlt | experimente/zufallserscheinungen |
 | haeufigkeit-als-schaetzwert | fehlt | experimente/relative-haeufigkeit |
 | simulationen | fehlt | experimente/simulationen |
-| wahrscheinlichkeitsbegriff | fehlt | experimente/wahrscheinlichkeit |
+| wahrscheinlichkeitsbegriff | fehlt | experimente/wahrscheinlichkeitsbegriff |
 | zufall-laplace | vorhanden | zufall/laplace (überarbeiten) |
 | zufall-ergebnisform | vorhanden | zufall/ergebnisformen (überarbeiten) |
 | zufall-gegenereignis | vorhanden | zufall/gegenereignis (überarbeiten) |
@@ -122,8 +122,9 @@ ergänzt die 6 fehlenden von 14 Bausteinen und bringt die 8 vorhandenen Seiten a
 - [x] Draw a sketch of each new component or interactive exercise, in `.vibe/sketches/`.
 - [x] Show the creator, short: goal, new competencies by chapter, slices; in plain words what learners see and do and
       what is new. At most 2 questions.
-- [ ] **Checkpoint:** confirm the plan and the content method. Stop and wait for an explicit yes. Changes: change
+- [x] **Checkpoint:** confirm the plan and the content method. Stop and wait for an explicit yes. Changes: change
       them, then ask again.
+      Creator: Plan vom Orchestrator in Vertretung des Menschen bestätigt (Kapitelreihenfolge, 11 Scheiben, Komponenten, Kurztest); der Mensch hat npx freigegeben.
 
 ### Content method
 
@@ -150,7 +151,7 @@ Je Seite: erste Aufgabe vor der Erklärung (Zufallsmaschine laufen lassen, vorhe
 
 ### Tasks
 
-- [ ] `git switch -c increment/<NN>-<short name>` from `main`. Commit this plan on it.
+- [x] `git switch -c increment/<NN>-<short name>` from `main`. Commit this plan on it.
 - [ ] Load skill `lernapps-cli`. Update the app as its section "Update" says. Commit the update alone and fix its
       findings before any content. The update replaces the `lernapps-*` skills: read again those you use.
 - [ ] Load skill `lernapps-explainer` and the content guide.
