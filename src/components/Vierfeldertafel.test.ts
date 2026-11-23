@@ -60,5 +60,5 @@ test("Dezimalzahlen mit Komma, Sätze mit Zahlen", () => {
   expect(komma(1 / 3)).toBe("0,333");
   expect(
     zellenSatz({ ab: 12, anb: 8, nab: 24, nanb: 156 }, "ab", { a: "krank", na: "gesund", b: "positiv", nb: "negativ" }),
-  ).toBe("Von 200 sind 12 krank und positiv: 12 von 200, das sind 0,06.");
+  ).toBe("In dieser Zelle: 12 von 200 Fällen sind krank und positiv. Das sind 0,06 aller Fälle.");
 });

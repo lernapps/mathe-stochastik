@@ -94,7 +94,7 @@ export function komma(x: number): string {
 export const ZELLEN = ["ab", "anb", "nab", "nanb"] as const;
 export type Zelle = (typeof ZELLEN)[number];
 
-/** Der Satz zu einer Zelle: „Von 200 sind 12 krank und positiv: 0,06.“ */
+/** Der Satz zu einer Zelle: „In dieser Zelle: 12 von 200 Fällen sind krank und positiv. Das sind 0,06 aller Fälle.“ */
 export function zellenSatz(t: Tafel, zelle: Zelle, namen: { a: string; na: string; b: string; nb: string }): string {
   const s = summen(t);
   const [m1, m2] = {
@@ -103,5 +103,5 @@ export function zellenSatz(t: Tafel, zelle: Zelle, namen: { a: string; na: strin
     nab: [namen.na, namen.b],
     nanb: [namen.na, namen.nb],
   }[zelle];
-  return `Von ${s.alle} sind ${t[zelle]} ${m1} und ${m2}: ${t[zelle]} von ${s.alle}, das sind ${komma(t[zelle] / s.alle)}.`;
+  return `In dieser Zelle: ${t[zelle]} von ${s.alle} Fällen sind ${m1} und ${m2}. Das sind ${komma(t[zelle] / s.alle)} aller Fälle.`;
 }
