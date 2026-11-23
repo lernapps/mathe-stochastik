@@ -77,10 +77,10 @@ blocks:
             info: Das stimmt nicht. Jede Drehung bleibt Zufall. Du kannst nicht sagen, bei welcher Drehung Blau kommt.
           - text: Auf lange Sicht ist ungefähr jede vierte Drehung Blau.
             correct: true
-            info: Genau das sagt die Wahrscheinlichkeit 0,25. Bei vielen Drehs liegt der Anteil von Blau nahe bei 25 %.
-          - text: Nach vier Drehs ist genau einmal Blau dabei.
+            info: Genau das sagt die Wahrscheinlichkeit 0,25. Bei vielen Drehungen liegt der Anteil von Blau nahe bei 25 %.
+          - text: Nach vier Drehungen ist genau einmal Blau dabei.
             correct: false
-            info: Auch das stimmt nicht. Bei vier Drehs kann Blau keinmal oder mehrmals kommen.
+            info: Auch das stimmt nicht. Bei vier Drehungen kann Blau keinmal oder mehrmals kommen.
         explanation: Wahrscheinlichkeit beschreibt, wie oft etwas auf lange Sicht passiert, nicht, was beim nächsten Versuch passiert.
   - type: section
     id: uebung

@@ -55,7 +55,7 @@ blocks:
         blocks:
           - type: text
             text: >-
-              Für die Laplace-Formel brauchst du Ergebnisse, die alle gleich wahrscheinlich sind. Das sind hier die einzelnen Kugeln, nicht die Farben. Es gibt 6 Kugeln, nicht 3 Farben – sonst würdest du $\frac{1}{3}$ für jede Farbe rechnen, und das ist falsch.
+              Für die Laplace-Formel brauchst du Ergebnisse, die alle gleich wahrscheinlich sind. Das sind hier die einzelnen Kugeln, nicht die Farben. Es gibt 6 Kugeln, nicht 3 Farben – sonst würdest du für jede Farbe $\frac{1}{3}$ rechnen. Das stimmt nur für Blau, für Rot ($\frac{1}{2}$) und Gelb ($\frac{1}{6}$) ist es falsch.
   - type: section
     id: bild
     title: Bild

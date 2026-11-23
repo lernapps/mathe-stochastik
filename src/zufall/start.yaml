@@ -134,8 +134,8 @@ blocks:
           right: Richtig.
           wrong: Nicht richtig.
         nojs: |
-          Kurztest: Wie viel Euro sind 15 % von 80 €? Antwort: 12 €, denn 0,15 · 80 = 12. 1200 € wäre ohne das Teilen durch
-          100, 5,33 € käme vom Teilen 80 : 15.
+          Kurztest: Wie viel Euro sind 35 % von 240 €? Antwort: 84 €, denn 0,35 · 240 = 84. 8400 € wäre ohne das Teilen durch
+          100, 6,86 € käme vom Teilen 240 : 35.
       - type: text
         text: "Falsch gelegen? Dann übe den Baustein [Prozentrechnung: Grundbegriffe](https://lernapps.net/apps/map/mathematik/c/prozent-grundbegriffe/) auf der Karte."
   - type: section

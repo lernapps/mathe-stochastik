@@ -28,7 +28,7 @@ blocks:
         id: linie-beobachten
         text: Du würfelst sehr oft. Was machst du mit der Linie der Sechsen?
         options:
-          - text: Sie schwankt am Anfang stark und liegt später ruhig nahe bei der gestrichelten Linie.
+          - text: Sie schwankt am Anfang stark und liegt später ruhig nahe bei der gestrichelten Linie, die ab 100 Würfen erscheint.
             correct: true
             info: Bei wenigen Würfen kann eine Sechs den Anteil stark ändern. Bei vielen Würfen fällt ein einzelner Wurf kaum noch ins Gewicht.
           - text: Sie steigt immer weiter, bis die Sechs fast jeden Wurf kommt.

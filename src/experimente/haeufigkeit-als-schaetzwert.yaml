@@ -79,7 +79,7 @@ blocks:
           in der Tabelle mit. Die Zeile „Noppen oben“ ist mit ◄ markiert. So gehst du vor: Drücke einmal „10 Würfe“ und
           lies in dieser Zeile die relative Häufigkeit ab. Drücke „Zurücksetzen“ und mache es noch einmal. Das sind zwei
           Reihen mit je 10 Würfen. Mach dann zwei Reihen mit je 1000 Würfen (zehnmal „100 Würfe“ oder einmal „1000 Würfe“).
-          Vergleiche, welche beiden Zahlen näher beieinander liegen. Die Linie unter der Tabelle zeigt dir dasselbe: Sie
+          Vergleiche, welche beiden Zahlen näher beieinander liegen. Die Linie zeigt dir dasselbe: Sie
           wackelt am Anfang stark und wird ruhiger.
       - type: vue-component
         id: maschine-legostein

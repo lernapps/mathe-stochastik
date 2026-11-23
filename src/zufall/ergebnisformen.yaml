@@ -151,4 +151,4 @@ blocks:
         hint: "Wandle den Bruch zuerst in eine Dezimalzahl um. Wie rechnest du dann auf Prozent?"
         steps:
           - '$\frac{{{z}}}{{{n}}} = {{z}} : {{n}}$'
-          - "Mal 100 gerechnet ergibt das {{answer}} %."
+          - "Mal 100 gerechnet ergibt das {{answer}} %."
