@@ -120,15 +120,16 @@ blocks:
         explanation: Wer Karten und Brett spielt, ist in beiden Summen enthalten. Er wird doppelt gezählt. Es kommt 30 + 22 = 52 heraus, das sind mehr als 50. Die Gesamtzahl ergibt sich nur aus allen Zeilen oder allen Spalten.
       - type: number
         id: tafel-ergaenzen
-        text: "Von 60 Kindern einer Klassenfahrt schwimmen 36, 30 radeln, und 15 tun beides. Ergänze die Tafel im Kopf oder auf Papier. Wie viele Kinder schwimmen nicht und radeln nicht?"
+        text: "Von 60 Kindern einer Klassenfahrt schwimmen 36, 30 radeln, und 15 tun beides. Zeichne dir die Vierfeldertafel auf Papier und ergänze sie. Wie viele Kinder schwimmen nicht und radeln nicht?"
         material:
           - type: table
-            caption: "Klassenfahrt, 60 Kinder. „nein“ heißt: tut es nicht. Fehlende Felder mit ?"
-            header: ["Kinder", "radeln", "nein", "Summe"]
+            caption: Klassenfahrt, 60 Kinder
+            header: [Gruppe, Kinder]
             rows:
-              - ["schwimmen", "15", "?", "36"]
-              - ["nein", "?", "?", "24"]
-              - ["Summe", "30", "30", "60"]
+              - ["schwimmen", "36"]
+              - ["radeln", "30"]
+              - ["schwimmen und radeln", "15"]
+              - ["alle Kinder", "60"]
         answer: 9
         tolerance: 0
         mistakes:
@@ -149,18 +150,19 @@ blocks:
         text: "Ordne zu: Welche Zahl in der Tafel gehört zu welcher Aussage?"
         material:
           - type: table
-            caption: "Schulfest, 80 Gäste. „ohne“ heißt: kein Kuchen."
-            header: ["Gäste", "Kuchen", "ohne", "Summe"]
+            caption: Schulfest, 80 Gäste
+            header: [Gruppe, Gäste]
             rows:
-              - ["Saft", "20", "25", "45"]
-              - ["kein Saft", "15", "20", "35"]
-              - ["Summe", "35", "45", "80"]
+              - ["Saft und Kuchen", "20"]
+              - ["Saft, kein Kuchen", "25"]
+              - ["Kuchen, kein Saft", "15"]
+              - ["weder Saft noch Kuchen", "20"]
         pairs:
-          - { left: Gäste mit Saft und Kuchen, right: "20" }
+          - { left: "Gäste mit Saft oder Kuchen oder beidem", right: "60" }
           - { left: "Gäste mit Saft, egal ob mit Kuchen", right: "45" }
           - { left: "Gäste mit Kuchen, egal ob mit Saft", right: "35" }
           - { left: alle Gäste, right: "80" }
-        explanation: Die Zahl im Feld zählt beide Angaben zugleich, die Zahl am Rand zählt nur eine Angabe.
+        explanation: "Eine Summe am Rand zählt alle Felder ihrer Zeile oder Spalte zusammen, zum Beispiel Saft mit und ohne Kuchen 20 + 25 = 45. Wer Saft oder Kuchen oder beides hat, ist jeder außer den 20 ohne beides: 80 − 20 = 60."
       - type: generated
         id: tafel-wahrscheinlichkeit
         given:

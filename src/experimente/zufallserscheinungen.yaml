@@ -26,7 +26,7 @@ blocks:
           einem Sechstel, ungefähr 0,17.
       - type: single-choice
         id: linie-beobachten
-        text: Du würfelst sehr oft. Was machst du mit der Linie der Sechsen?
+        text: Du würfelst sehr oft. Wie verläuft die Linie der Sechsen?
         options:
           - text: Sie schwankt am Anfang stark und liegt später ruhig nahe bei der gestrichelten Linie, die ab 100 Würfen erscheint.
             correct: true

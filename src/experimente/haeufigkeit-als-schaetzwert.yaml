@@ -68,9 +68,9 @@ blocks:
             caption: 40 Würfe mit der Reißzwecke, relativ = absolut geteilt durch 40
             header: [Ergebnis, absolut, relativ]
             rows:
-              - ["Spitze oben", "15", "0,375 = 37,5 %"]
-              - ["Spitze unten", "25", "0,625 = 62,5 %"]
-              - ["alle Würfe", "40", "1 = 100 %"]
+              - ["Spitze oben", "15", "0,375"]
+              - ["Spitze unten", "25", "0,625"]
+              - ["alle Würfe", "40", "1"]
           - type: text
             text: "Die beiden relativen Häufigkeiten ergeben zusammen 1, denn jeder Wurf hat genau ein Ergebnis. Fehlt dir ein Ergebnis in einer Aufgabe, ist es der Rest: alle Würfe minus die anderen Ergebnisse. Für Prozent rechnest du die Dezimalzahl mal 100. Jonas nimmt 0,375 als Schätzwert dafür, wie oft die Spitze auf lange Sicht oben liegt."
       - type: text

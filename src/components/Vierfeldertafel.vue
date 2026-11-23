@@ -209,7 +209,7 @@ const zeilen = computed(() => [
 .tafel-tabelle th,
 .tafel-tabelle td {
   border: 1px solid var(--page-border);
-  padding: 0.2rem 0.5rem;
+  padding: 0.2rem 0.3rem;
   text-align: center;
 }
 
