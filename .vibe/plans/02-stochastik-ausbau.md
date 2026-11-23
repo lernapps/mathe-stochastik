@@ -4,7 +4,7 @@
 # Archetype, as in the app's first plan. Allowed values: explainer, interactive, quiz.
 archetype: explainer
 # Current phase. Allowed values: explore, plan, code, commit.
-phase: code
+phase: commit
 # prePushFailures: failed pre-push runs of this increment, written by the hook.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks.
@@ -184,7 +184,7 @@ Je Seite: erste Aufgabe vor der Erklärung (Zufallsmaschine laufen lassen, vorhe
       Creator: Musterseite vom Orchestrator in Vertretung des Menschen angenommen (Weiter nach diesem Muster); der Mensch hat npx freigegeben.
 - [x] Update the content guide so that it describes the app as it is now (`app-content-matches`).
 - [x] Run `npx --no -- lernapps check` until it passes.
-- [ ] Look at every changed screen, at 360 px and on a desktop, as "Look at the app" of skill `lernapps-cli` says.
+- [x] Look at every changed screen, at 360 px and on a desktop, as "Look at the app" of skill `lernapps-cli` says.
 
 ## Commit
 
@@ -195,7 +195,7 @@ Je Seite: erste Aufgabe vor der Erklärung (Zufallsmaschine laufen lassen, vorhe
 
 ### Tasks
 
-- [ ] If pages or exercises changed, load skill `lernapps-explainer-self-assessment` and update the self-assessment
+- [x] If pages or exercises changed, load skill `lernapps-explainer-self-assessment` and update the self-assessment
       as it says. Commit.
 - [ ] Load skill `lernapps-github`. Push the branch, open the preview pull request and see its checks to green, as it
       says.
@@ -239,12 +239,16 @@ Je Seite: erste Aufgabe vor der Erklärung (Zufallsmaschine laufen lassen, vorhe
 
 ### Phases reached
 
-<!-- Last phase completed, checkpoints passed. E.g. "commit; confirmed, published". -->
+Code, Commit offen: Checkpoints Recherche, Plan und Musterseite sind bestanden (vom Orchestrator in Vertretung des Menschen beantwortet, der Mensch hat `npx` freigegeben, damit `plan done --answer` lief). Vorschau-PR #20 offen, Checks laufen. „Veröffentlichen“ noch nicht gemeldet.
 
 ### Creator turns after the plan
 
-<!-- Number of creator messages after the confirmation, topic of each. Target: at most 3. -->
+Menschliche Nachrichten nach der Planbestätigung: 1 (Freigabe für `npx`, vorher eine Frage, ob es die App schon gibt). Rückmeldungen des Orchestrators in Vertretung: 5 (Musterseite, Kurztest-Vorlage, Seiten-ids, Quellen-Link und Simulationsgrenze, Rückmeldungen des Menschen zu #385 als Abschnitt 9 der Regeln).
 
 ### Where I had to guess
 
-<!-- Each gap in plan, skills, content guide, messages or answers, and your choice. "None" if none. -->
+- Seiten-ids: erst `zufallsversuche` und `wahrscheinlichkeit`, vom Orchestrator auf die Karten-ids korrigiert.
+- Tafel-Beispiele (Spieleabend 50 Gäste, Schulfest 80 Gäste, Klassenfahrt 60 Kinder, Schnelltest 1000 Personen) und Steckstein-/Reißzwecken-Gewichte der Maschine (46/34/20 und 35/65 von 100) sind erfunden.
+- Begriff „Schätzwert“ vor der Definition von Wahrscheinlichkeit; Notation `P_T(K)` für bedingte Wahrscheinlichkeit (Karte vermerkt „HE: not named“).
+- Phasen: Der Unteragent für Bestand B brauchte etwa 20 Minuten, zwei Seiten-Unteragenten brachen am 5-Stunden-Limit ab und mussten fortgesetzt werden; der erste Entwurf der Seiten kam vor den Regeln aus Abschnitt 9 und wurde danach angepasst.
+- Ein Befehl (`plan done`) hakte eine Aufgabe ab, obwohl der Schritt davor (Skill ganz lesen) noch fehlte; ich habe es nachgeholt und hier vermerkt. Die `video`-Abschnitte der acht Bestandsseiten sind entfallen (Anker `#video` gibt es nicht mehr).
