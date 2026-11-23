@@ -36,11 +36,14 @@ blocks:
         blocks:
           - type: text
             text: Du würfelst einmal. Wie groß ist die Wahrscheinlichkeit für eine gerade Zahl?
-          - type: text
-            text: |-
-              1. Mögliche Ergebnisse: 1, 2, 3, 4, 5, 6 – das sind **6**.
-              2. Günstige Ergebnisse (gerade Zahl): 2, 4, 6 – das sind **3**.
-              3. $P(\text{gerade Zahl}) = \frac{3}{6} = \frac{1}{2} = 0{,}5 = 50\,\%$.
+          - type: table
+            caption: Eine gerade Zahl würfeln, Schritt für Schritt
+            header: [Schritt, Ergebnis]
+            rowHeaders: true
+            rows:
+              - ["Mögliche Ergebnisse", "1, 2, 3, 4, 5, 6 – das sind **6**."]
+              - ["Günstige Ergebnisse", "2, 4, 6 – das sind **3**."]
+              - ["Wahrscheinlichkeit", '$P(\text{gerade Zahl}) = \frac{3}{6} = \frac{1}{2} = 0{,}5 = 50\,\%$']
       - type: example
         title: Eine blaue Kugel ziehen
         blocks:
@@ -67,6 +70,22 @@ blocks:
     id: uebung
     title: Übung
     blocks:
+      - type: number
+        id: laplace-gluecksrad
+        text: Ein Glücksrad hat 10 gleich große Felder. 3 davon sind rot. Du drehst einmal. Wie groß ist die Wahrscheinlichkeit für rot? Gib sie in Prozent an.
+        answer: 30
+        tolerance: 0
+        unit: "%"
+        mistakes:
+          - answer: 70
+            message: Das sind die Felder, die nicht rot sind. Gefragt ist die Wahrscheinlichkeit für rot.
+          - answer: 3
+            message: Das ist nur die Zahl der günstigen Felder. Teile sie durch die Zahl aller Felder.
+        hint: Wie viele Felder sind günstig, wie viele sind möglich? Dann teilst du und schreibst das Ergebnis als Prozent.
+        explanation: "Es gibt 3 günstige und 10 mögliche Ergebnisse: $\\frac{3}{10} = 0{,}3 = 30\\,\\%$."
+        examples:
+          accepted: ["30", "30,0"]
+          rejected: ["0,3", "10"]
       - type: vue-component
         id: laplace-zaehlen
         component: ZufallLaplace
@@ -79,6 +98,17 @@ blocks:
             - { answer: "2" }
             - { answer: "" }
             - { answer: "Hälfte" }
+      - type: ordering
+        id: laplace-ordnen
+        text: Du würfelst einmal mit einem normalen Würfel. Ordne die Ereignisse von der kleinsten zur größten Wahrscheinlichkeit.
+        items:
+          - eine Zahl größer als 6
+          - eine 6
+          - eine Zahl größer als 3
+          - eine Zahl kleiner als 6
+          - eine Zahl von 1 bis 6
+        hint: Zähle bei jedem Ereignis die günstigen Ergebnisse. Die möglichen Ergebnisse sind immer 6.
+        explanation: "Günstig sind 0, 1, 3, 5 und 6 von 6 Ergebnissen: $\\frac{0}{6}$, $\\frac{1}{6}$, $\\frac{3}{6}$, $\\frac{5}{6}$ und $\\frac{6}{6}$. Bei gleich vielen möglichen Ergebnissen ist die Wahrscheinlichkeit größer, wenn mehr Ergebnisse günstig sind."
       - type: generated
         id: laplace-urne
         given:
