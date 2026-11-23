@@ -66,6 +66,12 @@ test("mehr als die Obergrenze wird nicht geworfen", () => {
   expect(werfen(stand, 10, "Kopf", mulberry32(3)).n).toBe(MAX_WUERFE);
 });
 
+test("der letzte Wurf wird mit seinem Namen gemerkt", () => {
+  expect(neuerStand("wuerfel").letzter).toBe("");
+  expect(werfen(neuerStand("wuerfel"), 1, "6", () => 0).letzter).toBe("1");
+  expect(werfen(neuerStand("muenze"), 3, "Kopf", () => 0.99).letzter).toBe("Zahl");
+});
+
 test("der Verlauf endet bei der relativen Häufigkeit des beobachteten Ergebnisses", () => {
   const stand = werfen(neuerStand("wuerfel"), 60, "6", mulberry32(5));
   expect(stand.verlauf.at(-1)).toBeCloseTo(relativ(stand, 5), 12);

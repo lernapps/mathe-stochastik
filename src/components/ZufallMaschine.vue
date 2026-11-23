@@ -56,8 +56,10 @@ function zuruecksetzen() {
   <div class="maschine">
     <p class="maschine-geraet">
       Gerät: <strong>{{ beschreibung.name }}</strong
-      >. Beobachtet wird: <strong>{{ beschreibung.ergebnisse[index]!.name }}</strong
-      >.
+      >. Beobachtet wird: <strong>{{ beschreibung.ergebnisse[index]!.name }}</strong> (in der Tabelle mit ◄ markiert).
+    </p>
+    <p class="maschine-letzter" aria-live="polite">
+      Letzter Wurf: <strong>{{ stand.letzter || "–" }}</strong>
     </p>
     <div class="maschine-knoepfe">
       <button v-for="k in schritte" :key="k" type="button" :disabled="voll" @click="wirf(k)">
@@ -95,6 +97,14 @@ function zuruecksetzen() {
       <line v-if="wertY !== undefined" x1="0" x2="300" :y1="wertY" :y2="wertY" class="maschine-wert" />
       <polyline v-if="punkte" :points="punkte" class="maschine-linie" />
     </svg>
+    <p class="maschine-erklaerung">
+      Die Linie zeigt die relative Häufigkeit von „{{ beschreibung.ergebnisse[index]!.name }}“ nach jedem Wurf:
+      waagerecht die Würfe, senkrecht von 0 (unten) bis 1 (oben).
+      <span v-if="wert">
+        Die gestrichelte Linie ist der Wert, den du vorher ausrechnen kannst: {{ wert.z }} von {{ wert.n }}, das sind
+        ungefähr {{ komma(wert.z / wert.n) }}.
+      </span>
+    </p>
     <p class="maschine-satz" aria-live="polite">
       {{ satz }}
       <span v-if="voll"> Mehr als {{ MAX_WUERFE }} Würfe sind nicht möglich: setze zurück.</span>
@@ -181,6 +191,15 @@ function zuruecksetzen() {
   fill: none;
   stroke: var(--page-accent);
   stroke-width: 2;
+}
+
+.maschine-erklaerung {
+  margin: 0.25rem 0;
+  color: var(--page-muted);
+}
+
+.maschine-letzter {
+  margin: 0.25rem 0;
 }
 
 .maschine-satz {

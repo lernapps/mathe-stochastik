@@ -72,10 +72,12 @@ export interface Stand {
   n: number;
   /** Relative Häufigkeit des beobachteten Ergebnisses nach dem 1., 2., … Wurf. */
   verlauf: number[];
+  /** Name des Ergebnisses des letzten Wurfs; leer vor dem ersten Wurf. */
+  letzter: string;
 }
 
 export function neuerStand(geraet: Geraet): Stand {
-  return { geraet, zaehler: GERAETE[geraet].ergebnisse.map(() => 0), n: 0, verlauf: [] };
+  return { geraet, zaehler: GERAETE[geraet].ergebnisse.map(() => 0), n: 0, verlauf: [], letzter: "" };
 }
 
 /** Index des Ergebnisses, das zu der Zufallszahl `u` in [0, 1) gehört. */
@@ -102,13 +104,16 @@ export function werfen(stand: Stand, anzahl: number, beobachte: string, zufall: 
   const verlauf = [...stand.verlauf];
   const ziel = beobachtetIndex(stand.geraet, beobachte);
   let n = stand.n;
+  let letzter = stand.letzter;
   const schritte = Math.max(0, Math.min(anzahl, MAX_WUERFE - n));
   for (let k = 0; k < schritte; k++) {
-    zaehler[ergebnisIndex(stand.geraet, zufall())]!++;
+    const i = ergebnisIndex(stand.geraet, zufall());
+    zaehler[i]!++;
+    letzter = GERAETE[stand.geraet].ergebnisse[i]!.name;
     n++;
     verlauf.push(zaehler[ziel]! / n);
   }
-  return { geraet: stand.geraet, zaehler, n, verlauf };
+  return { geraet: stand.geraet, zaehler, n, verlauf, letzter };
 }
 
 /** Relative Häufigkeit als Dezimalzahl in [0, 1]; ohne Wurf 0. */

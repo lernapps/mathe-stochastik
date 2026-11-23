@@ -9,8 +9,9 @@ blocks:
     blocks:
       - type: text
         text: |
-          Mia und Jonas spielen ein Würfelspiel. Jonas wartet schon lange auf eine Sechs. Wirf selbst: erst ein paarmal, dann
-          viele Würfe auf einmal. Schau auf die Tabelle.
+          Mia und Jonas spielen ein Würfelspiel. Jonas wartet schon lange auf eine Sechs. Die Zufallsmaschine würfelt für
+          dich. Die Tabelle zählt, wie oft jedes **Ergebnis** (jede Zahl) vorkam. Wirf erst ein paarmal, dann 100- und
+          1000-mal. Achte auf die Linie: Sie zeigt den Anteil der Sechsen.
       - type: vue-component
         id: maschine-wuerfel
         component: ZufallMaschine
@@ -24,19 +25,38 @@ blocks:
           Sechs hat also die relative Häufigkeit 11 von 60, ungefähr 0,18. Bei sehr vielen Würfen liegt sie nahe bei
           einem Sechstel, ungefähr 0,17.
       - type: single-choice
+        id: linie-beobachten
+        text: Du würfelst sehr oft. Was machst du mit der Linie der Sechsen?
+        options:
+          - text: Sie schwankt am Anfang stark und liegt später ruhig nahe bei der gestrichelten Linie.
+            correct: true
+            info: Bei wenigen Würfen kann eine Sechs den Anteil stark ändern. Bei vielen Würfen fällt ein einzelner Wurf kaum noch ins Gewicht.
+          - text: Sie steigt immer weiter, bis die Sechs fast jeden Wurf kommt.
+            correct: false
+            info: Das stimmt nicht. Die Sechs wird nicht häufiger. Ihr Anteil bleibt bei ungefähr einem Sechstel.
+          - text: Sie springt bei jedem Wurf zufällig zwischen 0 und 1 hin und her.
+            correct: false
+            info: Nur am Anfang schwankt sie stark. Mit jedem Wurf bewegt sie sich weniger.
+        explanation: Die relative Häufigkeit der Sechs pendelt sich bei vielen Würfen bei ungefähr einem Sechstel ein, ungefähr 0,17.
+        links:
+          - {
+              title: "Zufallsversuche auf der Lernlandkarte von lernapps.net",
+              url: "https://lernapps.net/apps/map/mathematik/c/zufallserscheinungen/",
+            }
+      - type: single-choice
         id: zufall-erkennen
         text: Jonas hat sechsmal gewürfelt. Muss genau eine Sechs dabei sein?
         options:
-          - text: Nein, es können auch keine oder mehrere Sechsen kommen.
-            correct: true
-            info: Jeder Wurf ist für sich Zufall. Vorher kannst du nicht sagen, welche Zahl kommt.
           - text: Ja, bei sechs Würfen kommt jede Zahl einmal.
             correct: false
             info: Das stimmt nicht. Die Würfe merken sich nichts, eine Zahl kann mehrmals kommen und eine andere nie.
-          - text: Ja, die Sechs ist beim sechsten Wurf an der Reihe.
+          - text: Nein, es können auch keine Sechs oder mehrere Sechsen kommen.
+            correct: true
+            info: Jeder Wurf ist für sich Zufall. Vorher kannst du nicht sagen, welche Zahl kommt.
+          - text: Ja, beim sechsten Wurf kommt bestimmt die Sechs.
             correct: false
             info: Es gibt keine feste Reihenfolge. Beim sechsten Wurf ist jede Zahl wieder möglich.
-        explanation: Beim Würfeln steht das Ergebnis erst nach dem Wurf fest. Das ist das Besondere an einem Zufallsversuch.
+        explanation: Beim Würfeln weißt du erst nach dem Wurf, welche Zahl oben liegt. Das ist das Besondere an einem Zufallsversuch.
         links:
           - {
               title: "Zufallsversuche (Lernlandkarte)",
@@ -48,13 +68,13 @@ blocks:
     blocks:
       - type: definition
         term: Zufallsversuch
-        explanation: Ein Versuch, dessen Ausgang du vorher nicht sicher kennst und den du unter gleichen Bedingungen wiederholen kannst. Beispiele sind Würfeln, Münzwerfen und Glücksraddrehen.
+        explanation: Ein Versuch, bei dem du vorher nicht sicher weißt, was herauskommt, und den du immer wieder gleich durchführen kannst. Mias Würfeln ist ein Zufallsversuch, ebenso Münzwerfen und Glücksraddrehen.
       - type: definition
         term: Ergebnis
         explanation: Das, was am Ende eines Versuchs herauskommt. Beim Würfeln ist ein Ergebnis zum Beispiel die 4, beim Glücksrad die Farbe, auf der der Zeiger stehen bleibt.
       - type: definition
         term: Ergebnismenge
-        explanation: Alle möglichen Ergebnisse eines Versuchs, in geschweiften Klammern aufgeschrieben. Beim Würfel ist es die Menge aus den Zahlen von 1 bis 6.
+        explanation: Alle möglichen Ergebnisse eines Versuchs. Du schreibst sie in geschweiften Klammern auf, getrennt durch Kommas. Beim Würfel sind es die Zahlen von 1 bis 6.
       - type: formula
         formula: '\{1, 2, 3, 4, 5, 6\}'
   - type: section
@@ -65,16 +85,21 @@ blocks:
         title: Beispiel
         blocks:
           - type: text
-            text: Nicht alles im Alltag ist Zufall. Bei diesen Situationen kannst du prüfen, ob du das Ergebnis vorher kennst.
+            text: "Nicht alles im Alltag ist Zufall. Frage dich immer: Kann ich das Ergebnis vorher sicher wissen? Wenn nein, und du kannst den Versuch gleich wiederholen, ist es ein Zufallsversuch."
           - type: table
-            caption: Zufallsversuche und Ergebnisse
-            header: [Situation, Ergebnisse, Zufallsversuch?]
+            caption: Kannst du das Ergebnis vorher sicher wissen?
+            header: [Situation, Ergebnis vorher sicher?, Zufallsversuch?]
             rows:
-              - ["Münze werfen", "Kopf oder Zahl", "ja"]
-              - ["Glücksrad mit drei Farben drehen", "Rot, Blau oder Gelb", "ja"]
-              - ["Würfel werfen", "1 bis 6", "ja"]
-              - ["Einen Stein loslassen", "Er fällt nach unten.", "nein"]
-              - ["3 + 4 rechnen", "7", "nein"]
+              - ["Münze werfen", "nein", "ja"]
+              - ["Glücksrad drehen", "nein", "ja"]
+              - ["Würfel werfen", "nein", "ja"]
+              - ["Einen Stein loslassen", "ja, er fällt nach unten", "nein"]
+              - ["3 + 4 rechnen", "ja, 7", "nein"]
+      - type: text
+        text: |
+          Beim Würfel kannst du vorher nachdenken. Bei einer **Reißzwecke** nicht: Sie kann auf dem Rücken landen (Spitze
+          oben) oder auf der Seite (Spitze unten). Setze die Maschine zurück, wirf 100-mal und lies ab, wie oft die Spitze
+          oben lag.
       - type: vue-component
         id: maschine-reisszwecke
         component: ZufallMaschine
@@ -84,9 +109,27 @@ blocks:
         nojs: |
           Die Zufallsmaschine wirft eine Reißzwecke so oft, wie du willst. Die Ergebnisse sind „Spitze oben“ und
           „Spitze unten“. Anders als beim Würfel kannst du hier nicht vorher rechnen, wie oft eine Seite kommt: Du musst
-          werfen und zählen. Ein Beispiel mit 100 Würfen: 37-mal Spitze oben und 63-mal Spitze unten.
-      - type: text
-        text: Bei der Reißzwecke kannst du nicht rechnen. Wirf sie 100-mal und lies ab, wie oft die Spitze oben liegt.
+          werfen und zählen. Ein Beispiel mit 100 Würfen: 37-mal Spitze oben und 63-mal Spitze unten, die relative
+          Häufigkeit von „Spitze oben“ ist also 0,37.
+      - type: single-choice
+        id: reisszwecke-warum
+        text: Warum kannst du bei der Reißzwecke nicht vorher ausrechnen, wie oft die Spitze oben liegt?
+        options:
+          - text: Weil die beiden Ergebnisse nicht gleich oft vorkommen müssen und du es nicht weißt.
+            correct: true
+            info: Beim Würfel kommt jede Zahl gleich oft vor. Bei der Reißzwecke gibt es dafür keinen Grund, du musst es ausprobieren.
+          - text: Weil man eine Reißzwecke nicht werfen kann.
+            correct: false
+            info: Man kann sie werfen. Nur das Ergebnis lässt sich nicht aus der Form ausrechnen.
+          - text: Weil die Spitze immer unten liegt.
+            correct: false
+            info: Das stimmt nicht. Du siehst es an der Tabelle, beide Ergebnisse kommen vor.
+        explanation: Wo du nicht rechnen kannst, hilft nur Werfen und Zählen. Wie du daraus etwas für den nächsten Wurf schließt, lernst du auf der nächsten Seite.
+        links:
+          - {
+              title: "Zufallsversuche auf der Lernlandkarte von lernapps.net",
+              url: "https://lernapps.net/apps/map/mathematik/c/zufallserscheinungen/",
+            }
   - type: section
     id: uebung
     title: Übung
@@ -96,28 +139,33 @@ blocks:
         given:
           k: { int: [3, 6] }
           f: { int: [2, 4] }
+        where: ["f != k"]
         task:
-          text: "Ein Glücksrad hat {{k}} Farben. Jede Farbe kommt auf {{f}} Feldern vor. Das Ergebnis ist die Farbe, auf der der Zeiger stehen bleibt. Wie viele mögliche Ergebnisse hat ein Dreh?"
+          text: "Ein Glücksrad ist in gleich große Felder eingeteilt, wie Tortenstücke. Es hat {{k}} Farben, und jede Farbe kommt auf {{f}} Feldern vor. Das Ergebnis ist die Farbe, bei der der Zeiger stehen bleibt. Wie viele mögliche Ergebnisse hat ein Dreh?"
         answer: { value: "k", compare: number }
         mistakes:
           - { value: "k * f", message: "Du hast die Felder gezählt. Das Ergebnis ist aber die Farbe, nicht das Feld." }
-        hint: "Zähle nur die verschiedenen Farben."
+          - {
+              value: "f",
+              message: "Das ist die Zahl der Felder einer Farbe. Gefragt ist, wie viele verschiedene Farben es gibt.",
+            }
+        hint: "Was gilt hier als Ergebnis: ein Feld oder eine Farbe? Lies die Aufgabe noch einmal."
         steps:
           - "Es gibt {{k}} Farben, also {{answer}} mögliche Ergebnisse."
       - type: single-choice
         id: kein-ausgleich
         text: Eine Münze fiel fünfmal hintereinander auf Zahl. Was gilt für den sechsten Wurf?
         options:
-          - text: Kopf und Zahl sind wieder gleich möglich.
-            correct: true
-            info: Die Münze merkt sich nichts. Jeder Wurf ist ein neuer Zufallsversuch unter gleichen Bedingungen.
           - text: Kopf ist jetzt eher dran, damit es sich ausgleicht.
             correct: false
-            info: Ein Ausgleich passiert nicht Wurf für Wurf. Erst bei sehr vielen Würfen gleichen sich die Anteile an.
-          - text: Zahl ist wahrscheinlicher, weil sie schon oft kam.
+            info: Ein Ausgleich passiert nicht Wurf für Wurf. Erst bei sehr vielen Würfen verschwindet der Einfluss der ersten Würfe.
+          - text: Kopf und Zahl haben wieder dieselbe Chance.
+            correct: true
+            info: Die Münze merkt sich nichts. Jeder Wurf ist ein neuer Zufallsversuch unter gleichen Bedingungen.
+          - text: Zahl kommt eher, weil sie schon oft kam.
             correct: false
             info: Auch das stimmt nicht. Frühere Würfe ändern nichts am nächsten Wurf.
-        explanation: Zufallsversuche haben kein Gedächtnis. Probiere es in der Zufallsmaschine mit der Münze aus.
+        explanation: Zufallsversuche haben kein Gedächtnis. Jeder Wurf beginnt neu.
         links:
           - {
               title: "Zufallsversuche (Lernlandkarte)",
@@ -130,7 +178,7 @@ blocks:
           - { left: Münze werfen, right: "Kopf, Zahl" }
           - { left: Würfel werfen, right: "1, 2, 3, 4, 5, 6" }
           - { left: "Glücksrad mit Rot, Blau, Gelb", right: "Rot, Blau, Gelb" }
-        distractors: ["Ja, Nein"]
+        distractors: ["Spitze oben, Spitze unten"]
         explanation: Die Ergebnismenge nennt jedes mögliche Ergebnis genau einmal.
         links:
           - {
