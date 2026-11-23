@@ -31,9 +31,9 @@ const index = beobachtetIndex(geraet, props.beobachte);
 const stand = ref(neuerStand(geraet));
 const schritte = [1, 10, 100, 1000];
 const breite = 300;
-const hoehe = 120;
+const hoehe = 160;
 
-const wert = computed(() => (props.zeigeWert ? wahrscheinlichkeit(geraet, index) : undefined));
+const wert = computed(() => (props.zeigeWert && stand.value.n >= 100 ? wahrscheinlichkeit(geraet, index) : undefined));
 const wertY = computed(() => (wert.value ? hoehe - (wert.value.z / wert.value.n) * hoehe : undefined));
 const punkte = computed(() => linie(stand.value.verlauf, breite, hoehe));
 const satz = computed(() => verlaufText(stand.value, props.beobachte));
@@ -67,6 +67,26 @@ function zuruecksetzen() {
       </button>
       <button type="button" class="maschine-zurueck" @click="zuruecksetzen">Zurücksetzen</button>
     </div>
+    <svg class="maschine-bild" :viewBox="`-18 -8 ${breite + 24} ${hoehe + 28}`" role="img" :aria-label="alt">
+      <text x="-4" y="4" text-anchor="end" class="maschine-achse">1</text>
+      <text x="-4" :y="hoehe + 4" text-anchor="end" class="maschine-achse">0</text>
+      <text :x="breite" :y="hoehe + 16" text-anchor="end" class="maschine-achse">Würfe →</text>
+      <rect x="0" y="0" :width="breite" :height="hoehe" class="maschine-rahmen" />
+      <line v-if="wertY !== undefined" x1="0" x2="300" :y1="wertY" :y2="wertY" class="maschine-wert" />
+      <polyline v-if="punkte" :points="punkte" class="maschine-linie" />
+    </svg>
+    <p class="maschine-erklaerung">
+      Die Linie zeigt die relative Häufigkeit von „{{ beschreibung.ergebnisse[index]!.name }}“ nach jedem Wurf:
+      waagerecht die Würfe, senkrecht von 0 (unten) bis 1 (oben).
+      <span v-if="wert">
+        Die gestrichelte Linie ist der Wert, den du vorher ausrechnen kannst: {{ wert.z }} von {{ wert.n }}, das sind
+        ungefähr {{ komma(wert.z / wert.n) }}.
+      </span>
+    </p>
+    <p class="maschine-satz" aria-live="polite">
+      {{ satz }}
+      <span v-if="voll"> Mehr als {{ MAX_WUERFE }} Würfe sind nicht möglich: setze zurück.</span>
+    </p>
     <table class="maschine-tabelle">
       <caption>
         Häufigkeiten nach
@@ -92,23 +112,6 @@ function zuruecksetzen() {
         </tr>
       </tbody>
     </table>
-    <svg class="maschine-bild" :viewBox="`-2 -2 ${breite + 4} ${hoehe + 4}`" role="img" :aria-label="alt">
-      <rect x="0" y="0" :width="breite" :height="hoehe" class="maschine-rahmen" />
-      <line v-if="wertY !== undefined" x1="0" x2="300" :y1="wertY" :y2="wertY" class="maschine-wert" />
-      <polyline v-if="punkte" :points="punkte" class="maschine-linie" />
-    </svg>
-    <p class="maschine-erklaerung">
-      Die Linie zeigt die relative Häufigkeit von „{{ beschreibung.ergebnisse[index]!.name }}“ nach jedem Wurf:
-      waagerecht die Würfe, senkrecht von 0 (unten) bis 1 (oben).
-      <span v-if="wert">
-        Die gestrichelte Linie ist der Wert, den du vorher ausrechnen kannst: {{ wert.z }} von {{ wert.n }}, das sind
-        ungefähr {{ komma(wert.z / wert.n) }}.
-      </span>
-    </p>
-    <p class="maschine-satz" aria-live="polite">
-      {{ satz }}
-      <span v-if="voll"> Mehr als {{ MAX_WUERFE }} Würfe sind nicht möglich: setze zurück.</span>
-    </p>
   </div>
 </template>
 
@@ -175,6 +178,11 @@ function zuruecksetzen() {
   width: 100%;
   max-width: 24rem;
   height: auto;
+}
+
+.maschine-achse {
+  fill: var(--page-muted);
+  font-size: 11px;
 }
 
 .maschine-rahmen {

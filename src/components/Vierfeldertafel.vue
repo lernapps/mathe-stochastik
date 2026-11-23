@@ -60,6 +60,12 @@ const alt = computed(
     `Die Zahlen an den Zweigen stehen auch in der Tafel.`,
 );
 
+const blattIndex = computed(() => {
+  if (!gewaehlt.value) return -1;
+  const a: Record<Zelle, number> = { ab: 0, anb: 1, nab: 2, nanb: 3 };
+  const b: Record<Zelle, number> = { ab: 0, nab: 1, anb: 2, nanb: 3 };
+  return (zuerst.value === "A" ? a : b)[gewaehlt.value];
+});
 const kopf = computed(() => [props.b, props.nb, "Summe"]);
 const zeilen = computed(() => [
   { name: props.a, zellen: [props.ab, props.anb] as number[], summe: s.value.a, ids: ["ab", "anb"] as Zelle[] },
@@ -158,12 +164,19 @@ const zeilen = computed(() => [
           <text :x="x" y="100" text-anchor="middle">{{ kuerzel(oben[i]!) }}</text>
         </g>
         <g v-for="(x, i) in blattX" :key="'b' + i">
-          <circle :cx="x" cy="178" r="12" />
+          <circle :cx="x" cy="178" r="12" :class="{ hervor: blattIndex === i }" />
           <text :x="x" y="182" text-anchor="middle">{{ kuerzel(unten[i % 2]!) }}</text>
         </g>
       </g>
       <g class="pfad">
-        <text v-for="(x, i) in blattX" :key="'p' + i" :x="x" y="204" text-anchor="middle">
+        <text
+          v-for="(x, i) in blattX"
+          :key="'p' + i"
+          :x="x"
+          y="204"
+          text-anchor="middle"
+          :class="{ hervor: blattIndex === i }"
+        >
           {{ pfade[i] }}
         </text>
       </g>
@@ -278,6 +291,16 @@ const zeilen = computed(() => [
 
 .pfad text {
   font-size: 11px;
+}
+
+.pfad text.hervor {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.knoten circle.hervor {
+  stroke: #ff8f00;
+  stroke-width: 4;
 }
 
 .tafel-legende {

@@ -37,21 +37,16 @@ blocks:
               Urne mit 3 roten, 2 blauen und 1 gelben Kugel, zweimal ziehen **ohne Zurücklegen**. Wie groß ist $P(\text{genau einmal rot})$?
           - type: table
             caption: Genau einmal rot, Schritt für Schritt
-            header: [Schritt, Rechnung]
+            header: [Pfad, Rechnung]
             rowHeaders: true
             rows:
-              - [
-                  "Pfade finden",
-                  "rot-blau, rot-gelb, blau-rot, gelb-rot (rot-rot ist *zweimal* rot und gehört nicht dazu)",
-                ]
-              - [
-                  "Jeden Pfad multiplizieren",
-                  '$\frac{3}{6} \cdot \frac{2}{5}$, $\frac{3}{6} \cdot \frac{1}{5}$, $\frac{2}{6} \cdot \frac{3}{5}$, $\frac{1}{6} \cdot \frac{3}{5}$',
-                ]
-              - [
-                  "Addieren",
-                  '$\frac{6}{30} + \frac{3}{30} + \frac{6}{30} + \frac{3}{30} = \frac{18}{30} = \frac{3}{5}$',
-                ]
+              - ["rot-blau", '$\frac{3}{6} \cdot \frac{2}{5} = \frac{6}{30}$']
+              - ["rot-gelb", '$\frac{3}{6} \cdot \frac{1}{5} = \frac{3}{30}$']
+              - ["blau-rot", '$\frac{2}{6} \cdot \frac{3}{5} = \frac{6}{30}$']
+              - ["gelb-rot", '$\frac{1}{6} \cdot \frac{3}{5} = \frac{3}{30}$']
+              - ["Summe", '$\frac{18}{30} = \frac{3}{5}$']
+          - type: text
+            text: Rot-rot gehört nicht dazu, denn das ist zweimal rot.
           - type: text
             text: >-
               Kürzer: „genau einmal rot“ = rot-nicht rot + nicht rot-rot: $\frac{3}{6} \cdot \frac{3}{5} + \frac{3}{6} \cdot \frac{3}{5}$ $= 2 \cdot \frac{9}{30} = \frac{3}{5}$.

@@ -78,13 +78,13 @@ blocks:
             text: "Nicht alles im Alltag ist Zufall. Frage dich immer: Kann ich das Ergebnis vorher sicher wissen? Wenn nein, und du kannst den Versuch gleich wiederholen, ist es ein Zufallsversuch."
           - type: table
             caption: Kannst du das Ergebnis vorher sicher wissen?
-            header: [Situation, Ergebnis vorher sicher?, Zufallsversuch?]
+            header: [Situation, Ergebnis sicher?, Zufall?]
             rows:
               - ["Münze werfen", "nein", "ja"]
               - ["Glücksrad drehen", "nein", "ja"]
               - ["Würfel werfen", "nein", "ja"]
-              - ["Einen Stein loslassen", "ja, er fällt nach unten", "nein"]
-              - ["3 + 4 rechnen", "ja, 7", "nein"]
+              - ["Einen Stein loslassen", "ja", "nein"]
+              - ["3 + 4 rechnen", "ja", "nein"]
       - type: text
         text: |
           Beim Würfel kannst du vorher nachdenken. Bei einer **Reißzwecke** nicht: Sie kann auf dem Rücken landen (Spitze

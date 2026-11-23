@@ -11,8 +11,9 @@ blocks:
         text: |
           Du lernst, zwei Merkmale in einer Tafel gemeinsam zu zählen und daraus Wahrscheinlichkeiten abzulesen. Beim
           Spieleabend sind 50 Gäste. Manche spielen Karten, manche ein Brettspiel, manche beides, manche keins von beiden.
-          Eine **Vierfeldertafel** zeigt alle vier Fälle auf einen Blick. Tippe in der Tafel auf die Zellen. Wechsle dann
-          bei „Baum lesen mit“ zwischen Karten und Brett und vergleiche die Zahlen im Baum mit der Tafel.
+          Eine **Vierfeldertafel** zeigt alle vier Fälle auf einen Blick. Tippe in der Tafel auf eine Zelle, zum Beispiel auf die 12.
+          Im Baum leuchtet das Blatt auf, das zu dieser Zelle gehört, und darunter steht der Anteil an allen 50 Gästen. Wechsle bei „Baum lesen mit“
+          zwischen Karten und Brett. Die Blätter ändern ihre Reihenfolge, die Anteile bleiben gleich.
       - type: vue-component
         id: tafel-spieleabend
         component: Vierfeldertafel
@@ -35,18 +36,18 @@ blocks:
           Im Baum mit Karten zuerst teilen sich die 50 in 30 und 20, die 30 in 12 und 18, die 20 in 10 und 10.
       - type: single-choice
         id: tafel-gesamt
-        text: Welche Zahl steht in der Tafel unten rechts, in der Zelle der Gesamtsumme?
+        text: Wie viele Gäste spielen weder Karten noch Brett?
         options:
-          - text: Die Zahl der Gäste, die Karten und Brett spielen.
+          - text: "20, das sind die Gäste ohne Karten."
             correct: false
-            info: Die steht in der ersten Zelle oben links. Unten rechts steht etwas anderes.
-          - text: Die Zahl aller Gäste.
+            info: Von den 20 Gästen ohne Karten spielen 10 Brett. Sie zählen nicht zu denen, die gar nichts spielen.
+          - text: "10, das ist das Feld unten rechts in der Tafel."
             correct: true
-            info: Die Zeilensummen und die Spaltensummen ergeben beide die Zahl aller Gäste. Sie steht unten rechts.
-          - text: Die Zahl der Gäste, die Karten spielen.
+            info: Das Feld „ohne Karten, ohne Brett“ zählt genau die Gäste, auf die beide Angaben zugleich zutreffen, hier „nein“ und „nein“.
+          - text: "28, das sind die Gäste ohne Brett."
             correct: false
-            info: Das ist die Summe der ersten Zeile, sie steht am Ende dieser Zeile.
-        explanation: Unten rechts steht die Gesamtzahl. Du kannst sie über die Zeilen oder über die Spalten ausrechnen und erhältst dasselbe.
+            info: Von den 28 Gästen ohne Brett spielen 18 Karten. Sie zählen nicht zu denen, die gar nichts spielen.
+        explanation: Für „weder noch“ brauchst du das Feld, in dem beide Merkmale fehlen.
   - type: section
     id: regel
     title: So liest du die Tafel
@@ -81,12 +82,12 @@ blocks:
               Saft getrunken?
           - type: table
             caption: Rechenweg in vier Schritten
-            header: [Feld, Rechnung, Ergebnis]
+            header: [Feld, Rechnung, Zahl]
             rows:
-              - ["Saft und Kuchen", "gegeben", "20"]
-              - ["Saft ohne Kuchen", "45 − 20", "25"]
-              - ["Kuchen ohne Saft", "35 − 20", "15"]
-              - ["weder Saft noch Kuchen", "80 − 20 − 25 − 15", "20"]
+              - ["beides", "gegeben", "20"]
+              - ["nur Saft", "45 − 20", "25"]
+              - ["nur Kuchen", "35 − 20", "15"]
+              - ["keins", "80 − 60", "20"]
           - type: text
             text: Die Summen der Zeilen und Spalten stimmen dann wieder mit 80 überein.
   - type: section
@@ -117,16 +118,42 @@ blocks:
         text: Die Zeilensumme von „Karten“ (30) und die Spaltensumme von „Brett“ (22) ergeben zusammen die Zahl aller Gäste (50).
         answer: false
         explanation: Wer Karten und Brett spielt, ist in beiden Summen enthalten. Er wird doppelt gezählt. Es kommt 30 + 22 = 52 heraus, das sind mehr als 50. Die Gesamtzahl ergibt sich nur aus allen Zeilen oder allen Spalten.
+      - type: number
+        id: tafel-ergaenzen
+        text: "Von 60 Kindern einer Klassenfahrt schwimmen 36, 30 radeln, und 15 tun beides. Ergänze die Tafel im Kopf oder auf Papier. Wie viele Kinder schwimmen nicht und radeln nicht?"
+        material:
+          - type: table
+            caption: "Klassenfahrt, 60 Kinder. „nein“ heißt: tut es nicht. Fehlende Felder mit ?"
+            header: ["Kinder", "radeln", "nein", "Summe"]
+            rows:
+              - ["schwimmen", "15", "?", "36"]
+              - ["nein", "?", "?", "24"]
+              - ["Summe", "30", "30", "60"]
+        answer: 9
+        tolerance: 0
+        mistakes:
+          - { answer: 24, message: "Das sind alle Kinder, die nicht schwimmen. Darunter sind auch Kinder, die radeln." }
+          - {
+              answer: 15,
+              message: "Das sind die Kinder, die schwimmen und radeln. Gefragt sind die, die beides nicht tun.",
+            }
+        hint: "Bestimme zuerst, wie viele Kinder nur schwimmen. Rechne dann in der Zeile oder Spalte weiter."
+        explanation: "Nur schwimmen: 36 − 15 = 21. Nur radeln: 30 − 15 = 15. Schwimmen nicht und radeln nicht: 60 − 15 − 21 − 15 = 9. Probe in der Zeile: 15 + 9 = 24."
+      - type: true-false
+        id: zeilen-summe
+        text: Wenn du alle Zeilensummen einer Vierfeldertafel addierst, erhältst du die Zahl aller Fälle.
+        answer: true
+        explanation: Jeder Fall steht in genau einer Zeile. Die Zeilensummen zählen deshalb alle Fälle genau einmal. Dasselbe gilt für die Spaltensummen.
       - type: matching
         id: tafel-zuordnen
         text: "Ordne zu: Welche Zahl in der Tafel gehört zu welcher Aussage?"
         material:
           - type: table
-            caption: Schulfest, 80 Gäste
-            header: ["Gäste", "Kuchen", "ohne Kuchen", "Summe"]
+            caption: "Schulfest, 80 Gäste. „ohne“ heißt: kein Kuchen."
+            header: ["Gäste", "Kuchen", "ohne", "Summe"]
             rows:
               - ["Saft", "20", "25", "45"]
-              - ["ohne Saft", "15", "20", "35"]
+              - ["kein Saft", "15", "20", "35"]
               - ["Summe", "35", "45", "80"]
         pairs:
           - { left: Gäste mit Saft und Kuchen, right: "20" }

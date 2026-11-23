@@ -77,15 +77,10 @@ blocks:
             text: Dieselbe Tafel gibt zwei verschiedene Antworten, je nachdem, welche Bedingung gilt.
           - type: table
             caption: Zwei Richtungen aus einer Tafel
-            header: [Frage, Bedingung, Gesamtheit, Ergebnis]
+            header: [Frage, Teilen durch, Ergebnis]
             rows:
-              - ["Wie wahrscheinlich ist ein positiver Test bei Kranken?", "krank", "40", "36 von 40, also 0,9"]
-              - [
-                  "Wie wahrscheinlich ist Krankheit bei positivem Test?",
-                  "Test positiv",
-                  "84",
-                  "36 von 84, ungefähr 0,43",
-                ]
+              - ["Positiver Test, wenn krank?", "40 Kranke", "36 von 40 = 0,9"]
+              - ["Krank, wenn Test positiv?", "84 Positive", "36 von 84 ≈ 0,43"]
           - type: text
             text: Der Test erkennt 9 von 10 Kranken. Trotzdem ist bei einem positiven Test weniger als die Hälfte der Personen wirklich krank, weil es viele Gesunde gibt.
   - type: section

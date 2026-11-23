@@ -49,6 +49,28 @@ blocks:
         nojs: |
           Kurztest: Bei 60 Würfen sind 21 Ergebnisse eine gerade Zahl. Wie groß ist die relative Häufigkeit von „gerade“?
           Antwort: 0,35. 21 von 60 kürzt du mit 3 zu 7 von 20, das sind 0,35 oder 35 %. Die 21 ist die absolute Häufigkeit.
+      - type: vue-component
+        id: test-anteil
+        component: Kurztest
+        props:
+          question: Bei einer Umfrage antworten 18 von 24 Personen mit Ja. Wie viel Prozent sind das?
+          options:
+            - { text: "75 %", correct: true, info: "18 von 24 kürzt du mit 6 zu 3 von 4. Das sind 0,75, also 75 %." }
+            - {
+                text: "133 %",
+                correct: false,
+                info: "Du hast 24 durch 18 geteilt. Der Anteil ist Treffer durch alle: 18 durch 24.",
+              }
+            - {
+                text: "18 %",
+                correct: false,
+                info: "Das ist die Anzahl der Ja-Antworten als Prozentzahl. Die Prozentzahl bekommst du, wenn du 18 durch 24 teilst und mit 100 malnimmst.",
+              }
+          right: Richtig.
+          wrong: Nicht richtig.
+        nojs: |
+          Kurztest: Bei einer Umfrage antworten 18 von 24 Personen mit Ja. Wie viel Prozent sind das? Antwort: 75 %, denn 18 : 24 = 0,75.
+          133 % käme vom Teilen 24 : 18, 18 % wäre die Anzahl als Prozentzahl.
       - type: text
         text: |
           Falsch gelegen? Dann übe den Baustein

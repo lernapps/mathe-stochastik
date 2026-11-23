@@ -22,11 +22,11 @@ blocks:
         explanation: Die gezogene Kugel bleibt draußen. Nach jedem Zug ist eine Kugel weniger in der Urne.
       - type: table
         caption: Was sich beim zweiten Zug ändert
-        header: [Zug, mit Zurücklegen, ohne Zurücklegen]
+        header: [Was, mit, ohne]
         rowHeaders: true
         rows:
-          - ["Nenner", "bleibt gleich", "wird bei jedem Zug um 1 kleiner (6 → 5 → 4)"]
-          - ["Zähler einer Farbe", "bleibt gleich", "wird nur um 1 kleiner, wenn vorher diese Farbe gezogen wurde"]
+          - ["Nenner", "bleibt", "wird kleiner (6, 5, 4)"]
+          - ["Zähler", "bleibt", "wird kleiner, wenn diese Farbe gezogen wurde"]
       - type: text
         text: Die Zweige der zweiten Stufe hängen also davon ab, was in der ersten Stufe passiert ist.
   - type: section
@@ -40,7 +40,7 @@ blocks:
             text: Urne mit 3 roten, 2 blauen und 1 gelben Kugel (6 Kugeln). Die erste gezogene Kugel ist **rot**.
           - type: table
             caption: Wahrscheinlichkeit für die 2. Kugel mit und ohne Zurücklegen, wenn die erste rot war
-            header: [2. Kugel, mit Zurücklegen, ohne Zurücklegen]
+            header: [2. Kugel, mit, ohne]
             rowHeaders: true
             rows:
               - [rot, '$\frac{3}{6}$', '$\frac{2}{5}$']

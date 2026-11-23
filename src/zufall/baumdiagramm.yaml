@@ -32,6 +32,12 @@ blocks:
       - type: definition
         term: Pfad
         explanation: Ein Weg im Baumdiagramm vom Start bis zu einem Ende.
+      - type: definition
+        term: Zweig
+        explanation: Eine Linie im Baumdiagramm. An jedem Zweig steht, wie wahrscheinlich dieser Schritt ist.
+      - type: definition
+        term: Knoten
+        explanation: Ein Punkt im Baumdiagramm, an dem sich der Baum verzweigt oder ein Pfad endet.
   - type: section
     id: beispiel
     title: Beispiel
