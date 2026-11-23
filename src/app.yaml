@@ -11,7 +11,7 @@ languages: [de]
 chapters: [experimente, zufall]
 sources:
   - title: Kerncurriculum Mathematik Sekundarstufe I, Hessisches Kultusministerium
-    url: https://kultusministerium.hessen.de/unterricht/kerncurricula/sekundarstufe-i/mathematik
+    url: https://kultus.hessen.de/sites/kultus.hessen.de/files/2021-07/kerncurriculum_mathematik_gymnasium.pdf
   - title: Bildungsstandards der Kultusministerkonferenz (Mathematik, 2022)
     url: https://www.kmk.org/bildungsministerkonferenz/bildungsthemen/bildungsstandards.html
 tutor:

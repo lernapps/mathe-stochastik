@@ -35,6 +35,8 @@ ergänzt die 6 fehlenden von 14 Bausteinen und bringt die 8 vorhandenen Seiten a
 ## Key decisions
 
 - Kein `scope` in `app.yaml`: keine `open-task`, kein Material des Creators; der Bestand hat auch keinen.
+- Die Seite `zufallserscheinungen` hat keinen Abschnitt `bild`: Die Zufallsmaschine ist das Bild; Textalternative (aria-label der Linie, Erklärungstext) und Version ohne JavaScript (`nojs` mit Beispielreihe) sagen, was man sieht (Orchestrator-Freigabe).
+- `simulationen`: Die Karte nennt Tabellenkalkulation; die App kann das nicht. Simulation läuft mit der Zufallsmaschine, die Grenze steht auf der Seite und hier (kein Versprechen, das die App nicht hält).
 - Branch `increment/01-stochastik-ausbau` von `main`; Plan 02, weil die offenen Commit-Aufgaben von Plan 01 einem anderen Branch gehören.
 - Kapitel-, Seiten- und Übungs-ids und alle Adressen des Bestands bleiben (öffentlicher Vertrag). Kapitel `zufall` bleibt für Kapitel 2 und 3 des Issues; neu kommen `experimente` (Kap. 1, Klasse 7-8) und `vierfeldertafel` (Kap. 4, Klasse 9-10). Reihenfolge in `app.yaml`: experimente, zufall, vierfeldertafel.
 - Erster Commit ist `lernapps update` (0.18.5 / 0.14.0) allein; Befunde zuerst beheben (Orchestrator-Freigabe).
@@ -74,6 +76,8 @@ ergänzt die 6 fehlenden von 14 Bausteinen und bringt die 8 vorhandenen Seiten a
 **Umfang:** drin: alle 14 Bausteine, Recaps, Bereinigung. Draußen: Häufigkeiten und Umfragedaten (#400), Zählprinzip (#386), Lernlandkarte ändern.
 
 **Quellen:** Karte, KMK-Bildungsstandards 2022, Hessisches Kerncurriculum Sek I, eigene Herleitungen. Nachschlagen ohne Übernahme; fachlicher Prüfer rechnet nach.
+
+**Quelle Kerncurriculum:** der alte Link (`kultusministerium.hessen.de/…/mathematik`) lieferte hier 404 (Proxy oder tot, ungeklärt); ersetzt durch das PDF `kultus.hessen.de/…/kerncurriculum_mathematik_gymnasium.pdf` (200, application/pdf, hier geprüft).
 
 **Funde fürs Werkzeug (an den Orchestrator):** `recap` hat keine Übungen, Selbsttests daher auf eigener Seite (geklärt); Node 22 hier, CI 26.
 
