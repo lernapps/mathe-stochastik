@@ -55,14 +55,6 @@ blocks:
         source: Eigene Darstellung der Mathe-Karte
         licence: MIT
   - type: section
-    id: video
-    title: Video dazu
-    blocks:
-      - type: video
-        youtube: Pi1M1F2l024
-        title: "Summenregel | Wahrscheinlichkeitsrechnung | Mathematik"
-        channel: Lehrerschmidt
-  - type: section
     id: uebung
     title: Übung
     blocks:

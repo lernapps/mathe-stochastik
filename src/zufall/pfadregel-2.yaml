@@ -60,17 +60,6 @@ blocks:
         source: Eigene Darstellung der Mathe-Karte
         licence: MIT
   - type: section
-    id: video
-    title: Video dazu
-    blocks:
-      - type: video
-        youtube: Pi1M1F2l024
-        title: "Summenregel | Wahrscheinlichkeitsrechnung | Mathematik"
-        channel: Lehrerschmidt
-      - type: text
-        text: |-
-          - Noch eine Erklärung: [Pfadregeln](https://de.serlo.org/mathe/189811/pfadregeln) bei serlo.org
-  - type: section
     id: uebung
     title: Übung
     blocks:

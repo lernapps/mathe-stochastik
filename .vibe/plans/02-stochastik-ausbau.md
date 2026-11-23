@@ -34,6 +34,7 @@ ergänzt die 6 fehlenden von 14 Bausteinen und bringt die 8 vorhandenen Seiten a
 
 ## Key decisions
 
+- Kein `scope` in `app.yaml`: keine `open-task`, kein Material des Creators; der Bestand hat auch keinen.
 - Branch `increment/01-stochastik-ausbau` von `main`; Plan 02, weil die offenen Commit-Aufgaben von Plan 01 einem anderen Branch gehören.
 - Kapitel-, Seiten- und Übungs-ids und alle Adressen des Bestands bleiben (öffentlicher Vertrag). Kapitel `zufall` bleibt für Kapitel 2 und 3 des Issues; neu kommen `experimente` (Kap. 1, Klasse 7-8) und `vierfeldertafel` (Kap. 4, Klasse 9-10). Reihenfolge in `app.yaml`: experimente, zufall, vierfeldertafel.
 - Erster Commit ist `lernapps update` (0.18.5 / 0.14.0) allein; Befunde zuerst beheben (Orchestrator-Freigabe).
@@ -154,14 +155,14 @@ Je Seite: erste Aufgabe vor der Erklärung (Zufallsmaschine laufen lassen, vorhe
 - [x] `git switch -c increment/<NN>-<short name>` from `main`. Commit this plan on it.
 - [x] Load skill `lernapps-cli`. Update the app as its section "Update" says. Commit the update alone and fix its
       findings before any content. The update replaces the `lernapps-*` skills: read again those you use.
-- [ ] Load skill `lernapps-explainer` and the content guide.
-- [ ] Load skill `lernapps-content-questions`. Read whole, with your file tool:
+- [x] Load skill `lernapps-explainer` and the content guide.
+- [x] Load skill `lernapps-content-questions`. Read whole, with your file tool:
       `.agents/skills/lernapps-explainer/references/blocks.md` and
       `.agents/skills/lernapps-explainer/references/exercises.md`. A foreign language: also
       `references/language-tasks.md` in the same folder. A component in the plan: also `references/components.md`.
-- [ ] Decide whether the app needs `scope`, as "`scope`" in
+- [x] Decide whether the app needs `scope`, as "`scope`" in
       `.agents/skills/lernapps-explainer/references/structure.md` says. Write the choice under "Key decisions".
-- [ ] Bestand A (ich allein): YouTube und serlo ersatzlos raus (Video-Abschnitte, Textlinks, links:, sources, Tutor-Regeln), Klassenangabe "7 und 8" in app.yaml und chapter.yaml; check und Tests grün.
+- [x] Bestand A (ich allein): YouTube und serlo ersatzlos raus (Video-Abschnitte, Textlinks, links:, sources, Tutor-Regeln), Klassenangabe "7 und 8" in app.yaml und chapter.yaml; check und Tests grün.
 - [ ] Bestand B (Unteragent, nur Kapitel zufall, eigene Worktree): je Seite mindestens 3 Aufgaben je Baustein, steigend und nicht überall generated, Brüche gesetzt statt 3/5 (a/b in Komponenten-Rückmeldungen zählen, W28), Textwände kürzen oder teilen, Abschnitt-Ids unverändert.
 - [ ] Kurztest + Recap Kapitel experimente (ich allein): Kurztest-Dateien aus /tmp/epic nach src/components kopieren und anpassen, Recap-Seite haeufigkeiten (Begriffe fett, Beispiel, Kopf, Checkliste, Kurztest), Glossar.
 - [ ] Zufallsmaschine + Musterseite experimente/zufallsversuche (zufallserscheinungen), ich allein: Komponente mit Test, Bild, drei Aufgaben; danach Lernenden-Prüfer (Klasse 7) und Checkpoint Musterseite.

@@ -37,10 +37,7 @@ Jede Seite hat diese Abschnitte, in dieser Reihenfolge und mit diesen ids (öffe
 2. `regel` – „Regel“: `formula`-Blöcke, Fachbegriffe als `definition`, eine `note` „Merke“.
 3. `beispiel` – „Beispiel“: eine `example`-Box mit `table` (gegeben, Rechnung, Ergebnis).
 4. `bild` – „Bild“: das Beispielbild, ohne JavaScript sichtbar (siehe Figures).
-5. `video` – „Video dazu“: ein `video`-Block (`youtube: <11 Zeichen nach watch?v=>`, `title` wie YouTube ihn zeigt,
-   `channel: Lehrerschmidt`), danach der serlo-Link als Text, falls es einen geprüften gibt. Kein YouTube-Link im
-   Text, kein Satz zu Kanal oder Datenschutz: das zeigt der Block selbst.
-6. `uebung` – „Übung“: die Übungen (siehe Exercise patterns).
+5. `uebung` – „Übung“: die Übungen (siehe Exercise patterns).
 
 `description` und `summary` sind reiner Text ohne `$…$`.
 
@@ -90,16 +87,13 @@ Jede Seite hat diese Abschnitte, in dieser Reihenfolge und mit diesen ids (öffe
 
 ## Sources
 
-- Videos: Kanal Lehrerschmidt (YouTube), je Seite geprüft über oEmbed (`author_name` und Titel passen); als `video`-Block,
-  der den Player erst nach dem Klick von youtube-nocookie.com lädt.
-- serlo.org: Artikel mit numerischer id (`https://de.serlo.org/mathe/<id>/<slug>`), per curl geprüft (Status 200, der
-  Artikel selbst, passt zur Kompetenz). Kein schwacher Treffer; dann kein Link.
+- Keine Videos, kein serlo.org, keine Dritt-Inhalte (Regeln des Mathe-Epics, Abschnitt 4). Fachfakten dürfen nachgeschlagen werden, stehen aber nicht im Explainer; verlangt das Werkzeug einen Link an einer Frage, zeigt er auf die Kartenseite des Bausteins.
 - Texte und Aufgaben sind eigene Arbeit (MIT), übernommen aus den alten Apps des Repos.
 
 ## Adding a chapter or round
 
 1. Kompetenzen als „Ich kann …“ hier eintragen; Seiten-ids festlegen (nie wieder ändern).
-2. `src/<kapitel>/chapter.yaml` und je Seite die YAML-Datei mit den sechs Abschnitten und `competencies` (Bausteine
+2. `src/<kapitel>/chapter.yaml` und je Seite die YAML-Datei mit den fünf Abschnitten und `competencies` (Bausteine
    des Strangs); Kapitel in `src/app.yaml`.
 3. Übungen nach den Mustern oben, Test zuerst (`src/components/<Name>.test.ts`).
 4. Beispielbilder nach Figures.
@@ -111,6 +105,5 @@ Jede Seite hat diese Abschnitte, in dieser Reihenfolge und mit diesen ids (öffe
 - Formeln in `description` erschienen roh im Inhaltsverzeichnis → reiner Text.
 - Formeln in Quiz-Fragen ließen die Laufzeit-Tests scheitern und hatten keinen zugänglichen Namen → reiner Text.
 - Bilder als Komponente waren ohne JavaScript unsichtbar → statische SVGs aus `scripts/bilder.mjs`.
-- Videos als Textlink mit Satz „Der Link öffnet YouTube …“ wiederholten, was die Runtime kann → `video`-Block.
 - Ein wählbares Feld mit sichtbarem Text braucht diesen Text am Anfang seines Namens (axe
   label-content-name-mismatch).

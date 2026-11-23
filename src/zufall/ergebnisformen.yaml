@@ -66,14 +66,6 @@ blocks:
         source: Eigene Darstellung der Mathe-Karte
         licence: MIT
   - type: section
-    id: video
-    title: Video dazu
-    blocks:
-      - type: video
-        youtube: Pi1M1F2l024
-        title: "Summenregel | Wahrscheinlichkeitsrechnung | Mathematik"
-        channel: Lehrerschmidt
-  - type: section
     id: uebung
     title: Übung
     blocks:
@@ -108,4 +100,7 @@ blocks:
         explanation: >-
           Kommt derselbe Faktor mehrmals vor, darfst du eine Potenz schreiben: fünf Sechstel mal fünf Sechstel mal fünf Sechstel ist fünf Sechstel hoch drei, ausgerechnet 125 Zweihundertsechzehntel.
         links:
-          - { title: Pfadregeln (serlo.org), url: "https://de.serlo.org/mathe/189811/pfadregeln" }
+          - {
+              title: "Darstellung von Wahrscheinlichkeiten (Lernlandkarte)",
+              url: "https://lernapps.net/apps/map/mathematik/c/zufall-ergebnisform/",
+            }

@@ -64,20 +64,6 @@ blocks:
         source: Eigene Darstellung der Mathe-Karte
         licence: MIT
   - type: section
-    id: video
-    title: Video dazu
-    blocks:
-      - type: video
-        youtube: rkLmLaFHodo
-        title: "einstufiger Zufallsversuch | Wahrscheinlichkeitsrechnung - einfach erklärt"
-        channel: Lehrerschmidt
-      - type: text
-        text: >-
-          Im Video heißt das „einstufiger Zufallsversuch“ – gemeint ist dasselbe.
-      - type: text
-        text: |-
-          - Noch eine Erklärung: [Laplace-Experiment](https://de.serlo.org/mathe/1755/laplace-experiment) bei serlo.org
-  - type: section
     id: uebung
     title: Übung
     blocks:
