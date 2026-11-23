@@ -8,7 +8,7 @@ phase: code
 # prePushFailures: failed pre-push runs of this increment, written by the hook.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks.
-failedChecks: { checks-pass: 1, plan-file: 1 }
+failedChecks: { accessible: 3, checks-pass: 1, plan-file: 1 }
 ---
 
 # Increment: stochastik-ausbau

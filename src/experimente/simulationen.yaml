@@ -116,8 +116,10 @@ blocks:
               - ["6", "|||||", "5"]
           - type: formula
             formula: "3 + 3 + 3 + 4 + 2 + 5 = 20"
+          - type: text
+            text: Die relative Häufigkeit der Sechs ist 5 von 20.
           - type: formula
-            formula: '\text{relative Häufigkeit der Sechs} = \frac{5}{20} = 0{,}25'
+            formula: 'h = \frac{5}{20} = 0{,}25'
           - type: text
             text: |
               Lena liest die Reihe auch als Durchläufe bis zur ersten Sechs: Der erste Durchlauf endet nach 2 Würfen

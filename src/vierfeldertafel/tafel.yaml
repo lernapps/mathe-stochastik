@@ -1,0 +1,156 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Vierfeldertafel
+description: "Zwei verknüpfte Ereignisse in einer Vierfeldertafel darstellen und Wahrscheinlichkeiten ablesen."
+competencies: [vierfeldertafel]
+blocks:
+  - type: section
+    id: warum
+    title: Was du hier lernst
+    blocks:
+      - type: text
+        text: |
+          Du lernst, zwei Merkmale in einer Tafel gemeinsam zu zählen und daraus Wahrscheinlichkeiten abzulesen. Beim
+          Spieleabend sind 50 Gäste. Manche spielen Karten, manche ein Brettspiel, manche beides, manche keins von beiden.
+          Eine **Vierfeldertafel** zeigt alle vier Fälle auf einen Blick. Tippe in der Tafel auf die Zellen. Wechsle dann
+          bei „Baum lesen mit“ zwischen Karten und Brett und vergleiche die Zahlen im Baum mit der Tafel.
+      - type: vue-component
+        id: tafel-spieleabend
+        component: Vierfeldertafel
+        props:
+          a: Karten
+          na: ohne Karten
+          b: Brett
+          nb: ohne Brett
+          ka: K
+          kna: nK
+          kb: B
+          knb: nB
+          ab: 12
+          anb: 18
+          nab: 8
+          nanb: 12
+        nojs: |
+          Die Tafel zählt 50 Gäste in vier Felder: 12 spielen Karten und Brett, 18 nur Karten, 8 nur Brett, 12 keins von
+          beiden. Die Zeilensummen sind 30 (Karten) und 20 (ohne Karten), die Spaltensummen 20 (Brett) und 30 (ohne Brett).
+          Im Baum mit Karten zuerst teilen sich die 50 in 30 und 20, die 30 in 12 und 18, die 20 in 8 und 12.
+      - type: single-choice
+        id: tafel-gesamt
+        text: Welche Zahl steht in der Tafel unten rechts, in der Zelle der Gesamtsumme?
+        options:
+          - text: Die Zahl der Gäste, die Karten und Brett spielen.
+            correct: false
+            info: Die steht in der ersten Zelle oben links. Unten rechts steht etwas anderes.
+          - text: Die Zahl aller Gäste.
+            correct: true
+            info: Die Zeilensummen und die Spaltensummen ergeben beide die Zahl aller Gäste. Sie steht unten rechts.
+          - text: Die Zahl der Gäste, die Karten spielen.
+            correct: false
+            info: Das ist die Summe der ersten Zeile, sie steht am Ende dieser Zeile.
+        explanation: Unten rechts steht die Gesamtzahl. Du kannst sie über die Zeilen oder über die Spalten ausrechnen und erhältst dasselbe.
+  - type: section
+    id: regel
+    title: So liest du die Tafel
+    blocks:
+      - type: definition
+        term: Vierfeldertafel
+        explanation: Eine Tabelle mit vier Feldern für zwei Merkmale, die jeweils zutreffen oder nicht. Jedes Feld zählt die Fälle, auf die beide Angaben zugleich passen. Am Rand stehen die Summen.
+      - type: text
+        text: |
+          Jede Zeile und jede Spalte hat eine **Summe** am Rand. Zeilensummen und Spaltensummen ergeben zusammen dieselbe
+          Gesamtzahl, sie steht unten rechts. Fehlt in der Tafel eine Zahl, rechnest du sie aus der Summe ihrer Zeile oder
+          ihrer Spalte aus.
+      - type: text
+        text: "Beispiel: Karten und Brett spielen 12 von 50 Gästen. Das schreibst du so:"
+      - type: formula
+        formula: 'P = \frac{12}{50} = 0{,}24'
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: Eine Wahrscheinlichkeit aus der Tafel ist die Zahl im Feld oder in der Summe am Rand, geteilt durch die Gesamtzahl.
+  - type: section
+    id: beispiel
+    title: Fehlende Zahlen ergänzen
+    blocks:
+      - type: example
+        title: Beispiel
+        blocks:
+          - type: text
+            text: |
+              Bei einem Schulfest sind 80 Gäste. 45 tranken Saft, 35 aßen Kuchen, und 20 haben beides. Wie viele haben nur
+              Saft getrunken?
+          - type: table
+            caption: Rechenweg in vier Schritten
+            header: [Feld, Rechnung, Ergebnis]
+            rows:
+              - ["Saft und Kuchen", "gegeben", "20"]
+              - ["Saft ohne Kuchen", "45 − 20", "25"]
+              - ["Kuchen ohne Saft", "35 − 20", "15"]
+              - ["weder Saft noch Kuchen", "80 − 20 − 25 − 15", "20"]
+          - type: text
+            text: Die Summen der Zeilen und Spalten stimmen dann wieder mit 80 überein.
+  - type: section
+    id: uebung
+    title: Übung
+    blocks:
+      - type: generated
+        id: nur-karten
+        given:
+          n: { oneOf: [40, 60, 80] }
+          k: { oneOf: [20, 24, 28, 32] }
+          x: { oneOf: [6, 8, 10, 14] }
+        where: ["k != 2 * x", "k + x < n"]
+        task:
+          text: "Auf einem Spieleabend sind {{n}} Gäste. {{k}} spielen Karten, davon spielen {{x}} auch ein Brettspiel. Wie viele Gäste spielen nur Karten?"
+        answer: { value: "k - x", compare: number }
+        mistakes:
+          - {
+              value: "k",
+              message: "Du hast alle Kartenspieler genommen. Die Gäste, die auch Brett spielen, zählen nicht zu denen, die nur Karten spielen.",
+            }
+          - { value: "x", message: "Das sind die Gäste, die beides spielen. Gefragt sind die, die nur Karten spielen." }
+        hint: "Trenne die Kartenspieler in zwei Gruppen: die mit Brett und die ohne."
+        steps:
+          - "$k - x = {{k}} - {{x}} = {{answer}}$, also {{answer}} Gäste."
+      - type: true-false
+        id: summen-doppelt
+        text: Die Zeilensumme von „Karten“ und die Spaltensumme von „Brett“ ergeben zusammen die Zahl aller Gäste.
+        answer: false
+        explanation: Wer Karten und Brett spielt, ist in beiden Summen enthalten. Er wird doppelt gezählt. Die Gesamtzahl ergibt sich nur aus allen Zeilen oder allen Spalten.
+      - type: matching
+        id: tafel-zuordnen
+        text: "Ordne zu: Welche Zahl in der Tafel gehört zu welcher Aussage?"
+        material:
+          - type: table
+            caption: Schulfest, 80 Gäste
+            header: ["Gäste", "Kuchen", "ohne Kuchen", "Summe"]
+            rows:
+              - ["Saft", "20", "25", "45"]
+              - ["ohne Saft", "15", "20", "35"]
+              - ["Summe", "35", "45", "80"]
+        pairs:
+          - { left: Gäste mit Saft und Kuchen, right: "20" }
+          - { left: "Gäste mit Saft, egal ob mit Kuchen", right: "45" }
+          - { left: "Gäste mit Kuchen, egal ob mit Saft", right: "35" }
+          - { left: alle Gäste, right: "80" }
+        explanation: Die Zahl im Feld zählt beide Angaben zugleich, die Zahl am Rand zählt nur eine Angabe.
+      - type: generated
+        id: tafel-wahrscheinlichkeit
+        given:
+          n: { oneOf: [40, 50, 100, 200] }
+          x: { oneOf: [6, 8, 10, 12, 14] }
+        task:
+          text: "Beim Spieleabend sind {{n}} Gäste, {{x}} davon spielen Karten und Brett. Ein Gast wird zufällig ausgewählt. Mit welcher Wahrscheinlichkeit spielt er beides? Gib sie als Dezimalzahl an."
+        answer: { value: "x / n", compare: number }
+        mistakes:
+          - {
+              value: "x",
+              message: "Das ist die Zahl der Gäste, keine Wahrscheinlichkeit. Teile sie durch die Gesamtzahl der Gäste.",
+            }
+          - {
+              value: "n / x",
+              message: "Du hast die Zahlen vertauscht. Die Zahl im Feld kommt in den Zähler, die Gesamtzahl in den Nenner.",
+            }
+        hint: "Wie viele Gäste sind es insgesamt, und wie viele davon sind günstig?"
+        steps:
+          - '$P = \frac{{{x}}}{{{n}}} = {{answer}}$'

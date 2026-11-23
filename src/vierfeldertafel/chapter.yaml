@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Vierfeldertafel und bedingte Wahrscheinlichkeit
+summary: >-
+  Daten in Vierfeldertafeln darstellen und bedingte Wahrscheinlichkeiten berechnen und deuten, für die Klassen 9 und 10:
+  dieselben Zahlen in Tafel und Baum, in beide Richtungen gelesen.
+pages: [tafel]
