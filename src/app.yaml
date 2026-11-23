@@ -8,7 +8,7 @@ intro: |
   Hier lernst du Wahrscheinlichkeitsrechnung für die Klassen 7 und 8. Jede Seite erklärt eine Sache mit Regel,
   Beispiel und Bild. Danach übst du mit Aufgaben. Jede Aufgabe sagt dir sofort, ob dein Ergebnis stimmt.
 languages: [de]
-chapters: [zufall]
+chapters: [experimente, zufall]
 sources:
   - title: Kerncurriculum Mathematik Sekundarstufe I, Hessisches Kultusministerium
     url: https://kultusministerium.hessen.de/unterricht/kerncurricula/sekundarstufe-i/mathematik
