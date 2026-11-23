@@ -1,0 +1,145 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Das brauchst du hier
+description: "Wiederholung für Kapitel 2 und 3: Zählprinzip, Brüche multiplizieren und Prozent, mit Beispielen und Kurztests."
+recap: [mathematik/zaehlprinzip, mathematik/brueche-multiplizieren-dividieren, mathematik/prozent-grundbegriffe]
+blocks:
+  - type: section
+    id: kopf
+    title: Das brauchst du für diese Kapitel
+    blocks:
+      - type: text
+        text: |
+          Jetzt rechnest du mit Wahrscheinlichkeiten und zeichnest Bäume. Dafür musst du drei Dinge sicher können. Zu jedem
+          gibt es eine kurze Wiederholung und einen Kurztest. Die Karte nennt sie
+          [Zählprinzip](https://lernapps.net/apps/map/mathematik/c/zaehlprinzip/),
+          [Bruchrechnung: Multiplikation und Division](https://lernapps.net/apps/map/mathematik/c/brueche-multiplizieren-dividieren/)
+          und [Prozentrechnung: Grundbegriffe](https://lernapps.net/apps/map/mathematik/c/prozent-grundbegriffe/).
+  - type: section
+    id: zaehlprinzip
+    title: Zählprinzip
+    blocks:
+      - type: text
+        text: "Ich kann mit dem Zählprinzip und Baumdiagrammen die Anzahl von Möglichkeiten bestimmen."
+      - type: definition
+        term: Zählprinzip
+        explanation: Wenn du in mehreren Schritten wählst, multiplizierst du die Zahl der Möglichkeiten je Schritt. Bei 3 Eissorten und 2 Soßen gibt es 3 · 2 = 6 Kombinationen.
+      - type: definition
+        term: Baumdiagramm
+        explanation: Ein Bild, das mit einem Punkt beginnt und sich bei jedem Schritt in Zweige teilt. Jeder Weg von oben nach unten ist eine Möglichkeit. Bei Eis und Soße hat der Baum 3 Zweige und an jedem 2 weitere, also 6 Wege.
+      - type: vue-component
+        id: test-zaehlprinzip
+        component: Kurztest
+        props:
+          question: In einem Café gibt es ein Menü aus 4 Vorspeisen, 5 Hauptgerichten und 3 Nachtischen. Wie viele verschiedene Menüs kann man zusammenstellen?
+          options:
+            - {
+                text: "12",
+                correct: false,
+                info: "Du hast die Zahlen addiert. Bei mehreren Schritten multiplizierst du die Möglichkeiten.",
+              }
+            - {
+                text: "60",
+                correct: true,
+                info: "4 · 5 · 3 = 60. Jede Vorspeise passt zu jedem Hauptgericht und jedem Nachtisch.",
+              }
+            - {
+                text: "20",
+                correct: false,
+                info: "Das sind nur Vorspeise und Hauptgericht (4 · 5). Der Nachtisch fehlt noch.",
+              }
+          right: Richtig.
+          wrong: Nicht richtig.
+        nojs: |
+          Kurztest: 4 Vorspeisen, 5 Hauptgerichte und 3 Nachtische. Wie viele Menüs? Antwort: 60, denn 4 · 5 · 3 = 60. Addieren
+          (12) ist falsch, 20 lässt den Nachtisch weg.
+      - type: text
+        text: "Falsch gelegen? Dann übe den Baustein [Zählprinzip](https://lernapps.net/apps/map/mathematik/c/zaehlprinzip/) auf der Karte."
+  - type: section
+    id: brueche-multiplizieren
+    title: "Bruchrechnung: Multiplikation und Division"
+    blocks:
+      - type: text
+        text: "Ich kann Brüche multiplizieren und dividieren."
+      - type: definition
+        term: Brüche multiplizieren
+        explanation: Du multiplizierst Zähler mit Zähler und Nenner mit Nenner und kürzt, wenn es geht.
+      - type: example
+        title: Beispiel
+        blocks:
+          - type: formula
+            formula: '\frac{2}{3} \cdot \frac{3}{4} = \frac{2 \cdot 3}{3 \cdot 4} = \frac{6}{12} = \frac{1}{2}'
+      - type: vue-component
+        id: test-brueche
+        component: Kurztest
+        props:
+          question: Was ist drei Fünftel mal fünf Sechstel?
+          options:
+            - {
+                text: "ein Halb",
+                correct: true,
+                info: "3 · 5 = 15 und 5 · 6 = 30, also fünfzehn Dreißigstel. Gekürzt mit 15 ist das ein Halb.",
+              }
+            - {
+                text: "acht Elftel",
+                correct: false,
+                info: "Du hast Zähler und Nenner addiert. Beim Multiplizieren multiplizierst du beide.",
+              }
+            - {
+                text: "fünfzehn Elftel",
+                correct: false,
+                info: "Der Zähler stimmt, aber der Nenner ist 5 · 6 = 30, nicht 5 + 6.",
+              }
+          right: Richtig.
+          wrong: Nicht richtig.
+        nojs: |
+          Kurztest: Drei Fünftel mal fünf Sechstel. Antwort: ein Halb. 3 · 5 = 15, 5 · 6 = 30, fünfzehn Dreißigstel gekürzt ein
+          Halb. Wer addiert, kommt auf acht Elftel.
+      - type: text
+        text: "Falsch gelegen? Dann übe den Baustein [Bruchrechnung: Multiplikation und Division](https://lernapps.net/apps/map/mathematik/c/brueche-multiplizieren-dividieren/) auf der Karte."
+  - type: section
+    id: prozent
+    title: "Prozentrechnung: Grundbegriffe"
+    blocks:
+      - type: text
+        text: "Ich kann Prozent als Hundertstel deuten und in einer Aufgabe Grundwert, Prozentwert und Prozentsatz erkennen."
+      - type: definition
+        term: Prozent
+        explanation: Prozent heißt Hundertstel. 15 % sind 15 von 100, also $\frac{15}{100} = 0{,}15$.
+      - type: definition
+        term: Grundwert
+        explanation: Das Ganze, von dem ein Anteil genommen wird, zum Beispiel der volle Preis von 80 €.
+      - type: definition
+        term: Prozentsatz
+        explanation: Der Anteil in Prozent, zum Beispiel 15 % Rabatt.
+      - type: definition
+        term: Prozentwert
+        explanation: Der Teil des Ganzen, den der Prozentsatz angibt. 15 % von 80 € sind 12 €.
+      - type: vue-component
+        id: test-prozent
+        component: Kurztest
+        props:
+          question: Wie viel Euro sind 15 % von 80 €?
+          options:
+            - { text: "12 €", correct: true, info: "15 % sind 0,15. Es gilt 0,15 · 80 = 12." }
+            - { text: "1200 €", correct: false, info: "Du hast 15 mal 80 gerechnet. Du musst noch durch 100 teilen." }
+            - {
+                text: "5,33 €",
+                correct: false,
+                info: "Du hast 80 durch 15 geteilt. Rechne 15 % als 0,15 und multipliziere mit 80.",
+              }
+          right: Richtig.
+          wrong: Nicht richtig.
+        nojs: |
+          Kurztest: Wie viel Euro sind 15 % von 80 €? Antwort: 12 €, denn 0,15 · 80 = 12. 1200 € wäre ohne das Teilen durch
+          100, 5,33 € käme vom Teilen 80 : 15.
+      - type: text
+        text: "Falsch gelegen? Dann übe den Baustein [Prozentrechnung: Grundbegriffe](https://lernapps.net/apps/map/mathematik/c/prozent-grundbegriffe/) auf der Karte."
+  - type: section
+    id: checkliste
+    title: Du bist bereit, wenn du …
+    blocks:
+      - type: text
+        text: |
+          - die Zahl der Möglichkeiten bei mehreren Schritten mit dem Zählprinzip und einem Baumdiagramm bestimmst,
+          - Brüche multiplizierst und das Ergebnis kürzt,
+          - Prozent als Hundertstel deutest und Grundwert, Prozentsatz und Prozentwert unterscheidest.
