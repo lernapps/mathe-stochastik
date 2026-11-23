@@ -126,8 +126,8 @@ blocks:
             caption: Klassenfahrt, 60 Kinder
             header: [Gruppe, Kinder]
             rows:
-              - ["schwimmen", "36"]
-              - ["radeln", "30"]
+              - ["schwimmen (auch mit radeln)", "36"]
+              - ["radeln (auch mit schwimmen)", "30"]
               - ["schwimmen und radeln", "15"]
               - ["alle Kinder", "60"]
         answer: 9
@@ -136,10 +136,10 @@ blocks:
           - { answer: 24, message: "Das sind alle Kinder, die nicht schwimmen. Darunter sind auch Kinder, die radeln." }
           - {
               answer: 15,
-              message: "15 steht in der Tafel (beides oder nur radeln). Gefragt ist das Feld, in dem beides fehlt.",
+              message: "15 kommt in deiner Tafel zweimal vor (beides und nur radeln). Gefragt ist das Feld, in dem beides fehlt.",
             }
         hint: "Bestimme zuerst, wie viele Kinder nur schwimmen. Rechne dann in der Zeile oder Spalte weiter."
-        explanation: "Nur schwimmen: 36 − 15 = 21. Nur radeln: 30 − 15 = 15. Schwimmen nicht und radeln nicht: 60 − 15 − 21 − 15 = 9. Probe in der Zeile: 15 + 9 = 24."
+        explanation: "Nur schwimmen: 36 − 15 = 21. Nur radeln: 30 − 15 = 15. Schwimmen nicht und radeln nicht: 60 − 15 − 21 − 15 = 9. Probe: nur radeln 15 + weder noch 9 = 24, das sind alle Kinder, die nicht schwimmen."
       - type: true-false
         id: zeilen-summe
         text: Wenn du alle Zeilensummen einer Vierfeldertafel addierst, erhältst du die Zahl aller Fälle.
@@ -147,7 +147,7 @@ blocks:
         explanation: Jeder Fall steht in genau einer Zeile. Die Zeilensummen zählen deshalb alle Fälle genau einmal. Dasselbe gilt für die Spaltensummen.
       - type: matching
         id: tafel-zuordnen
-        text: "Ordne zu: Welche Zahl in der Tafel gehört zu welcher Aussage?"
+        text: "Ordne zu: Welche Zahl gehört zu welcher Aussage? Rechne mit den Zahlen aus der Tabelle."
         material:
           - type: table
             caption: Schulfest, 80 Gäste
@@ -162,7 +162,7 @@ blocks:
           - { left: "Gäste mit Saft, egal ob mit Kuchen", right: "45" }
           - { left: "Gäste mit Kuchen, egal ob mit Saft", right: "35" }
           - { left: alle Gäste, right: "80" }
-        explanation: "Eine Summe am Rand zählt alle Felder ihrer Zeile oder Spalte zusammen, zum Beispiel Saft mit und ohne Kuchen 20 + 25 = 45. Wer Saft oder Kuchen oder beides hat, ist jeder außer den 20 ohne beides: 80 − 20 = 60."
+        explanation: "Mit Saft: 20 + 25 = 45. Mit Kuchen: 20 + 15 = 35. Wer Saft oder Kuchen oder beides hat, ist jeder außer den 20 ohne beides: 80 − 20 = 60."
       - type: generated
         id: tafel-wahrscheinlichkeit
         given:
