@@ -152,7 +152,7 @@ Je Seite: erste Aufgabe vor der Erklärung (Zufallsmaschine laufen lassen, vorhe
 ### Tasks
 
 - [x] `git switch -c increment/<NN>-<short name>` from `main`. Commit this plan on it.
-- [ ] Load skill `lernapps-cli`. Update the app as its section "Update" says. Commit the update alone and fix its
+- [x] Load skill `lernapps-cli`. Update the app as its section "Update" says. Commit the update alone and fix its
       findings before any content. The update replaces the `lernapps-*` skills: read again those you use.
 - [ ] Load skill `lernapps-explainer` and the content guide.
 - [ ] Load skill `lernapps-content-questions`. Read whole, with your file tool:
