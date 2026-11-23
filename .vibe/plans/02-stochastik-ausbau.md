@@ -8,7 +8,7 @@ phase: code
 # prePushFailures: failed pre-push runs of this increment, written by the hook.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks.
-failedChecks: { accessible: 3, checks-pass: 2, plan-file: 1 }
+failedChecks: { accessible: 3, checks-pass: 3, plan-file: 1 }
 ---
 
 # Increment: stochastik-ausbau
@@ -212,6 +212,26 @@ Je Seite: erste Aufgabe vor der Erklärung (Zufallsmaschine laufen lassen, vorhe
       says, without asking first, see it to "bestanden", then show the creator the pull request and its result. The
       entry did not change: tell the creator that the catalog updates the app by itself.
 - [ ] If the plan changed since its last push, commit it on `main` and push again.
+
+## Review
+
+### Fachlicher Prüfer (zwei Läufe)
+
+- Lauf 1 über alle Seiten und Komponenten-Logik: Fehler behoben: Wahr-Falsch-Aufgabe `summen-doppelt` war mit den Zahlen der Tafel nicht eindeutig (Tafel 12/18/10/10 statt 12/18/8/12), Steckstein-Zahlen passten nicht zur Maschine (jetzt 0,458 und 0,467 bei 1000 Würfen, Aufgaben mit „Stein aus ihrer Kiste“), Option „2,85“ (60 : 21 ≈ 2,86), „Ergebnis“-Widerspruch zwischen Kapitel 1 und `laplace`, „Zeilen- und Spaltensummen“-Satz, Aussagen zu bedingter Wahrscheinlichkeit („meist verschieden“, „kann viel kleiner sein“), Baustein `zufall-ergebnisform` ohne Formwechsel (neue Aufgabe `ergebnisform-wechseln`), Recap ohne Division, Marke „Legostein“ (jetzt „Steckstein“), Leerzeichen vor `%` und `€` (U+00A0). Offen gelassen, bewusst: Vorgriff „ohne Zurücklegen“ in Komponenten von `pfadregel-1` und `gegenereignis` (Bestand, ändert die Reihenfolge der veröffentlichten Seiten nicht), `a/b` in Komponenten-Rückmeldungen (W28, 8 Stellen in `Zufall*.ts` laut Prüfer, in `mistakes` der YAML keine), interne Ids `legostein`.
+- Lauf 2 nur auf die Änderungen (`git diff f1afb3a HEAD`): Fehler behoben: `nojs` des Prozent-Kurztests passte nicht zur Frage, „unten rechts“ zweideutig, „Linie unter der Tabelle“ nach Umbau falsch, uneinheitliches „Drehs“, Leerzeichen in `ergebnisform-wechseln`, Satz zu Farben in `laplace` (1/3 stimmt nur für Blau), Fehlermeldung zur Antwort 15. Nicht geprüft vom Prüfer: Tests, Build, Browser, SVG-Dateien (die Tests, Build und `lernapps check` habe ich selbst gelaufen: grün).
+- Stichprobe auf wörtliche Übernahme: keine wörtlichen Treffer; allgemeine Merksätze („entlang des Pfades mal, über mehrere Pfade plus“).
+
+### Lernenden-Prüfer (Klasse 7 an der Musterseite, Klasse 8 über alle Seiten, Klasse 9-10 für Kapitel 4, zwei Läufe)
+
+- Musterseite: über 20 Befunde, umgesetzt (letzter Wurf, Diagramm erklärt, Tabelle gab Antworten, Reißzwecke ohne Abschluss, Zuordnung mit unpassender Option).
+- Lauf über alle Seiten: umgesetzt: Zufallsmaschine (Linie größer, Achsen 0 und 1, Linie direkt unter den Knöpfen, Vergleichslinie erst nach 100 Würfen), Zelle in der Tafel markiert das Blatt im Baum, Tabellen auf 360 px gekürzt (laplace, pfadregel-2, ohne-zuruecklegen, tafel, bedingt, haeufigkeit, zufallserscheinungen), ersetzte schwache erste Aufgaben (`tafel-gesamt`), neue Aufgaben (`tafel-ergaenzen` mit Material-Tabelle, `zeilen-summe` als wahre Aussage), zweiter Kurztest im Recap, Definitionen Zweig, Knoten, Potenz, Division im Recap.
+- Lauf 2 auf die geänderten Stellen: alle Tabellen auf 360 px sichtbar, Tafel-Blatt-Markierung richtig; umgesetzt: die drei Tabellen mit abgeschnittener Summenspalte (jetzt zweispaltige Material-Tabellen), Frage zur Linie, härtere Zuordnung. Nicht umgesetzt: Randsummen der Tafel nicht anklickbar (Absicht, steht auf der Seite), Achsenmarken klein (11 px), Maschinen-Knöpfe „Wurf“ beim Glücksrad.
+- **Nach dem letzten Prüferlauf noch geändert:** Satz „Wie verläuft die Linie der Sechsen?“ (Frage umformuliert) und die Aufgaben-Tabellen der Tafel-Seite (inhaltlich: Zuordnung `tafel-zuordnen` nutzt jetzt 20 + 25 = 45, 20 + 15 = 35, 80 − 20 = 60). Diese Stellen sind nach dem Lauf **nicht** noch einmal von den Prüfern gelesen; ich habe sie nachgerechnet (Schulfest 20/25/15/20 von 80; Klassenfahrt 36/30/15 von 60, Antwort 9) und im Browser bei 360 px auf Überlauf geprüft.
+
+### Offen
+
+- Funde zur Laufzeit und zum Werkzeug (nicht behoben, Orchestrator): keine Rückmeldung bei falscher Antwort in Baum-Komponenten (Prüfen grau, nur „Lösung zeigen“); Bruch, Potenz oder „75 Prozent“ im Zahlenfeld gibt „Antworte zuerst: Wähle, tippe oder ordne alles zu“; generische „Lies dazu noch einmal den Text“-Meldung für true-false, ordering, number ohne passende Fehler; „Neue Aufgabe“ nur Symbol; Tipp und Lösung ohne JavaScript sofort sichtbar; Tabellen mit zu breiten Spalten haben keinen Hinweis auf Seitwärts-Wischen; `recap:` hat keine Aufgaben (Kurztest als Komponente); `links:` verlangt das Schema nicht (`lernapps check` besteht ohne); Los-Aufgabe in `laplace` („10 Lose, 2 Gewinne, klick an“) nennt nicht, welche Lose gewinnen; Singular „1 Gewinne“ in der Laplace-Komponente; zwei `mistakes` können denselben Wert haben; Node 22 hier, CI 26.
+- Nicht geprüft: SVG-Dateien in `src/images/`, Kontrast im dunklen Modus, Tutor-Seiten.
 
 ## Retrospective
 
