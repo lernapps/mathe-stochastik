@@ -8,7 +8,7 @@ phase: code
 # prePushFailures: failed pre-push runs of this increment, written by the hook.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks.
-failedChecks: { accessible: 3, checks-pass: 1, plan-file: 1 }
+failedChecks: { accessible: 3, checks-pass: 2, plan-file: 1 }
 ---
 
 # Increment: stochastik-ausbau
@@ -170,19 +170,20 @@ Je Seite: erste Aufgabe vor der Erklärung (Zufallsmaschine laufen lassen, vorhe
 - [x] Bestand B (Unteragent, nur Kapitel zufall, eigene Worktree): je Seite mindestens 3 Aufgaben je Baustein, steigend und nicht überall generated, Brüche gesetzt statt 3/5 (a/b in Komponenten-Rückmeldungen zählen, W28), Textwände kürzen oder teilen, Abschnitt-Ids unverändert.
 - [x] Kurztest + Recap Kapitel experimente (ich allein): Kurztest-Dateien aus /tmp/epic nach src/components kopieren und anpassen, Recap-Seite haeufigkeiten (Begriffe fett, Beispiel, Kopf, Checkliste, Kurztest), Glossar.
 - [x] Zufallsmaschine + Musterseite experimente/zufallsversuche (zufallserscheinungen), ich allein: Komponente mit Test, Bild, drei Aufgaben; danach Lernenden-Prüfer (Klasse 7) und Checkpoint Musterseite.
-- [ ] Seite experimente/relative-haeufigkeit (haeufigkeit-als-schaetzwert): Unteragent nach der Musterseite, eigene Datei, nutzt die Zufallsmaschine.
-- [ ] Seite experimente/simulationen (simulationen): Unteragent nach der Musterseite, eigene Datei.
-- [ ] Seite experimente/wahrscheinlichkeit (wahrscheinlichkeitsbegriff) und chapter.yaml experimente: ich allein.
-- [ ] Recap zu Kapitelanfang zufall (zaehlprinzip, brueche-multiplizieren-dividieren, prozent-grundbegriffe) mit Kurztests; Baumdiagramm-Begriffe wie in der Karte; chapter.yaml, app.yaml Reihenfolge: ich allein.
-- [ ] Kapitel vierfeldertafel, Seite tafel (vierfeldertafel): Komponente Vierfeldertafel mit Test, Baum und Tafel mit denselben Zahlen, drei Aufgaben; Unteragent möglich nach der Musterseite.
-- [ ] Seite vierfeldertafel/bedingt (bedingte-wahrscheinlichkeit): Schnelltest mit falsch positiven Ergebnissen, Richtung der Bedingung; Unteragent möglich nach der Musterseite.
-- [ ] Selbsteinschätzung je Kapitel (selfAssessment), Spieleabend als roter Faden, Kapitelrückblick: ich allein.
+- [x] Seite experimente/relative-haeufigkeit (haeufigkeit-als-schaetzwert): Unteragent nach der Musterseite, eigene Datei, nutzt die Zufallsmaschine.
+- [x] Seite experimente/simulationen (simulationen): Unteragent nach der Musterseite, eigene Datei.
+- [x] Seite experimente/wahrscheinlichkeit (wahrscheinlichkeitsbegriff) und chapter.yaml experimente: ich allein.
+- [x] Recap zu Kapitelanfang zufall (zaehlprinzip, brueche-multiplizieren-dividieren, prozent-grundbegriffe) mit Kurztests; Baumdiagramm-Begriffe wie in der Karte; chapter.yaml, app.yaml Reihenfolge: ich allein.
+- [x] Kapitel vierfeldertafel, Seite tafel (vierfeldertafel): Komponente Vierfeldertafel mit Test, Baum und Tafel mit denselben Zahlen, drei Aufgaben; Unteragent möglich nach der Musterseite.
+- [x] Seite vierfeldertafel/bedingt (bedingte-wahrscheinlichkeit): Schnelltest mit falsch positiven Ergebnissen, Richtung der Bedingung; Unteragent möglich nach der Musterseite.
+- [x] Selbsteinschätzung je Kapitel (selfAssessment), Spieleabend als roter Faden, Kapitelrückblick: ich allein.
 <!-- tasks: slices (11 added): one per competency, as written in Plan -->
-- [ ] **Checkpoint:** the pattern page, after the first slice. A slice in a pattern the app already has: show it to
+- [x] **Checkpoint:** the pattern page, after the first slice. A slice in a pattern the app already has: show it to
       the creator and go on. A new pattern: load skill `lernapps-learner-check`, do its learner check, fix what it
       finds, then ask the creator whether the others may follow it, and wait.
-- [ ] Update the content guide so that it describes the app as it is now (`app-content-matches`).
-- [ ] Run `npx --no -- lernapps check` until it passes.
+      Creator: Musterseite vom Orchestrator in Vertretung des Menschen angenommen (Weiter nach diesem Muster); der Mensch hat npx freigegeben.
+- [x] Update the content guide so that it describes the app as it is now (`app-content-matches`).
+- [x] Run `npx --no -- lernapps check` until it passes.
 - [ ] Look at every changed screen, at 360 px and on a desktop, as "Look at the app" of skill `lernapps-cli` says.
 
 ## Commit

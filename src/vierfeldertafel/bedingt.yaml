@@ -147,3 +147,15 @@ blocks:
             correct: false
             info: Die 10 % sind der Anteil der Kranken, die der Test übersieht. Sie sagen nichts über positive Tests.
         explanation: Die Wahrscheinlichkeit, krank zu sein, wenn der Test positiv ist, rechnest du mit den Positiven als Gesamtheit. Dort zählen Kranke und Gesunde.
+  - type: section
+    id: abschluss
+    title: Das nimmst du mit
+    blocks:
+      - type: note
+        title: Rückblick auf das Kapitel
+        blocks:
+          - type: text
+            text: |
+              Mit der Vierfeldertafel zählst du zwei Merkmale gemeinsam. Der Baum zeigt dieselben Zahlen in zwei Richtungen. Bei
+              einer bedingten Wahrscheinlichkeit legt die Bedingung fest, durch welche Summe du teilst. Wenn du die Richtung
+              der Bedingung vertauschst, ändert sich das Ergebnis.

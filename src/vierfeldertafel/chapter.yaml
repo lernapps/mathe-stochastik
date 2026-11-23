@@ -4,3 +4,12 @@ summary: >-
   Daten in Vierfeldertafeln darstellen und bedingte Wahrscheinlichkeiten berechnen und deuten, für die Klassen 9 und 10:
   dieselben Zahlen in Tafel und Baum, in beide Richtungen gelesen.
 pages: [tafel, bedingt]
+selfAssessment:
+  pages:
+    - exercises:
+        - /vierfeldertafel/tafel/#nur-karten
+        - /vierfeldertafel/tafel/#tafel-wahrscheinlichkeit
+    - exercises:
+        - /vierfeldertafel/bedingt/#bedingt-tafel
+        - /vierfeldertafel/bedingt/#bedingt-tafel
+        - /vierfeldertafel/bedingt/#sicherheit

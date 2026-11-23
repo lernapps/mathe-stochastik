@@ -9,7 +9,8 @@ description: Use for any content work in this app - researching, writing, extend
 
 - Hessen, Gymnasium (G9); Kerncurriculum Mathematik Sekundarstufe I (Hessisches Kultusministerium, 2021). Die
   Zuordnung je Bundesland steht im Katalog (Lernlandkarte, `map/mathematik/curricula/`), nicht hier.
-- Wahrscheinlichkeit: Klasse 7 und 8.
+- Wahrscheinlichkeit: Klasse 7 und 8 (Kapitel `experimente` und `zufall`), Vierfeldertafel und bedingte Wahrscheinlichkeit: Klasse 9 und 10 (`vierfeldertafel`).
+- Die gemeinsamen Regeln der Mathe-Apps stehen in `docs/mathe-epic/regeln.md` von lernapps/apps (Schreibweisen, Aufgaben, Quellen, Recap); bei Widerspruch gelten sie vor diesem Leitfaden nur, soweit hier nichts anderes steht.
 - Die App gehört zum Strang `mathematik/stochastik` der Lernlandkarte (`strand` in `src/app.yaml`, Format 2). Jede
   Seite nennt in `competencies` die Bausteine, die sie übt: ids aus `map/mathematik.yaml` in lernapps/apps, nur aus
   diesem Strang. Ein neues Kapitel kommt nur dazu, wenn seine Bausteine im Strang `stochastik` stehen; fehlt ein
@@ -18,26 +19,33 @@ description: Use for any content work in this app - researching, writing, extend
 
 ## Competencies
 
-Je Seite eine Kompetenz, Datei `src/<kapitel>/<seite>.yaml`.
+Je Seite eine Kompetenz, Datei `src/<kapitel>/<seite>.yaml`. Drei Kapitel in dieser Reihenfolge: `experimente`, `zufall`, `vierfeldertafel`.
+
+- Experimente (`src/experimente/`, Klasse 7-8): Ich kann Zufallsversuche beschreiben (`zufallserscheinungen`), relative Häufigkeiten als Schätzwert deuten (`haeufigkeit-als-schaetzwert`), erklären, was Wahrscheinlichkeit bedeutet, und sie auf der Skala von 0 bis 1 einordnen (`wahrscheinlichkeitsbegriff`) und einfache Versuche simulieren (`simulationen`, mit der Zufallsmaschine; eine Tabellenkalkulation hat die App nicht, die Seite sagt das). Die Seite `start` ist die Sammel-Wiederholung (`recap`) zu `haeufigkeiten`.
+- Vierfeldertafel (`src/vierfeldertafel/`, Klasse 9-10): Ich kann zwei Ereignisse in einer Vierfeldertafel darstellen und Wahrscheinlichkeiten ablesen (`tafel` → `vierfeldertafel`) und bedingte Wahrscheinlichkeiten erkennen und berechnen (`bedingt` → `bedingte-wahrscheinlichkeit`). Kein Recap: alle Voraussetzungen stehen im Strang.
+- Die Seite `start` im Kapitel `zufall` ist die Sammel-Wiederholung zu `zaehlprinzip`, `brueche-multiplizieren-dividieren` und `prozent-grundbegriffe`.
 
 - Zufall (`src/zufall/`): Ich kann die Laplace-Formel anwenden (`laplace`), ein Baumdiagramm zeichnen
   (`baumdiagramm`), die erste und zweite Pfadregel anwenden (`pfadregel-1`, `pfadregel-2`), mit dem Gegenereignis
   rechnen (`gegenereignis`), ohne Zurücklegen rechnen (`ohne-zuruecklegen`), Wahrscheinlichkeiten als Produkt, Summe
   oder Potenz angeben (`ergebnisformen`) und Ereignisse in Pfade übersetzen (`pfade-uebersetzen`).
-- Bausteine je Seite (`competencies`): `laplace` → `zufall-laplace`, `baumdiagramm` → `zufall-baumdiagramm`,
+- Bausteine je Seite im Kapitel `experimente`: `zufallserscheinungen` → `zufallserscheinungen`, `haeufigkeit-als-schaetzwert` → `haeufigkeit-als-schaetzwert`, `wahrscheinlichkeitsbegriff` → `wahrscheinlichkeitsbegriff`, `simulationen` → `simulationen`.
+- Bausteine je Seite (`competencies`) im Kapitel `zufall`: `laplace` → `zufall-laplace`, `baumdiagramm` → `zufall-baumdiagramm`,
   `pfadregel-1` → `zufall-pfadregel-1`, `gegenereignis` → `zufall-gegenereignis`, `ohne-zuruecklegen` →
   `zufall-ohne-zuruecklegen`, `pfadregel-2` → `zufall-pfadregel-2`, `ergebnisformen` → `zufall-ergebnisform`,
   `pfade-uebersetzen` → `zufall-ereignis-uebersetzen`.
 
 ## Content structure
 
-Jede Seite hat diese Abschnitte, in dieser Reihenfolge und mit diesen ids (öffentlicher Vertrag, nie umbenennen):
+Jede Seite des Kapitels `zufall` hat diese Abschnitte, in dieser Reihenfolge und mit diesen ids (öffentlicher Vertrag, nie umbenennen):
 
 1. `warum` – „Warum?“: ein Absatz aus dem Alltag oder der Klassenarbeit.
 2. `regel` – „Regel“: `formula`-Blöcke, Fachbegriffe als `definition`, eine `note` „Merke“.
 3. `beispiel` – „Beispiel“: eine `example`-Box mit `table` (gegeben, Rechnung, Ergebnis).
 4. `bild` – „Bild“: das Beispielbild, ohne JavaScript sichtbar (siehe Figures).
 5. `uebung` – „Übung“: die Übungen (siehe Exercise patterns).
+
+Die Seiten der Kapitel `experimente` und `vierfeldertafel` haben `warum` (Einstieg mit erster Aufgabe oder Maschine), `regel`, `beispiel`, `uebung` und, wo es einen Rückblick gibt, `abschluss`; Recap-Seiten (`start`) haben `kopf`, je Baustein einen Abschnitt und `checkliste`.
 
 `description` und `summary` sind reiner Text ohne `$…$`.
 
@@ -61,11 +69,13 @@ Jede Seite hat diese Abschnitte, in dieser Reihenfolge und mit diesen ids (öffe
   `src/components/Bruch.ts` (exakte Brüche, Runden) und `src/components/Zufallszahlen.ts` (mulberry32); nie in ein
   Kapitel kopieren.
 
-- Je Seite eine Übungskomponente mit „Bild zur Aufgabe“, Tipp, Rechenweg und den typischen Fehlern der alten App:
+- Zufallsmaschine (`ZufallMaschine`, Logik in `ZufallMaschine.ts`): Würfel, Münze, Glücksrad, Reißzwecke, Legostein; 1, 10, 100 oder 1000 Würfe, Tabelle der Häufigkeiten, Linie der relativen Häufigkeit eines beobachteten Ergebnisses, auf Wunsch gestrichelt der berechnete Wert. Keine Aufgabe; Reißzwecke und Legostein haben verdeckte Wahrscheinlichkeiten. Vor jeder Maschine steht, was man tut und wonach man schaut, danach eine Frage.
+- Vierfeldertafel (`Vierfeldertafel`): Tafel mit Summen, anklickbare Zellen, derselbe Inhalt als Baum mit A oder B zuerst; Kürzel der Merkmale über `ka`, `kna`, `kb`, `knb`.
+- Kurztest (`Kurztest`): Selbsttest in einer Recap-Seite, eine Frage, Auswahl, Grund bei jeder Option, `nojs`-Text.
+- Je Seite des Kapitels `zufall` eine Übungskomponente mit „Bild zur Aufgabe“, Tipp, Rechenweg und den typischen Fehlern der alten App:
   - Zufall: `ZufallLaplace`, `ZufallBaumLuecken`, `ZufallPfad`, `ZufallGegen`, `ZufallOhne`, `ZufallPfade`,
     `ZufallTerm`; Brüche in `ZufallBruch.ts`, Modelle in `ZufallModell.ts`, Bäume in `ZufallBaum.vue`.
-- Dazu je Seite eine Übung, die keine Komponente ist (der explainer verlangt sie): ein `generated`-Block
-  (Zahl, `mistakes`, `hint`, `steps`).
+- Dazu je Seite mindestens vier Aufgaben von verschiedener Art (`generated`, `number`, `single-choice`, `true-false`, `matching`, `ordering`, Komponente); die erste braucht kein Vorwissen aus dem Kapitel, dann steigend. Keine `links:` an Aufgaben.
 - Selbsteinschätzung (`selfAssessment` in `chapter.yaml`): so viele Seiten wie sinnvoll, je abgefragte Seite 2
   Aufgaben, Schritte zu 3, je Kapitel 12. Bevorzugt die Übungskomponente der Seite (sie zeigt ihre Aufgabe
   selbst und zieht jede Runde eine neue), dazu die `generated`-Übung, sonst die Komponente zweimal.
@@ -77,6 +87,8 @@ Jede Seite hat diese Abschnitte, in dieser Reihenfolge und mit diesen ids (öffe
   Hochzahlen als `²`, Malpunkt `·`.
 
 ## Figures
+
+- Die Seiten der Kapitel `experimente` und `vierfeldertafel` haben keinen Abschnitt `bild`: die Zufallsmaschine und die Vierfeldertafel sind das Bild; Textalternative (`aria-label`) und `nojs` sagen, was man sieht.
 
 - Was kein Block zeichnet (Flächenbild, Baum, Urne), zeichnet die Komponente der Übung; das Beispielbild entsteht
   daraus als SVG (gerendert mit `scripts/bilder.mjs`, das bis `8b229e9` im Repo lag und in der Git-Historie steht;
