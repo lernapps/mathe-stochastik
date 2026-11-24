@@ -190,6 +190,8 @@ const zeilen = computed(() => [
 
 <style scoped>
 .tafel {
+  box-sizing: border-box;
+  max-width: 100%;
   margin: 1rem 0;
   padding: 0.75rem 1rem;
   border: 1px solid var(--page-border);

@@ -117,6 +117,8 @@ function zuruecksetzen() {
 
 <style scoped>
 .maschine {
+  box-sizing: border-box;
+  max-width: 100%;
   margin: 1rem 0;
   padding: 0.75rem 1rem;
   border: 1px solid var(--page-border);
@@ -155,6 +157,8 @@ function zuruecksetzen() {
 .maschine-tabelle {
   border-collapse: collapse;
   margin: 0.5rem 0;
+  width: 100%;
+  table-layout: fixed;
 }
 
 .maschine-tabelle caption {
@@ -165,8 +169,10 @@ function zuruecksetzen() {
 .maschine-tabelle th,
 .maschine-tabelle td {
   border: 1px solid var(--page-border);
-  padding: 0.25rem 0.6rem;
+  padding: 0.25rem 0.4rem;
   text-align: left;
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 
 .maschine-tabelle .beobachtet th::after {
