@@ -32,14 +32,12 @@ blocks:
         explanation: Wenn du nicht ausrechnen kannst, wie oft etwas vorkommt, hilft nur, oft zu werfen und zu zählen.
   - type: section
     id: regel
-    title: Zählen und den Anteil bilden
+    title: Aus Würfen einen Schätzwert gewinnen
     blocks:
       - type: text
         text: |
-          Die drei werfen den Stein 20-mal und zählen. Die Noppen liegen 9-mal oben. Das ist die **absolute Häufigkeit**:
-          eine Anzahl, die sagt, wie oft ein Ergebnis vorkam. Die **relative Häufigkeit** ist der Anteil an allen Würfen.
-          Du teilst die absolute Häufigkeit durch die Zahl aller Würfe und gibst das als Bruch, als Dezimalzahl oder in
-          Prozent an.
+          Wenn du nicht ausrechnen kannst, wie oft etwas passiert, musst du es ausprobieren und zählen. Die drei werfen den
+          Stein 20-mal, die Noppen liegen 9-mal oben. Aus der relativen Häufigkeit machst du einen Schätzwert.
       - type: formula
         formula: 'h = \frac{\text{absolute Häufigkeit}}{\text{Zahl aller Würfe}}'
       - type: formula

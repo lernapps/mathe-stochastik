@@ -26,6 +26,8 @@ blocks:
     id: regel
     title: Wahrscheinlichkeit ist eine Zahl von 0 bis 1
     blocks:
+      - type: text
+        text: Wenn du sagen willst, wie sicher oder wie selten etwas ist, brauchst du dafür eine Zahl. Sie heißt Wahrscheinlichkeit, und es gibt feste Wörter dafür.
       - type: definition
         term: Ereignis
         explanation: Eine Aussage über das Ergebnis eines Zufallsversuchs, die eintreten kann oder nicht. Beim Würfel ist „Die Augenzahl ist gerade“ ein Ereignis. Es trifft bei den Ergebnissen 2, 4 und 6 zu.

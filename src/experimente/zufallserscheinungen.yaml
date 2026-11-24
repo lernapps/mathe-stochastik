@@ -56,6 +56,8 @@ blocks:
     id: regel
     title: Was ist ein Zufallsversuch?
     blocks:
+      - type: text
+        text: Wenn du über Würfeln, Münzenwerfen oder Glücksräder genau sprechen willst, brauchst du feste Wörter. Mit ihnen sagst du, was passiert und was herauskommen kann.
       - type: definition
         term: Zufallsversuch
         explanation: Ein Versuch, bei dem du vorher nicht sicher weißt, was herauskommt, und den du immer wieder gleich durchführen kannst. Mias Würfeln ist ein Zufallsversuch, ebenso Münzwerfen und Glücksraddrehen.

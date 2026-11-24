@@ -52,6 +52,8 @@ blocks:
     id: regel
     title: Die Bedingung bestimmt den Nenner
     blocks:
+      - type: text
+        text: Wenn du schon weißt, dass etwas eingetreten ist, zum Beispiel ein positiver Test, fragst du anders als vorher. Dann rechnest du mit einer bedingten Wahrscheinlichkeit.
       - type: definition
         term: bedingte Wahrscheinlichkeit
         explanation: Die Wahrscheinlichkeit eines Ereignisses A, wenn du schon weißt, dass ein Ereignis B eingetreten ist. Du schreibst $P_B(A)$ und liest „P von A unter der Bedingung B“.

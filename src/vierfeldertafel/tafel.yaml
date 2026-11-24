@@ -52,6 +52,8 @@ blocks:
     id: regel
     title: So liest du die Tafel
     blocks:
+      - type: text
+        text: Wenn zwei Merkmale zusammen vorkommen können, willst du wissen, wie viele Fälle zu beiden gehören und wie viele nur zu einem. Dafür zählst du alle vier Möglichkeiten in einer Tafel.
       - type: definition
         term: Vierfeldertafel
         explanation: Eine Tabelle mit vier Feldern für zwei Merkmale, die jeweils zutreffen oder nicht. Jedes Feld zählt die Fälle, auf die beide Angaben zugleich passen. Am Rand stehen die Summen.

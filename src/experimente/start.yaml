@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
 title: Das brauchst du hier
-description: "Wiederholung für Kapitel 1: absolute und relative Häufigkeit, mit Beispiel und Kurztest."
+description: "Wiederholung für Kapitel 1: absolute und relative Häufigkeit, mit Beispiel und zwei Übungen."
 recap: mathematik/haeufigkeiten
 blocks:
   - type: section
@@ -31,50 +31,33 @@ blocks:
             formula: '\frac{12}{20} = 0{,}6 = 60\,\%'
           - type: text
             text: Die absolute Häufigkeit von „Zahl“ ist 12, die relative Häufigkeit ist 0,6 oder 60 %.
-      - type: vue-component
-        id: test-haeufigkeit
-        component: Kurztest
-        props:
-          question: Bei 60 Würfen sind 21 Ergebnisse eine gerade Zahl. Wie groß ist die relative Häufigkeit von „gerade“?
-          options:
-            - { text: "21", correct: false, info: "Das ist die absolute Häufigkeit, die Anzahl der geraden Zahlen." }
-            - {
-                text: "knapp 3",
-                correct: false,
-                info: "Du hast 60 durch 21 geteilt. Teile die Anzahl der Treffer (21) durch die Zahl aller Würfe (60).",
-              }
-            - { text: "0,35", correct: true, info: "21 von 60 kürzt du mit 3 zu 7 von 20. Das sind 0,35, also 35 %." }
-          right: Richtig.
-          wrong: Nicht richtig.
-        nojs: |
-          Kurztest: Bei 60 Würfen sind 21 Ergebnisse eine gerade Zahl. Wie groß ist die relative Häufigkeit von „gerade“?
-          Antwort: 0,35. 21 von 60 kürzt du mit 3 zu 7 von 20, das sind 0,35 oder 35 %. Die 21 ist die absolute Häufigkeit.
-      - type: vue-component
-        id: test-anteil
-        component: Kurztest
-        props:
-          question: Bei einer Umfrage antworten 18 von 24 Personen mit Ja. Wie viel Prozent sind das?
-          options:
-            - { text: "75 %", correct: true, info: "18 von 24 kürzt du mit 6 zu 3 von 4. Das sind 0,75, also 75 %." }
-            - {
-                text: "133 %",
-                correct: false,
-                info: "Du hast 24 durch 18 geteilt. Der Anteil ist Treffer durch alle: 18 durch 24.",
-              }
-            - {
-                text: "18 %",
-                correct: false,
-                info: "Das ist die Anzahl der Ja-Antworten als Prozentzahl. Die Prozentzahl bekommst du, wenn du 18 durch 24 teilst und mit 100 malnimmst.",
-              }
-          right: Richtig.
-          wrong: Nicht richtig.
-        nojs: |
-          Kurztest: Bei einer Umfrage antworten 18 von 24 Personen mit Ja. Wie viel Prozent sind das? Antwort: 75 %, denn 18 : 24 = 0,75.
-          133 % käme vom Teilen 24 : 18, 18 % wäre die Anzahl als Prozentzahl.
-      - type: text
-        text: |
-          Falsch gelegen? Dann übe den Baustein
-          [Absolute und relative Häufigkeit](https://lernapps.net/apps/map/mathematik/c/haeufigkeiten/) auf der Karte.
+      - type: number
+        id: haeufigkeit-berechnen
+        text: Bei 60 Würfen sind 21 Ergebnisse eine gerade Zahl. Wie groß ist die relative Häufigkeit von „gerade“? Gib sie als Dezimalzahl an.
+        answer: 0.35
+        tolerance: 0
+        mistakes:
+          - {
+              answer: 21,
+              message: "Das ist die absolute Häufigkeit, die Anzahl der geraden Zahlen. Gefragt ist der Anteil an allen Würfen.",
+            }
+          - {
+              answer: 2.86,
+              message: "Du hast 60 durch 21 geteilt. Teile die Anzahl der Treffer (21) durch die Zahl aller Würfe (60).",
+            }
+        hint: "Wie viele Würfe waren es insgesamt, und wie viele davon sind Treffer? Kürze den Bruch, wenn du kannst."
+        explanation: "21 von 60 kürzt du mit 3 zu 7 von 20. Das sind 0,35, also 35 %."
+      - type: number
+        id: anteil-prozent
+        text: Bei einer Umfrage antworten 18 von 24 Personen mit Ja. Wie viel Prozent sind das?
+        answer: 75
+        tolerance: 0
+        unit: "%"
+        mistakes:
+          - { answer: 133.33, message: "Du hast 24 durch 18 geteilt. Der Anteil ist Treffer durch alle: 18 durch 24." }
+          - { answer: 0.75, message: "Das ist die Dezimalzahl. Für Prozent musst du sie mit 100 malnehmen." }
+        hint: "Bilde den Bruch aus den Ja-Antworten und allen Personen. Wandle ihn dann in Prozent um."
+        explanation: "18 von 24 kürzt du mit 6 zu 3 von 4. Das sind 0,75, also 75 %."
   - type: section
     id: checkliste
     title: Du bist bereit, wenn du …
@@ -84,3 +67,5 @@ blocks:
           - eine absolute Häufigkeit aus einer Strichliste oder Tabelle abliest,
           - eine relative Häufigkeit als Bruch, Dezimalzahl und in Prozent angibst,
           - sagen kannst, welche der beiden Zahlen eine Anzahl und welche ein Anteil ist.
+      - type: text
+        text: "Wenn eine Übung nicht klappte, übe den Baustein auf der Karte: [Absolute und relative Häufigkeit](https://lernapps.net/apps/map/mathematik/c/haeufigkeiten/)"

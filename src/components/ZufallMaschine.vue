@@ -65,7 +65,9 @@ function zuruecksetzen() {
       <button v-for="k in schritte" :key="k" type="button" :disabled="voll" @click="wirf(k)">
         {{ k === 1 ? "1 Wurf" : `${k} Würfe` }}
       </button>
-      <button type="button" class="maschine-zurueck" @click="zuruecksetzen">Zurücksetzen</button>
+      <button type="button" class="maschine-zurueck" :disabled="stand.n === 0" @click="zuruecksetzen">
+        Zurücksetzen
+      </button>
     </div>
     <svg class="maschine-bild" :viewBox="`-18 -8 ${breite + 24} ${hoehe + 28}`" role="img" :aria-label="alt">
       <text x="-4" y="4" text-anchor="end" class="maschine-achse">1</text>
@@ -134,24 +136,28 @@ function zuruecksetzen() {
 
 .maschine-knoepfe button {
   min-height: 44px;
-  padding: 0 1rem;
-  border: 1px solid var(--page-accent);
-  border-radius: 0.3rem;
+  font: inherit;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--page-accent);
+  border-radius: 0.375rem;
   background: var(--page-accent);
   color: var(--page-on-accent);
-  font: inherit;
   cursor: pointer;
 }
 
 .maschine-knoepfe button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+  cursor: default;
+  opacity: 0.6;
+}
+
+.maschine-knoepfe button:focus-visible {
+  outline: 3px solid var(--page-text);
+  outline-offset: 2px;
 }
 
 .maschine-knoepfe .maschine-zurueck {
   background: transparent;
   color: var(--page-text);
-  border-color: var(--page-border);
 }
 
 .maschine-tabelle {

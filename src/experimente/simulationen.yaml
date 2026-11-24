@@ -49,7 +49,7 @@ blocks:
     blocks:
       - type: text
         text: |
-          Du brauchst für eine Simulation zwei Dinge. Denke dir die Zufallszahlen wie Lose in einer Trommel: Du ziehst
+          Wenn echtes Würfeln zu lange dauert, ersetzt du den Versuch durch eine Simulation. Du brauchst dafür zwei Dinge. Denke dir die Zufallszahlen wie Lose in einer Trommel: Du ziehst
           ein Los, und eine Regel sagt dir, welches Ergebnis dieses Los bedeutet.
       - type: definition
         term: Zufallszahl

@@ -223,12 +223,18 @@ const zeilen = computed(() => [
 .tafel-zelle {
   min-width: 44px;
   min-height: 44px;
-  border: 1px solid var(--page-accent);
-  border-radius: 0.3rem;
+  font: inherit;
+  padding: 0.25rem 0.5rem;
+  border: 2px solid var(--page-accent);
+  border-radius: 0.375rem;
   background: transparent;
   color: var(--page-text);
-  font: inherit;
   cursor: pointer;
+}
+
+.tafel-zelle:focus-visible {
+  outline: 3px solid var(--page-text);
+  outline-offset: 2px;
 }
 
 .tafel-zelle.gewaehlt {
