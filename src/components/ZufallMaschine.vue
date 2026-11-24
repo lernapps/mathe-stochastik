@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // Die Zufallsmaschine: ein Gerät werfen, die Ergebnisse zählen und zusehen, wie sich die relative Häufigkeit eines
 // Ergebnisses einpendelt. Keine Aufgabe: nichts wird gezählt oder gespeichert. Zufall nur nach einem Klick.
-import { computed, ref } from "vue";
+import { computed, nextTick, ref } from "vue";
 import {
   beobachtetIndex,
   GERAETE,
@@ -38,6 +38,8 @@ const wertY = computed(() => (wert.value ? hoehe - (wert.value.z / wert.value.n)
 const punkte = computed(() => linie(stand.value.verlauf, breite, hoehe));
 const satz = computed(() => verlaufText(stand.value, props.beobachte));
 const voll = computed(() => stand.value.n >= MAX_WUERFE);
+const rest = computed(() => MAX_WUERFE - stand.value.n);
+const knoepfe = ref<HTMLButtonElement[]>([]);
 const alt = computed(
   () =>
     `Linie der relativen Häufigkeit von ${beschreibung.ergebnisse[index]!.name}. ${satz.value}` +
@@ -49,6 +51,7 @@ function wirf(anzahl: number) {
 }
 function zuruecksetzen() {
   stand.value = neuerStand(geraet);
+  void nextTick(() => knoepfe.value[0]?.focus());
 }
 </script>
 
@@ -62,7 +65,14 @@ function zuruecksetzen() {
       Letzter Wurf: <strong>{{ stand.letzter || "–" }}</strong>
     </p>
     <div class="maschine-knoepfe">
-      <button v-for="k in schritte" :key="k" type="button" :disabled="voll" @click="wirf(k)">
+      <button
+        v-for="k in schritte"
+        :key="k"
+        ref="knoepfe"
+        type="button"
+        :disabled="stand.n + k > MAX_WUERFE"
+        @click="wirf(k)"
+      >
         {{ k === 1 ? "1 Wurf" : `${k} Würfe` }}
       </button>
       <button type="button" class="maschine-zurueck" :disabled="stand.n === 0" @click="zuruecksetzen">
@@ -88,6 +98,9 @@ function zuruecksetzen() {
     <p class="maschine-satz" aria-live="polite">
       {{ satz }}
       <span v-if="voll"> Mehr als {{ MAX_WUERFE }} Würfe sind nicht möglich: setze zurück.</span>
+      <span v-else-if="rest < 1000">
+        Es sind höchstens {{ MAX_WUERFE }} Würfe möglich, noch {{ rest }}. Knöpfe mit mehr Würfen sind gesperrt.
+      </span>
     </p>
     <table class="maschine-tabelle">
       <caption>

@@ -9,7 +9,7 @@ blocks:
     blocks:
       - type: text
         text: |
-          Lena sagt am Spieleabend: „Dass der Würfel eine 7 zeigt, ist unmöglich. Dass er keine 6 zeigt, ist ziemlich
+          Wenn jemand „unmöglich“ oder „ziemlich sicher“ sagt, willst du das genau sagen können. Lena sagt am Spieleabend: „Dass der Würfel eine 7 zeigt, ist unmöglich. Dass er keine 6 zeigt, ist ziemlich
           sicher.“ Mia widerspricht: „Ziemlich sicher ist nicht sicher.“ Mit Zahlen kann man das genauer sagen. Probiere
           zuerst, was du dir denkst.
       - type: ordering
@@ -36,6 +36,8 @@ blocks:
         explanation: Eine Zahl zwischen 0 und 1, die sagt, wie oft ein Ereignis auf lange Sicht eintritt. Man schreibt $P(E)$.
       - type: formula
         formula: '0 \le P(E) \le 1'
+      - type: text
+        text: Damit du eine Wahrscheinlichkeit einordnen kannst, zeigt die Tabelle die Skala von 0 bis 1.
       - type: table
         caption: Die Skala der Wahrscheinlichkeit
         header: [Wert, Bedeutung, Beispiel]
@@ -56,7 +58,7 @@ blocks:
     blocks:
       - type: text
         text: |
-          Dieses Glücksrad hat vier gleich große Felder: zwei rot, eins blau, eins gelb. Beobachtet wird Blau. Drehe
+          Wenn du sehen willst, was eine Wahrscheinlichkeit bedeutet, lass ein Glücksrad oft drehen. Es hat vier gleich große Felder: zwei rot, eins blau, eins gelb. Beobachtet wird Blau. Drehe
           100- und 1000-mal. Achte darauf, bei welcher Zahl sich die Linie einpendelt.
       - type: vue-component
         id: maschine-gluecksrad

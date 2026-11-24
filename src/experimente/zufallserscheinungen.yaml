@@ -9,7 +9,7 @@ blocks:
     blocks:
       - type: text
         text: |
-          Mia und Jonas spielen ein Würfelspiel. Jonas wartet schon lange auf eine Sechs. Die Zufallsmaschine würfelt für
+          Wenn du wissen willst, wie sicher eine Sechs beim Würfeln ist, musst du zuerst verstehen, was bei einem Zufallsversuch passiert. Mia und Jonas spielen ein Würfelspiel. Jonas wartet schon lange auf eine Sechs. Die Zufallsmaschine würfelt für
           dich. Die Tabelle zählt, wie oft jedes **Ergebnis** (jede Zahl) vorkam. Wirf erst ein paarmal, dann 100- und
           1000-mal. Achte auf die Linie: Sie zeigt den Anteil der Sechsen.
       - type: vue-component
@@ -77,7 +77,7 @@ blocks:
         title: Beispiel
         blocks:
           - type: text
-            text: "Nicht alles im Alltag ist Zufall. Frage dich immer: Kann ich das Ergebnis vorher sicher wissen? Wenn nein, und du kannst den Versuch gleich wiederholen, ist es ein Zufallsversuch."
+            text: "Wenn du entscheiden willst, ob etwas Zufall ist, hilft dir eine einfache Frage: Kann ich das Ergebnis vorher sicher wissen? Wenn nein, und du kannst den Versuch gleich wiederholen, ist es ein Zufallsversuch."
           - type: table
             caption: Kannst du das Ergebnis vorher sicher wissen?
             header: [Situation, Ergebnis sicher?, Zufall?]
