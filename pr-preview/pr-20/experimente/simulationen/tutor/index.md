@@ -79,13 +79,15 @@ ein Los, und eine Regel sagt dir, welches Ergebnis dieses Los bedeutet.
 
 - **Treffer**: Das Ergebnis, auf das du bei einer Simulation achtest und das du zählst, zum Beispiel die Sechs.
 
+Damit eine Zufallszahl ein Ergebnis bedeutet, brauchst du eine feste Zuordnung. Die Tabelle zeigt drei Beispiele.
+
 So ordnest du Zufallszahlen zu:
 - Versuch | Zufallszahl | Zuordnung
 - Würfel | 1 bis 6 | Die Zahl ist die Augenzahl.
 - Münze | 1 bis 6 | gerade = Kopf, ungerade = Zahl
 - Urne mit 3 roten und 1 blauen Kugel | 1 bis 4 | 1 bis 3 = rot, 4 = blau
 
-Eine Simulation läuft in vier Schritten: Zufallszahl ziehen, Zuordnung anwenden, Ergebnis notieren, alles
+Wenn du viele Durchläufe brauchst, gehst du jedes Mal gleich vor. Eine Simulation läuft in vier Schritten: Zufallszahl ziehen, Zuordnung anwenden, Ergebnis notieren, alles
 oft wiederholen und die Treffer zählen. So sieht das für die Urne mit 3 roten und 1 blauen Kugel aus.
 
 Fünf Durchgänge mit der Urne:
@@ -110,7 +112,7 @@ Seite.
 
 **Beispiel: Beispiel**
 
-Lena simuliert 20 Würfe mit Zufallszahlen von 1 bis 6. Die Zahl ist die Augenzahl. Ihre Reihe: 3, 6, 1,
+Wenn eine Simulation fertig ist, willst du wissen, wie oft der Treffer vorkam. Lena simuliert 20 Würfe mit Zufallszahlen von 1 bis 6. Die Zahl ist die Augenzahl. Ihre Reihe: 3, 6, 1,
 4, 6, 2, 5, 3, 6, 1, 2, 4, 4, 6, 5, 3, 1, 6, 2, 4. Sie zählt jede Zahl mit einer Strichliste.
 
 Strichliste der 20 Zufallszahlen:

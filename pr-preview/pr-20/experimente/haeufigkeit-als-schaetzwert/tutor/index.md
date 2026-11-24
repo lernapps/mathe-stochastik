@@ -55,7 +55,7 @@ Wo du nicht rechnen kannst, wirfst du oft und zählst: die relative Häufigkeit 
 
 ### Der Steckstein am Spieleabend
 
-Mia, Jonas und Lena spielen am Spieleabend. Beim Würfel wissen sie: Auf lange Sicht kommt jede Zahl
+Wenn du nicht ausrechnen kannst, wie oft etwas passiert, musst du es ausprobieren. Mia, Jonas und Lena spielen am Spieleabend. Beim Würfel wissen sie: Auf lange Sicht kommt jede Zahl
 in etwa einem von sechs Würfen vor, bei der Münze kommt Kopf in etwa einem von zwei Würfen vor. Heute hat Lena einen
 Steckstein mitgebracht. Er wird geworfen wie ein Würfel und kann mit den Noppen nach oben, mit den Noppen nach
 unten oder auf der Seite landen. Wie oft was kommt, weiß niemand.
@@ -66,10 +66,6 @@ unten oder auf der Seite landen. Wie oft was kommt, weiß niemand.
 
 Wenn du nicht ausrechnen kannst, wie oft etwas passiert, musst du es ausprobieren und zählen. Die drei werfen den
 Stein 20-mal, die Noppen liegen 9-mal oben. Aus der relativen Häufigkeit machst du einen Schätzwert.
-
-$h = \frac{\text{absolute Häufigkeit}}{\text{Zahl aller Würfe}}$
-
-$\frac{9}{20} = 0{,}45 = 45\,\%$
 
 - **Schätzwert**: Eine Zahl, die du aus Versuchen gewinnst und als Näherung dafür nimmst, wie oft etwas auf lange Sicht vorkommt. Die relative Häufigkeit aus deinen Würfen ist so ein Schätzwert. Er ist nicht der genaue Wert.
 
@@ -125,7 +121,6 @@ Interaktiv: Die Zufallsmaschine wirft einen Steckstein so oft, wie du willst. Di
 **Merke: Zusammenfassung**
 
 - Wo du nicht rechnen kannst, wirfst du oft und zählst.
-- Die relative Häufigkeit ist die absolute Häufigkeit geteilt durch die Zahl aller Würfe.
 - Sie ist ein Schätzwert: Je mehr Würfe, desto kleiner die Schwankung und desto verlässlicher die Zahl, aber sicher ist sie nie.
 
 Auf der nächsten Seite geht es um den Begriff Wahrscheinlichkeit.

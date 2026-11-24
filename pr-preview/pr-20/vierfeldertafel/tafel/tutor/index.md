@@ -55,7 +55,7 @@ Zwei verknüpfte Ereignisse in einer Vierfeldertafel darstellen und Wahrscheinli
 
 ### Was du hier lernst
 
-Du lernst, zwei Merkmale in einer Tafel gemeinsam zu zählen und daraus Wahrscheinlichkeiten abzulesen. Beim
+Wenn du wissen willst, wie oft zwei Dinge zusammen vorkommen, zählst du sie am besten in einer Tafel und liest daraus Wahrscheinlichkeiten ab. Beim
 Spieleabend sind 50 Gäste. Manche spielen Karten, manche ein Brettspiel, manche beides, manche keins von beiden.
 Eine **Vierfeldertafel** zeigt alle vier Fälle auf einen Blick. Tippe in der Tafel auf eine Zelle, zum Beispiel auf die 12.
 Im Baum leuchtet das Blatt auf, das zu dieser Zelle gehört, und darunter steht der Anteil an allen 50 Gästen als Dezimalzahl. Wechsle bei „Baum lesen mit“
@@ -87,7 +87,7 @@ Eine Wahrscheinlichkeit aus der Tafel ist die Zahl im Feld oder in der Summe am 
 
 **Beispiel: Beispiel**
 
-Bei einem Schulfest sind 80 Gäste. 45 tranken Saft, 35 aßen Kuchen, und 20 haben beides. Wie viele haben nur
+Wenn in einer Tafel Zahlen fehlen, kannst du sie aus den Summen ausrechnen. Bei einem Schulfest sind 80 Gäste. 45 tranken Saft, 35 aßen Kuchen, und 20 haben beides. Wie viele haben nur
 Saft getrunken?
 
 Rechenweg in vier Schritten:

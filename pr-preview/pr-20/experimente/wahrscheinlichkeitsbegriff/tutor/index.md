@@ -55,7 +55,7 @@ Erklären, was Wahrscheinlichkeit bedeutet, und Wahrscheinlichkeiten auf einer S
 
 ### Wie wahrscheinlich ist das?
 
-Lena sagt am Spieleabend: „Dass der Würfel eine 7 zeigt, ist unmöglich. Dass er keine 6 zeigt, ist ziemlich
+Wenn jemand „unmöglich“ oder „ziemlich sicher“ sagt, willst du das genau sagen können. Lena sagt am Spieleabend: „Dass der Würfel eine 7 zeigt, ist unmöglich. Dass er keine 6 zeigt, ist ziemlich
 sicher.“ Mia widerspricht: „Ziemlich sicher ist nicht sicher.“ Mit Zahlen kann man das genauer sagen. Probiere
 zuerst, was du dir denkst.
 
@@ -71,6 +71,8 @@ Wenn du sagen willst, wie sicher oder wie selten etwas ist, brauchst du dafür e
 
 $0 \le P(E) \le 1$
 
+Damit du eine Wahrscheinlichkeit einordnen kannst, zeigt die Tabelle die Skala von 0 bis 1.
+
 Die Skala der Wahrscheinlichkeit:
 - Wert | Bedeutung | Beispiel
 - 0 | unmöglich | Aus einer Urne mit nur blauen Kugeln ziehst du eine rote.
@@ -85,7 +87,7 @@ Wahrscheinlichkeit sagt etwas über viele Versuche, nicht über einen einzelnen.
 
 ### Das Glücksrad ausprobieren
 
-Dieses Glücksrad hat vier gleich große Felder: zwei rot, eins blau, eins gelb. Beobachtet wird Blau. Drehe
+Wenn du sehen willst, was eine Wahrscheinlichkeit bedeutet, lass ein Glücksrad oft drehen. Es hat vier gleich große Felder: zwei rot, eins blau, eins gelb. Beobachtet wird Blau. Drehe
 100- und 1000-mal. Achte darauf, bei welcher Zahl sich die Linie einpendelt.
 
 Interaktiv: Die Zufallsmaschine dreht ein Glücksrad mit vier gleich großen Feldern: zwei rot, eins blau, eins gelb. Beobachtet wird Blau. Ein Beispiel mit 1000 Drehungen: Rot 497-mal, Blau 252-mal, Gelb 251-mal. Die relative Häufigkeit von Blau ist 0,252 und liegt nahe bei 0,25. Die Wahrscheinlichkeit für Blau ist ein Viertel, also 0,25 oder 25 %.

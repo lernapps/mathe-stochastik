@@ -55,7 +55,7 @@ Zufall im Alltag erkennen und Zufallsversuche mit ihren Ergebnissen beschreiben,
 
 ### Würfeln am Spieleabend
 
-Mia und Jonas spielen ein Würfelspiel. Jonas wartet schon lange auf eine Sechs. Die Zufallsmaschine würfelt für
+Wenn du wissen willst, wie sicher eine Sechs beim Würfeln ist, musst du zuerst verstehen, was bei einem Zufallsversuch passiert. Mia und Jonas spielen ein Würfelspiel. Jonas wartet schon lange auf eine Sechs. Die Zufallsmaschine würfelt für
 dich. Die Tabelle zählt, wie oft jedes **Ergebnis** (jede Zahl) vorkam. Wirf erst ein paarmal, dann 100- und
 1000-mal. Achte auf die Linie: Sie zeigt den Anteil der Sechsen.
 
@@ -81,7 +81,7 @@ $\{1, 2, 3, 4, 5, 6\}$
 
 **Beispiel: Beispiel**
 
-Nicht alles im Alltag ist Zufall. Frage dich immer: Kann ich das Ergebnis vorher sicher wissen? Wenn nein, und du kannst den Versuch gleich wiederholen, ist es ein Zufallsversuch.
+Wenn du entscheiden willst, ob etwas Zufall ist, hilft dir eine einfache Frage: Kann ich das Ergebnis vorher sicher wissen? Wenn nein, und du kannst den Versuch gleich wiederholen, ist es ein Zufallsversuch.
 
 Kannst du das Ergebnis vorher sicher wissen?:
 - Situation | Ergebnis sicher? | Zufall?

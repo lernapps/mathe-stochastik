@@ -58,7 +58,7 @@ Wiederholung für Kapitel 2 und 3: Zählprinzip, Brüche multiplizieren und Proz
 ### Das brauchst du für diese Kapitel
 
 Jetzt rechnest du mit Wahrscheinlichkeiten und zeichnest Bäume. Dafür musst du drei Dinge sicher können. Zu jedem
-gibt es eine kurze Wiederholung. Zwei Übungen zeigen dir, ob du es kannst. Die Karte nennt sie
+gibt es eine kurze Wiederholung. Zwei Übungen zeigen dir, ob du das Zählprinzip, das Multiplizieren von Brüchen und die Prozentschreibweise kannst. Die Karte nennt sie
 [Zählprinzip](https://lernapps.net/apps/map/mathematik/c/zaehlprinzip/),
 [Bruchrechnung: Multiplikation und Division](https://lernapps.net/apps/map/mathematik/c/brueche-multiplizieren-dividieren/)
 und [Prozentrechnung: Grundbegriffe](https://lernapps.net/apps/map/mathematik/c/prozent-grundbegriffe/).

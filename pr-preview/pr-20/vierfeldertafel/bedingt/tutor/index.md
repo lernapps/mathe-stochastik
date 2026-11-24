@@ -55,7 +55,7 @@ Bedingte Wahrscheinlichkeiten am Baumdiagramm oder in der Vierfeldertafel erkenn
 
 ### Was du hier lernst
 
-Du lernst, eine Wahrscheinlichkeit unter einer **Bedingung** zu berechnen. Das Beispiel ist ein Schnelltest. Von
+Dein Schnelltest ist positiv. Wie sicher bist du jetzt krank? Dafür brauchst du eine Wahrscheinlichkeit unter einer **Bedingung**. Das Beispiel ist ein Schnelltest. Von
 1000 Personen sind 40 krank. Der Test zeigt bei 36 Kranken ein positives Ergebnis und bei 48 Gesunden auch, obwohl
 sie gesund sind. Tippe in der Tafel auf die Zelle „krank, Test positiv“. Lies dann im Baum ab, welche Zahlen an
 den Zweigen stehen, wenn du mit „krank“ beginnst und wenn du mit „Test positiv“ beginnst.
@@ -84,7 +84,7 @@ Wenn du A und B vertauschst, ändert sich die Gesamtheit und damit der Nenner. D
 
 **Beispiel: Beispiel**
 
-Dieselbe Tafel gibt zwei verschiedene Antworten, je nachdem, welche Bedingung gilt.
+Wenn du dieselbe Tafel aus zwei Richtungen liest, bekommst du zwei verschiedene Antworten. Der Vergleich zeigt, warum die Bedingung zählt.
 
 Zwei Richtungen aus einer Tafel:
 - Frage | Teilen durch | Ergebnis
