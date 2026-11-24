@@ -8,7 +8,7 @@ Jede Seite nennt die Bausteine der Lernlandkarte, die sie übt (`competencies`).
 
 Jede Seite erklärt eine Sache mit Regel, Beispiel und Bild und endet mit Übungsaufgaben, die sofort sagen, ob das
 Ergebnis stimmt. Jede Seite ist ohne JavaScript lesbar, Text und Bild. Kein Server, kein Tracking, keine Anfrage an
-fremde Server vor einem Klick; ein Video lädt erst, wenn du es startest.
+fremde Server vor einem Klick. Keine Videos, keine Inhalte von fremden Servern.
 
 Die App entstand aus der [Mathe-Karte](https://github.com/lernapps/mathe-karte), die drei Stränge in einer App hatte. Die
 Seiten haben dieselben Adressen wie dort (`zufall/<seite>/`), nur unter `https://lernapps.net/mathe-stochastik/`.
@@ -32,8 +32,7 @@ Die App hat keine eigene Architektur. Für jeden explainer gilt die gemeinsame A
 `lernapps/app-templates`, dazu die Regeln von [lernapps.net](https://lernapps.net/tooling/rules/). Kürzel wie `QZ-3`
 oder `R-025` in Kommentaren und Tests stammen aus der früheren arc42-Doku der Mathe-Karte (in deren Git-Historie).
 
-Videos sind `video`-Blöcke der Runtime: Vor dem Klick lädt nichts von YouTube, erst der Klick lädt den Player von
-youtube-nocookie.com. Bäume und Urnen in `src/images/` sind aus den Übungskomponenten gerenderte SVGs (`scripts/bilder.mjs`, in der Git-Historie der Mathe-Karte bis `8b229e9`).
+Bäume und Urnen in `src/images/` sind aus den Übungskomponenten gerenderte SVGs (`scripts/bilder.mjs`, in der Git-Historie der Mathe-Karte bis `8b229e9`).
 
 Geprüft und veröffentlicht wird mit dem Werkzeug von lernapps.net, wie bei jeder App aus dem Generator:
 `.github/workflows/pages.yml` führt `lernapps check` bei jedem Push und Pull Request aus, stellt jeden Pull Request

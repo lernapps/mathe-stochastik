@@ -5,17 +5,15 @@ format: 2
 strand: mathematik/stochastik
 title: "Mathe: Stochastik – Wahrscheinlichkeit"
 intro: |
-  Hier lernst du Wahrscheinlichkeitsrechnung für die Klassen 7 und 8. Jede Seite erklärt eine Sache mit Regel,
+  Hier lernst du Wahrscheinlichkeitsrechnung für die Klassen 7 bis 10. Jede Seite erklärt eine Sache mit Regel,
   Beispiel und Bild. Danach übst du mit Aufgaben. Jede Aufgabe sagt dir sofort, ob dein Ergebnis stimmt.
 languages: [de]
-chapters: [zufall]
+chapters: [experimente, zufall, vierfeldertafel]
 sources:
   - title: Kerncurriculum Mathematik Sekundarstufe I, Hessisches Kultusministerium
-    url: https://kultusministerium.hessen.de/unterricht/kerncurricula/sekundarstufe-i/mathematik
-  - title: Pfadregeln (serlo.org)
-    url: https://de.serlo.org/mathe/189811/pfadregeln
-  - title: Erklärvideos von Lehrerschmidt (YouTube), auf jeder Seite unter „Video dazu“ verlinkt
-    url: https://www.youtube.com/@Lehrerschmidt
+    url: https://kultus.hessen.de/sites/kultus.hessen.de/files/2021-07/kerncurriculum_mathematik_gymnasium.pdf
+  - title: Bildungsstandards der Kultusministerkonferenz (Mathematik, 2022)
+    url: https://www.kmk.org/bildungsministerkonferenz/bildungsthemen/bildungsstandards.html
 tutor:
   rules: |
     - Gerechnet wird auf Papier und in der App, nicht im Chat. Das Ergebnis tippt das Kind in die App; im Chat
@@ -27,6 +25,3 @@ tutor:
       bittest du um eine Aufgabe ganz von Hand, als Foto nur vom Blatt, ohne Namen. Prüf jeden Schritt; ist einer
       falsch, nenn den ersten und stell eine Leitfrage dazu, statt ihn zu verbessern.
     - Brüche wie 3/8 sind in der Eingabe erlaubt, gekürzt oder ungekürzt.
-    - Empfiehl das Video unter „Video dazu“, wenn das Kind die Erklärung zweimal nicht wiedergeben kann; sonst
-      zuerst Aufgaben. Hat die Seite einen Link zu serlo.org, ist er die zweite Erklärung in anderen Worten, wenn
-      Regel, Beispiel und Video nicht gereicht haben.

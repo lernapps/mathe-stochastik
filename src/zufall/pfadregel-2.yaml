@@ -21,10 +21,9 @@ blocks:
       - type: formula
         formula: 'P(E) = P(\text{Pfad 1}) + P(\text{Pfad 2}) + \text{…}'
       - type: text
-        text: >-
+        text: |-
           Merkhilfe: **entlang** des Pfades **mal**, **über** mehrere Pfade **plus**.
-      - type: text
-        text: >-
+
           Mehr dazu: [Wahrscheinlichkeiten als Produkt, Summe oder Potenz angeben](/zufall/ergebnisformen/) und [Ereignisse in Pfade übersetzen](/zufall/pfade-uebersetzen/).
   - type: section
     id: beispiel
@@ -36,12 +35,18 @@ blocks:
           - type: text
             text: >-
               Urne mit 3 roten, 2 blauen und 1 gelben Kugel, zweimal ziehen **ohne Zurücklegen**. Wie groß ist $P(\text{genau einmal rot})$?
+          - type: table
+            caption: Genau einmal rot, Schritt für Schritt
+            header: [Pfad, Rechnung]
+            rowHeaders: true
+            rows:
+              - ["rot-blau", '$\frac{3}{6} \cdot \frac{2}{5} = \frac{6}{30}$']
+              - ["rot-gelb", '$\frac{3}{6} \cdot \frac{1}{5} = \frac{3}{30}$']
+              - ["blau-rot", '$\frac{2}{6} \cdot \frac{3}{5} = \frac{6}{30}$']
+              - ["gelb-rot", '$\frac{1}{6} \cdot \frac{3}{5} = \frac{3}{30}$']
+              - ["Summe", '$\frac{18}{30} = \frac{3}{5}$']
           - type: text
-            text: |-
-              1. Pfade finden: rot-blau, rot-gelb, blau-rot, gelb-rot. (rot-rot ist *zweimal* rot, gehört nicht dazu.)
-              2. Jeden Pfad multiplizieren: $\frac{3}{6} \cdot \frac{2}{5}$, $\frac{3}{6} \cdot \frac{1}{5}$,
-                 $\frac{2}{6} \cdot \frac{3}{5}$, $\frac{1}{6} \cdot \frac{3}{5}$.
-              3. Addieren: $\frac{6}{30} + \frac{3}{30} + \frac{6}{30} + \frac{3}{30}$ $= \frac{18}{30} = \frac{3}{5}$.
+            text: Rot-rot gehört nicht dazu, denn das ist zweimal rot.
           - type: text
             text: >-
               Kürzer: „genau einmal rot“ = rot-nicht rot + nicht rot-rot: $\frac{3}{6} \cdot \frac{3}{5} + \frac{3}{6} \cdot \frac{3}{5}$ $= 2 \cdot \frac{9}{30} = \frac{3}{5}$.
@@ -52,28 +57,47 @@ blocks:
       - type: figure
         image: images/zufall-pfadregel-2.svg
         alt: Baumdiagramm zur Urne mit 3 roten, 2 blauen und 1 gelben Kugel, zweimal ohne Zurücklegen; orange sind die vier Pfade von „genau einmal rot“
-        caption: |-
+        caption: >-
           Der Baum aus dem Beispiel: 3 rote (R), 2 blaue (B) und 1 gelbe (G) Kugel, zweimal ohne Zurücklegen. Erste
-          Stufe: rot 3/6, blau 2/6, gelb 1/6. Nach rot: rot 2/5, blau 2/5, gelb 1/5; nach blau: rot 3/5, blau 1/5,
-          gelb 1/5; nach gelb: rot 3/5, blau 2/5 (gelb ist leer). Orange sind die vier Pfade von „genau einmal rot“:
-          rot-blau 1/5, rot-gelb 1/10, blau-rot 1/5, gelb-rot 1/10. Zusammen 3/5.
+          Stufe: rot $\frac{3}{6}$, blau $\frac{2}{6}$, gelb $\frac{1}{6}$. Nach rot: rot $\frac{2}{5}$, blau $\frac{2}{5}$, gelb $\frac{1}{5}$; nach blau: rot $\frac{3}{5}$, blau $\frac{1}{5}$,
+          gelb $\frac{1}{5}$; nach gelb: rot $\frac{3}{5}$, blau $\frac{2}{5}$ (gelb ist leer). Orange sind die vier Pfade von „genau einmal rot“:
+          rot-blau $\frac{1}{5}$, rot-gelb $\frac{1}{10}$, blau-rot $\frac{1}{5}$, gelb-rot $\frac{1}{10}$. Zusammen $\frac{3}{5}$.
         source: Eigene Darstellung der Mathe-Karte
         licence: MIT
-  - type: section
-    id: video
-    title: Video dazu
-    blocks:
-      - type: video
-        youtube: Pi1M1F2l024
-        title: "Summenregel | Wahrscheinlichkeitsrechnung | Mathematik"
-        channel: Lehrerschmidt
-      - type: text
-        text: |-
-          - Noch eine Erklärung: [Pfadregeln](https://de.serlo.org/mathe/189811/pfadregeln) bei serlo.org
   - type: section
     id: uebung
     title: Übung
     blocks:
+      - type: number
+        id: pfade-muenze-einmal
+        text: Du wirfst eine Münze zweimal. Wie groß ist die Wahrscheinlichkeit für genau einmal Zahl? Gib sie in Prozent an.
+        answer: 50
+        tolerance: 0
+        unit: "%"
+        mistakes:
+          - answer: 25
+            message: Das ist nur ein Pfad. Zu „genau einmal Zahl“ gehören zwei Pfade, die du addieren musst.
+          - answer: 75
+            message: Das ist die Wahrscheinlichkeit für mindestens einmal Zahl. Zweimal Zahl gehört nicht zu „genau einmal“.
+        hint: Welche zwei Pfade gehören zu „genau einmal Zahl“? Rechne jeden mit der 1. Pfadregel und addiere dann.
+        explanation: "Die Pfade sind Zahl-Kopf und Kopf-Zahl. Jeder hat $\\frac{1}{2} \\cdot \\frac{1}{2} = \\frac{1}{4}$. Zusammen: $\\frac{1}{4} + \\frac{1}{4} = \\frac{1}{2} = 50\\,\\%$."
+        examples:
+          accepted: ["50", "50,0"]
+          rejected: ["0,5", "25"]
+      - type: matching
+        id: pfadregeln-zuordnen
+        text: Was geschieht in einem Baumdiagramm mit diesen Wahrscheinlichkeiten? Ordne zu.
+        pairs:
+          - left: Die Zweige eines Pfades
+            right: werden multipliziert
+          - left: Die Pfade eines Ereignisses
+            right: werden addiert
+          - left: Die Zweige an einem Knoten
+            right: ergeben zusammen 1
+        distractors:
+          - werden voneinander abgezogen
+        hint: "Denke an die Merkhilfe: entlang des Pfades mal, über mehrere Pfade plus."
+        explanation: Entlang eines Pfades gilt die 1. Pfadregel, also wird multipliziert. Gehören mehrere Pfade zu einem Ereignis, gilt die 2. Pfadregel, also wird addiert. Die Zweige an einem Knoten decken alle Möglichkeiten der Stufe ab und ergeben zusammen immer 1.
       - type: vue-component
         id: pfade-addieren
         component: ZufallPfade
@@ -83,7 +107,7 @@ blocks:
           accepted:
             - { answer: { antwort: "3/4" }, seed: 1 }
             - { answer: { antwort: "1/2*1/2+1/2*1/2+1/2*1/2", auswahl: [kz, zk, zz] }, seed: 1 }
-            - { answer: { antwort: "75 %" }, seed: 1 }
+            - { answer: { antwort: "75 %" }, seed: 1 }
           rejected:
             - { answer: { antwort: "1/4" }, seed: 1 }
             - { answer: { antwort: "" } }

@@ -1,0 +1,140 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Wahrscheinlichkeitsbegriff
+description: "Erklären, was Wahrscheinlichkeit bedeutet, und Wahrscheinlichkeiten auf einer Skala von 0 bis 1 einordnen."
+competencies: [wahrscheinlichkeitsbegriff]
+blocks:
+  - type: section
+    id: warum
+    title: Wie wahrscheinlich ist das?
+    blocks:
+      - type: text
+        text: |
+          Wenn jemand „unmöglich“ oder „ziemlich sicher“ sagt, willst du das genau sagen können. Lena sagt am Spieleabend: „Dass der Würfel eine 7 zeigt, ist unmöglich. Dass er keine 6 zeigt, ist ziemlich
+          sicher.“ Mia widerspricht: „Ziemlich sicher ist nicht sicher.“ Mit Zahlen kann man das genauer sagen. Probiere
+          zuerst, was du dir denkst.
+      - type: ordering
+        id: wahrscheinlich-ordnen
+        text: Ordne die Ereignisse. Oben steht das, was am seltensten passiert, unten das, was immer passiert.
+        items:
+          - Ein Würfel zeigt die 7.
+          - Ein Würfel zeigt die 6.
+          - Eine Münze zeigt Zahl.
+          - Ein Würfel zeigt keine 6.
+          - Auf Montag folgt Dienstag.
+        explanation: Die 7 gibt es auf dem Würfel nicht, die 6 ist eine von sechs Zahlen, Zahl ist eine von zwei Seiten, „keine 6“ passiert bei fünf von sechs Zahlen, und Dienstag folgt immer.
+  - type: section
+    id: regel
+    title: Wahrscheinlichkeit ist eine Zahl von 0 bis 1
+    blocks:
+      - type: text
+        text: Wenn du sagen willst, wie sicher oder wie selten etwas ist, brauchst du dafür eine Zahl. Sie heißt Wahrscheinlichkeit, und es gibt feste Wörter dafür.
+      - type: definition
+        term: Ereignis
+        explanation: Eine Aussage über das Ergebnis eines Zufallsversuchs, die eintreten kann oder nicht. Beim Würfel ist „Die Augenzahl ist gerade“ ein Ereignis. Es trifft bei den Ergebnissen 2, 4 und 6 zu.
+      - type: definition
+        term: Wahrscheinlichkeit
+        explanation: Eine Zahl zwischen 0 und 1, die sagt, wie oft ein Ereignis auf lange Sicht eintritt. Man schreibt $P(E)$.
+      - type: formula
+        formula: '0 \le P(E) \le 1'
+      - type: text
+        text: Damit du eine Wahrscheinlichkeit einordnen kannst, zeigt die Tabelle die Skala von 0 bis 1.
+      - type: table
+        caption: Die Skala der Wahrscheinlichkeit
+        header: [Wert, Bedeutung, Beispiel]
+        rows:
+          - ["0", "unmöglich", "Aus einer Urne mit nur blauen Kugeln ziehst du eine rote."]
+          - ["nahe bei 0", "sehr selten", "Beim Würfeln fällt zehnmal hintereinander die Sechs."]
+          - ["0,5 oder 50 %", "genauso oft wie nicht", "Eine Münze zeigt Kopf."]
+          - ["nahe bei 1", "sehr oft", "Beim Würfeln fällt nicht gleich zweimal die Sechs."]
+          - ["1", "sicher", "Aus einer Urne mit nur roten Kugeln ziehst du eine rote."]
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: Wahrscheinlichkeit sagt etwas über viele Versuche, nicht über einen einzelnen. Die relative Häufigkeit bei vielen Versuchen ist ein Schätzwert dafür.
+  - type: section
+    id: beispiel
+    title: Das Glücksrad ausprobieren
+    blocks:
+      - type: text
+        text: |
+          Wenn du sehen willst, was eine Wahrscheinlichkeit bedeutet, lass ein Glücksrad oft drehen. Es hat vier gleich große Felder: zwei rot, eins blau, eins gelb. Beobachtet wird Blau. Drehe
+          100- und 1000-mal. Achte darauf, bei welcher Zahl sich die Linie einpendelt.
+      - type: vue-component
+        id: maschine-gluecksrad
+        component: ZufallMaschine
+        props:
+          geraet: gluecksrad
+          beobachte: Blau
+          zeigeWert: true
+        nojs: |
+          Die Zufallsmaschine dreht ein Glücksrad mit vier gleich großen Feldern: zwei rot, eins blau, eins gelb. Beobachtet
+          wird Blau. Ein Beispiel mit 1000 Drehungen: Rot 497-mal, Blau 252-mal, Gelb 251-mal. Die relative Häufigkeit
+          von Blau ist 0,252 und liegt nahe bei 0,25. Die Wahrscheinlichkeit für Blau ist ein Viertel, also 0,25 oder
+          25 %.
+      - type: single-choice
+        id: gluecksrad-deuten
+        text: Die Linie pendelt sich bei 0,25 ein. Was bedeutet das für Blau?
+        options:
+          - text: Blau kommt bei jeder vierten Drehung.
+            correct: false
+            info: Das stimmt nicht. Jede Drehung bleibt Zufall. Du kannst nicht sagen, bei welcher Drehung Blau kommt.
+          - text: Auf lange Sicht ist ungefähr jede vierte Drehung Blau.
+            correct: true
+            info: Genau das sagt die Wahrscheinlichkeit 0,25. Bei vielen Drehungen liegt der Anteil von Blau nahe bei 25 %.
+          - text: Nach vier Drehungen ist genau einmal Blau dabei.
+            correct: false
+            info: Auch das stimmt nicht. Bei vier Drehungen kann Blau keinmal oder mehrmals kommen.
+        explanation: Wahrscheinlichkeit beschreibt, wie oft etwas auf lange Sicht passiert, nicht, was beim nächsten Versuch passiert.
+  - type: section
+    id: uebung
+    title: Übung
+    blocks:
+      - type: single-choice
+        id: keine-wahrscheinlichkeit
+        text: Welche Zahl kann keine Wahrscheinlichkeit sein?
+        options:
+          - text: "0"
+            correct: false
+            info: 0 ist erlaubt. Es ist die Wahrscheinlichkeit eines unmöglichen Ereignisses.
+          - text: "1,2"
+            correct: true
+            info: Wahrscheinlichkeiten liegen zwischen 0 und 1. Mehr als sicher geht nicht.
+          - text: "0,35"
+            correct: false
+            info: 0,35 liegt zwischen 0 und 1 und ist erlaubt.
+          - text: "1"
+            correct: false
+            info: 1 ist erlaubt. Es ist die Wahrscheinlichkeit eines sicheren Ereignisses.
+        explanation: Eine Wahrscheinlichkeit ist nie kleiner als 0 und nie größer als 1.
+      - type: true-false
+        id: genau-fuenfmal
+        text: Die Wahrscheinlichkeit für Kopf ist 0,5. Darum kommt bei 10 Münzwürfen genau 5-mal Kopf.
+        answer: false
+        explanation: Bei 10 Würfen schwankt die Zahl der Kopfwürfe. Erst bei sehr vielen Würfen liegt der Anteil nahe bei 0,5. Genau fünfmal Kopf kann passieren, muss aber nicht.
+      - type: matching
+        id: ereignis-wert
+        text: Ordne jedem Ereignis seine Wahrscheinlichkeit zu.
+        pairs:
+          - { left: Ein Würfel zeigt eine Zahl von 1 bis 6., right: "1" }
+          - { left: Ein Würfel zeigt die 9., right: "0" }
+          - { left: Eine Münze zeigt Kopf., right: "0,5" }
+        distractors: ["2"]
+        explanation: Sicher ist 1, unmöglich ist 0, und eine faire Münze zeigt Kopf auf lange Sicht in der Hälfte der Würfe.
+      - type: generated
+        id: regen-deuten
+        given:
+          n: { oneOf: [20, 40, 200] }
+          p: { oneOf: [10, 20, 25, 30, 40, 60, 75] }
+        task:
+          text: "Die Wahrscheinlichkeit für Regen ist {{p}} % an einem Tag in dieser Jahreszeit. Du schaust auf {{n}} Tage dieser Jahreszeit. An wie vielen davon erwartest du ungefähr Regen?"
+        answer: { value: "p * n / 100", compare: number }
+        mistakes:
+          - {
+              value: "p",
+              message: "Du hast die Prozentzahl als Anzahl der Tage genommen. {{p}} % von {{n}} Tagen heißt {{p}} von 100 Tagen. Rechne das auf {{n}} Tage um.",
+            }
+          - { value: "n - p * n / 100", message: "Das sind die Tage ohne Regen. Gefragt sind die Tage mit Regen." }
+        hint: "Wie viele Tage sind 1 % von allen Tagen? Rechne dann auf p % hoch."
+        steps:
+          - '$\frac{{{p}}}{100} \cdot {{n}} = {{answer}}$, also ungefähr {{answer}} Tage mit Regen.'

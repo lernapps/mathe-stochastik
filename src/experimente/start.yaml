@@ -1,0 +1,71 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Das brauchst du hier
+description: "Wiederholung für Kapitel 1: absolute und relative Häufigkeit, mit Beispiel und zwei Übungen."
+recap: mathematik/haeufigkeiten
+blocks:
+  - type: section
+    id: kopf
+    title: Das brauchst du für dieses Kapitel
+    blocks:
+      - type: text
+        text: |
+          In diesem Kapitel lässt du Zufallsversuche laufen und zählst, wie oft etwas passiert. Dafür musst du
+          **absolute und relative Häufigkeiten** kennen. Die Karte nennt das Ziel so: „Ich kann absolute und relative
+          Häufigkeiten bestimmen.“ Das Ziel heißt dort [Absolute und relative Häufigkeit](https://lernapps.net/apps/map/mathematik/c/haeufigkeiten/).
+  - type: section
+    id: haeufigkeiten
+    title: Absolute und relative Häufigkeit
+    blocks:
+      - type: definition
+        term: absolute Häufigkeit
+        explanation: Die absolute Häufigkeit sagt, wie oft ein Ergebnis vorkommt. Sie ist eine Anzahl. Bei 20 Würfen mit sechs Mal „gerade“ ist sie 6.
+      - type: definition
+        term: relative Häufigkeit
+        explanation: Die relative Häufigkeit ist der Anteil an allen Versuchen, also die absolute Häufigkeit geteilt durch die Anzahl der Versuche. Man gibt sie als Bruch, als Dezimalzahl oder in Prozent an.
+      - type: example
+        title: Beispiel
+        blocks:
+          - type: text
+            text: Du wirfst eine Münze 20-mal. Sie zeigt 12-mal Zahl.
+          - type: formula
+            formula: '\frac{12}{20} = 0{,}6 = 60\,\%'
+          - type: text
+            text: Die absolute Häufigkeit von „Zahl“ ist 12, die relative Häufigkeit ist 0,6 oder 60 %.
+      - type: number
+        id: haeufigkeit-berechnen
+        text: Bei 60 Würfen sind 21 Ergebnisse eine gerade Zahl. Wie groß ist die relative Häufigkeit von „gerade“? Gib sie als Dezimalzahl an.
+        answer: 0.35
+        tolerance: 0
+        mistakes:
+          - {
+              answer: 21,
+              message: "Das ist die absolute Häufigkeit, die Anzahl der geraden Zahlen. Gefragt ist der Anteil an allen Würfen.",
+            }
+          - {
+              answer: 2.86,
+              message: "Du hast 60 durch 21 geteilt. Teile die Anzahl der Treffer (21) durch die Zahl aller Würfe (60).",
+            }
+        hint: "Wie viele Würfe waren es insgesamt, und wie viele davon sind Treffer? Kürze den Bruch, wenn du kannst."
+        explanation: "21 von 60 kürzt du mit 3 zu 7 von 20. Das sind 0,35, also 35 %."
+      - type: number
+        id: anteil-prozent
+        text: Bei einer Umfrage antworten 18 von 24 Personen mit Ja. Wie viel Prozent sind das?
+        answer: 75
+        tolerance: 0
+        unit: "%"
+        mistakes:
+          - { answer: 133.33, message: "Du hast 24 durch 18 geteilt. Der Anteil ist Treffer durch alle: 18 durch 24." }
+          - { answer: 0.75, message: "Das ist die Dezimalzahl. Für Prozent musst du sie mit 100 malnehmen." }
+        hint: "Bilde den Bruch aus den Ja-Antworten und allen Personen. Wandle ihn dann in Prozent um."
+        explanation: "18 von 24 kürzt du mit 6 zu 3 von 4. Das sind 0,75, also 75 %."
+  - type: section
+    id: checkliste
+    title: Du bist bereit, wenn du …
+    blocks:
+      - type: text
+        text: |
+          - eine absolute Häufigkeit aus einer Strichliste oder Tabelle abliest,
+          - eine relative Häufigkeit als Bruch, Dezimalzahl und in Prozent angibst,
+          - sagen kannst, welche der beiden Zahlen eine Anzahl und welche ein Anteil ist.
+      - type: text
+        text: "Wenn eine Übung nicht klappte, übe den Baustein auf der Karte: [Absolute und relative Häufigkeit](https://lernapps.net/apps/map/mathematik/c/haeufigkeiten/)"

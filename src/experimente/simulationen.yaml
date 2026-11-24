@@ -1,0 +1,273 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Simulationen
+description: "Zufallsversuche mit Zufallszahlen und einer Zuordnung nachspielen und auswerten, mit der Zufallsmaschine zum Ausprobieren."
+competencies: [simulationen]
+blocks:
+  - type: section
+    id: warum
+    title: Wann kommt die erste Sechs?
+    blocks:
+      - type: text
+        text: |
+          Mia, Jonas und Lena spielen am Spieleabend ein Würfelspiel. Wer zuerst eine Sechs würfelt, darf anfangen. Lena
+          fragt: „Wie oft muss man würfeln, bis zum ersten Mal eine Sechs kommt?“ Das echt auszuprobieren dauert lange.
+          Darum ersetzt du den echten Versuch durch eine **Simulation**: ein Versuch, der sich genauso verhält, aber
+          schneller geht. Hier würfelt die Zufallsmaschine für dich: Bei jedem Klick zieht sie eine Zufallszahl von 1 bis 6, und diese Zahl ist die Augenzahl. Du siehst sie bei „Letzter Wurf“.
+      - type: text
+        text: |
+          Ein **Durchlauf** ist einmal von vorn bis zum Ziel: Du würfelst, bis die erste Sechs kommt, und zählst die
+          Würfe. Klicke auf „1 Wurf“, bis beim letzten Wurf eine 6 steht. Über der Tabelle der Maschine steht, nach
+          wie vielen Würfen die Zahlen gezählt sind: So siehst du, wie viele Würfe du gebraucht hast. Setze zurück und mache drei Durchläufe.
+      - type: vue-component
+        id: maschine-erste-sechs
+        component: ZufallMaschine
+        props:
+          geraet: wuerfel
+          beobachte: "6"
+        nojs: |
+          Die Zufallsmaschine wirft einen Würfel und zählt die Ergebnisse 1 bis 6. Du klickst auf „1 Wurf“, bis die
+          erste Sechs kommt, und liest über der Tabelle ab, wie viele Würfe das waren. Ein Beispiel mit drei
+          Durchläufen: Beim ersten Durchlauf kam die Sechs nach 3 Würfen, beim zweiten nach 8 Würfen und beim dritten
+          nach 5 Würfen.
+      - type: single-choice
+        id: durchlaeufe-vergleichen
+        text: Du hast mehrere Durchläufe gemacht. Was fällt dir an der Zahl der Würfe bis zur ersten Sechs auf?
+        options:
+          - text: Jeder Durchlauf dauert genau gleich viele Würfe.
+            correct: false
+            info: Das stimmt nicht. Der Zufall entscheidet bei jedem Wurf neu, darum dauern die Durchläufe verschieden lang.
+          - text: Mal kommt die Sechs früh, mal spät, die Zahl der Würfe ist jedes Mal anders.
+            correct: true
+            info: Genau das beobachtest du. Wie lange es dauert, lässt sich vorher nicht sicher sagen.
+          - text: Die erste Sechs kommt immer beim sechsten Wurf.
+            correct: false
+            info: Das stimmt nicht. Die Würfe merken sich nichts, die Sechs kann gleich beim ersten Wurf kommen.
+        explanation: Ein einzelner Durchlauf sagt wenig. Erst viele Durchläufe zeigen, wie lange es meistens dauert.
+  - type: section
+    id: regel
+    title: Zufallszahlen und Zuordnung
+    blocks:
+      - type: text
+        text: |
+          Wenn echtes Würfeln zu lange dauert, ersetzt du den Versuch durch eine Simulation. Du brauchst dafür zwei Dinge. Denke dir die Zufallszahlen wie Lose in einer Trommel: Du ziehst
+          ein Los, und eine Regel sagt dir, welches Ergebnis dieses Los bedeutet.
+      - type: definition
+        term: Zufallszahl
+        explanation: Eine Zahl, die der Zufall aus einem Bereich zieht, zum Beispiel aus 1 bis 6. Jede Zahl des Bereichs ist gleich wahrscheinlich.
+      - type: definition
+        term: Zuordnung
+        explanation: Die Regel, die sagt, welches Ergebnis des Versuchs zu welcher Zufallszahl gehört.
+      - type: definition
+        term: Treffer
+        explanation: Das Ergebnis, auf das du bei einer Simulation achtest und das du zählst, zum Beispiel die Sechs.
+      - type: text
+        text: Damit eine Zufallszahl ein Ergebnis bedeutet, brauchst du eine feste Zuordnung. Die Tabelle zeigt drei Beispiele.
+      - type: table
+        caption: So ordnest du Zufallszahlen zu
+        header: [Versuch, Zufallszahl, Zuordnung]
+        rows:
+          - ["Würfel", "1 bis 6", "Die Zahl ist die Augenzahl."]
+          - ["Münze", "1 bis 6", "gerade = Kopf, ungerade = Zahl"]
+          - ["Urne mit 3 roten und 1 blauen Kugel", "1 bis 4", "1 bis 3 = rot, 4 = blau"]
+      - type: text
+        text: |
+          Wenn du viele Durchläufe brauchst, gehst du jedes Mal gleich vor. Eine Simulation läuft in vier Schritten: Zufallszahl ziehen, Zuordnung anwenden, Ergebnis notieren, alles
+          oft wiederholen und die Treffer zählen. So sieht das für die Urne mit 3 roten und 1 blauen Kugel aus.
+      - type: table
+        caption: Fünf Durchgänge mit der Urne
+        header: [Zufallszahl, Zuordnung, Ergebnis]
+        rows:
+          - ["4", "4 = blau", "blau"]
+          - ["1", "1 bis 3 = rot", "rot"]
+          - ["3", "1 bis 3 = rot", "rot"]
+          - ["2", "1 bis 3 = rot", "rot"]
+          - ["4", "4 = blau", "blau"]
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Jedes Ergebnis bekommt so viele Zufallszahlen, wie zu seiner Wahrscheinlichkeit passt. In der Urne ist rot
+              dreimal so wahrscheinlich wie blau, darum hat rot drei Zahlen und blau eine. Die relative Häufigkeit der
+              Treffer schätzt dann die Wahrscheinlichkeit, und mehr Durchläufe machen die Schätzung verlässlicher.
+      - type: text
+        text: |
+          Mit einer Tabellenkalkulation kannst du Zufallszahlen am Rechner erzeugen. Eine Tabellenkalkulation hat diese
+          App nicht; das Prinzip ist dasselbe. Hier simulierst du mit der Zufallsmaschine und mit Zahlenreihen auf dieser
+          Seite.
+  - type: section
+    id: beispiel
+    title: Eine Zahlenreihe auswerten
+    blocks:
+      - type: example
+        title: Beispiel
+        blocks:
+          - type: text
+            text: |
+              Wenn eine Simulation fertig ist, willst du wissen, wie oft der Treffer vorkam. Lena simuliert 20 Würfe mit Zufallszahlen von 1 bis 6. Die Zahl ist die Augenzahl. Ihre Reihe: 3, 6, 1,
+              4, 6, 2, 5, 3, 6, 1, 2, 4, 4, 6, 5, 3, 1, 6, 2, 4. Sie zählt jede Zahl mit einer Strichliste.
+          - type: table
+            caption: Strichliste der 20 Zufallszahlen
+            header: [Zahl, Strichliste, Anzahl]
+            rows:
+              - ["1", "|||", "3"]
+              - ["2", "|||", "3"]
+              - ["3", "|||", "3"]
+              - ["4", "||||", "4"]
+              - ["5", "||", "2"]
+              - ["6", "|||||", "5"]
+          - type: formula
+            formula: "3 + 3 + 3 + 4 + 2 + 5 = 20"
+          - type: text
+            text: Die relative Häufigkeit der Sechs ist 5 von 20.
+          - type: formula
+            formula: 'h = \frac{5}{20} = 0{,}25'
+          - type: text
+            text: |
+              Lena liest die Reihe auch als Durchläufe bis zur ersten Sechs: Der erste Durchlauf endet nach 2 Würfen
+              (3, 6), der zweite nach 3 Würfen (1, 4, 6), die nächsten nach 4, 5 und 4 Würfen. Die letzten zwei Zahlen
+              (2, 4) gehören zu einem Durchlauf, der noch nicht fertig ist. Zum Vergleich: Bei einem Würfel erwartest du
+              für die Sechs $\frac{1}{6}$, ungefähr 0,17.
+      - type: text
+        text: |
+          Jetzt simulierst du eine Münze. Die Zufallsmaschine übernimmt die Zuordnung für dich. Wirf 100-mal und lies
+          die relative Häufigkeit von Kopf ab. Setze zurück und wiederhole das noch zweimal. Vergleiche die drei Werte.
+      - type: vue-component
+        id: maschine-muenze-simulation
+        component: ZufallMaschine
+        props:
+          geraet: muenze
+          beobachte: Kopf
+        nojs: |
+          Die Zufallsmaschine wirft eine Münze so oft, wie du willst, und zählt Kopf und Zahl. Ein Beispiel mit drei
+          Durchläufen zu je 100 Würfen: Kopf hatte die relative Häufigkeit 0,47, dann 0,53 und dann 0,5.
+      - type: single-choice
+        id: muenze-durchlaeufe
+        text: Du hast dreimal 100 Münzwürfe simuliert. Was zeigen die drei Werte für Kopf?
+        options:
+          - text: Alle drei Werte sind ähnlich, aber nicht genau gleich.
+            correct: true
+            info: So ist es. Jeder Durchlauf hat seinen eigenen Zufall, darum weichen die Werte ein wenig voneinander ab.
+          - text: Alle drei Werte sind genau gleich.
+            correct: false
+            info: Das stimmt nicht. Bei Zufall kommt es selten vor, dass zwei Durchläufe genau dasselbe ergeben.
+          - text: Die Werte liegen weit auseinander, einer nahe 0 und einer nahe 1.
+            correct: false
+            info: Das stimmt nicht. Bei 100 Würfen liegen die Werte meist nahe beieinander.
+        explanation: Jede Simulation liefert nur einen Schätzwert, der etwas schwankt. Du kannst ihn damit nicht als genauen Wert ausgeben.
+  - type: section
+    id: uebung
+    title: Übung
+    blocks:
+      - type: number
+        id: durchschnitt-durchlaeufe
+        text: "Mia hat drei Durchläufe gemacht. Bis zur ersten Sechs brauchte sie 4, 9 und 2 Würfe. Wie viele Würfe sind das im Durchschnitt pro Durchlauf? Der Durchschnitt ist die Summe aller Würfe geteilt durch die Zahl der Durchläufe."
+        answer: 5
+        tolerance: 0
+        mistakes:
+          - {
+              answer: 15,
+              message: "Das ist die Summe aller Würfe. Der Durchschnitt gilt für einen einzelnen Durchlauf.",
+            }
+          - { answer: 9, message: "Das ist der längste Durchlauf, nicht der Durchschnitt." }
+        hint: Addiere zuerst die Würfe aller Durchläufe. Durch welche Zahl musst du dann teilen?
+        explanation: Zusammen sind es 4 + 9 + 2 = 15 Würfe in 3 Durchläufen. Das sind 15 geteilt durch 3, also 5 Würfe pro Durchlauf. Mit nur drei Durchläufen ist das aber erst ein grober Schätzwert.
+      - type: matching
+        id: zuordnung-zuordnen
+        text: Ordne jedem Versuch die passende Zuordnung zu.
+        pairs:
+          - { left: "Würfel, Zufallszahl 1 bis 6", right: "Die Zahl ist die Augenzahl." }
+          - { left: "Münze, Zufallszahl 1 bis 8", right: "1 bis 4 = Kopf, 5 bis 8 = Zahl" }
+          - { left: "Urne mit 1 roten und 3 blauen Kugeln, Zufallszahl 1 bis 4", right: "1 = rot, 2 bis 4 = blau" }
+        explanation: Jedes Ergebnis bekommt so viele Zufallszahlen, wie zu seiner Wahrscheinlichkeit passt.
+      - type: true-false
+        id: zuordnung-gleich-gross
+        text: "Eine Münze soll mit einer Zufallszahl von 1 bis 6 simuliert werden. Die Zuordnung lautet: 1 und 2 = Kopf, 3 bis 6 = Zahl. Stellt das eine Münze richtig dar?"
+        answer: false
+        explanation: Kopf und Zahl sind bei einer Münze gleich wahrscheinlich, brauchen also gleich viele Zufallszahlen. Hier hat Kopf nur 2 von 6 Zahlen und Zahl hat 4. Das ist eine ungleiche Zuordnung für gleich wahrscheinliche Ergebnisse. Richtig wäre zum Beispiel 1 bis 3 = Kopf und 4 bis 6 = Zahl.
+      - type: number
+        id: durchlauf-zaehlen
+        text: "Mia simuliert mit Zufallszahlen von 1 bis 6. Die 6 bedeutet „Sechs“. Ihre Reihe: 2, 5, 1, 4, 4, 6, 3, 1, 6, 5. Der erste Durchlauf endet bei der ersten Sechs, der zweite bei der nächsten. Wie viele Würfe dauert der zweite Durchlauf, die Sechs mitgezählt?"
+        answer: 3
+        tolerance: 0
+        mistakes:
+          - {
+              answer: 2,
+              message: "Du hast die Sechs nicht mitgezählt. Der Durchlauf endet mit dem Wurf, der die Sechs zeigt.",
+            }
+          - {
+              answer: 9,
+              message: "Du hast von Anfang der Reihe gezählt. Der zweite Durchlauf beginnt erst nach der ersten Sechs.",
+            }
+        hint: Wo steht die erste Sechs? Ab welcher Zahl beginnt der zweite Durchlauf?
+        explanation: Die erste Sechs steht an 6. Stelle. Danach kommen 3, 1 und 6. Der zweite Durchlauf dauert also 3 Würfe.
+      - type: multiple-choice
+        id: treffer-festlegen
+        text: "Eine Zufallszahl von 1 bis 10 soll einen Versuch darstellen, bei dem ein Treffer die Wahrscheinlichkeit 30 % hat. Welche Zuordnungen passen? Wähle alle richtigen."
+        options:
+          - text: Treffer sind 4, 7 und 10.
+            correct: true
+            info: Das sind 3 von 10 Zahlen, also 30 %. Es kommt nur auf die Anzahl der Treffer-Zahlen an, nicht darauf, welche es sind.
+          - text: Treffer ist nur die 3.
+            correct: false
+            info: Das ist 1 von 10 Zahlen, also nur 10 %. Der Treffer bekommt zu wenige Zahlen.
+          - text: Treffer sind 1, 2, 3 und 4.
+            correct: false
+            info: Das sind 4 von 10 Zahlen, also 40 %. Der Treffer bekommt zu viele Zahlen.
+          - text: Treffer sind 1, 2 und 3.
+            correct: true
+            info: Das sind 3 von 10 Zahlen, also 30 %. Alle anderen Zahlen bedeuten dann kein Treffer.
+        explanation: Die Treffer bekommen so viele der 10 Zahlen, wie 30 % von 10 sind. Welche Zahlen es sind, ist egal.
+      - type: generated
+        id: reihe-auswerten
+        given:
+          a: { int: [2, 4] }
+          b: { int: [2, 4] }
+          c: { int: [2, 4] }
+          d: { int: [2, 4] }
+          e: { int: [2, 4] }
+        where: ["a + b + c + d + e >= 12", "a + b + c + d + e <= 19"]
+        task:
+          text: "Mia hat einen Würfel mit Zufallszahlen von 1 bis 6 simuliert, insgesamt 20 Würfe. Ihre Strichliste zeigt: 1 kam {{a}}-mal, 2 kam {{b}}-mal, 3 kam {{c}}-mal, 4 kam {{d}}-mal und 5 kam {{e}}-mal. Die Sechs fehlt noch in der Liste. Wie groß ist die relative Häufigkeit der Sechs? Gib sie als Dezimalzahl an."
+        answer: { value: "(20 - a - b - c - d - e) / 20", compare: { number: { format: decimal, decimals: 2 } } }
+        mistakes:
+          - {
+              value: "20 - a - b - c - d - e",
+              message: "Das ist die Zahl der Sechsen. Die relative Häufigkeit setzt sie ins Verhältnis zu allen Würfen.",
+            }
+          - {
+              value: "(a + b + c + d + e) / 20",
+              message: "Das ist die relative Häufigkeit der Zahlen 1 bis 5 zusammen, nicht die der Sechs.",
+            }
+        hint: "Alle sechs Anzahlen zusammen müssen 20 ergeben. Wie viele Würfe bleiben für die Sechs übrig?"
+        steps:
+          - "Die Zahlen 1 bis 5 kamen zusammen {{a}} + {{b}} + {{c}} + {{d}} + {{e}} mal. Die übrigen der 20 Würfe sind Sechsen."
+          - '$\frac{20 - ({{a}} + {{b}} + {{c}} + {{d}} + {{e}})}{20} = {{answer}}$'
+          - "Rechenprobe: Die Anzahl der Sechsen und die der Zahlen 1 bis 5 ergeben zusammen 20."
+      - type: single-choice
+        id: schaetzwert-nicht-beweis
+        text: "Lena simuliert 20 Würfe und bekommt 4-mal die Sechs. Jonas sagt: „Also hat die Sechs genau die Wahrscheinlichkeit 20 %. Die Simulation hat es bewiesen.“ Was antwortest du?"
+        options:
+          - text: Stimmt, denn die Simulation zeigt immer die genaue Wahrscheinlichkeit.
+            correct: false
+            info: Das stimmt nicht. Eine Simulation beweist nichts, sie liefert nur einen Schätzwert.
+          - text: Das ist nur ein Schätzwert aus 20 Würfen. Mit viel mehr Würfen wird er verlässlicher.
+            correct: true
+            info: Bei wenigen Durchläufen kann der Zufall den Wert stark verschieben. Viele Durchläufe machen die Schätzung besser, beweisen aber auch nichts.
+          - text: Die relative Häufigkeit sagt gar nichts über die Wahrscheinlichkeit.
+            correct: false
+            info: Das stimmt nicht. Die relative Häufigkeit schätzt die Wahrscheinlichkeit, vor allem bei vielen Durchläufen.
+        explanation: Eine Simulation ersetzt den echten Versuch und liefert einen Schätzwert. Zu wenige Durchläufe sind nur ein Anhaltspunkt, und auch viele beweisen nichts.
+  - type: section
+    id: abschluss
+    title: Das nimmst du mit
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              - Eine Simulation ersetzt den echten Versuch durch Zufallszahlen und eine Zuordnung.
+              - Gleich wahrscheinliche Ergebnisse bekommen gleich viele Zufallszahlen.
+              - Zähle die Treffer und rechne die relative Häufigkeit aus: Anzahl der Treffer durch Anzahl der Durchläufe.
+              - Wenige Durchläufe sind nur ein Anhaltspunkt. Eine Simulation liefert einen Schätzwert, keinen Beweis.
